@@ -1,0 +1,70 @@
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csprojAssemblyReference.cache
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaLogin.resources
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.Properties.Resources.resources
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.GenerateResource.cache
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe.config
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\bin\Debug\SOS Animal.pdb
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS Animal.exe
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS Animal.pdb
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\bin\Debug\SOSAnimaldados.mdf
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\bin\Debug\SOSAnimaldados_log.ldf
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaCadastro.resources
+C:\Users\aluno\Desktop\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaEscolhaCadastro.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.AssemblyReference.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.SuggestedBindingRedirects.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaCadastro.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaEscolhaCadastro.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaLogin.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.Properties.Resources.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.GenerateResource.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.exe
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.pdb
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe.config
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe
+C:\Users\lucas\Downloads\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.pdb
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe.config
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\SOS Animal.pdb
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.AssemblyReference.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.SuggestedBindingRedirects.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaCadastro.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaEscolhaCadastro.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaLogin.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.Properties.Resources.resources
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.GenerateResource.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.exe
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.pdb
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\EntityFramework.dll
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.dll
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\EntityFramework.xml
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.xml
+C:\Users\lucas\Downloads\SOSAnimal-main\SOSAnimal-main\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CopyComplete
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe.config
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\SOS Animal.exe
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\SOS Animal.pdb
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\EntityFramework.dll
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.dll
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\EntityFramework.xml
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\bin\Debug\System.Data.SQLite.xml
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csprojAssemblyReference.cache
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaCadastro.resources
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaEscolhaCadastro.resources
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.TelaLogin.resources
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS_Animal.Properties.Resources.resources
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.GenerateResource.cache
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.csproj.CopyComplete
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.exe
+C:\Users\aluno\Downloads\SOS Animal\SOS Animal\obj\Debug\SOS Animal.pdb
