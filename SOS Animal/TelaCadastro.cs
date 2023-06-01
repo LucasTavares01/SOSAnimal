@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace SOS_Animal
 {
@@ -20,14 +20,14 @@ namespace SOS_Animal
 
         private void botaoFecharCadastro_Click(object sender, EventArgs e)
         {
-            TelaLogin telalogin = new TelaLogin(); //INSTANCIA A TELALOGIN PARA O BOTAO CADASTRAR
+            TelaLogin telalogin = new TelaLogin();
             this.Hide();
             telalogin.Show();
         }
 
         private void botaoVoltarCadastro_Click(object sender, EventArgs e)
         {
-            TelaEscolhaCadastro telaescolhacadastro = new TelaEscolhaCadastro(); //INSTANCIA A TELAESCOLHACADASTRO PARA O BOTAO CADASTRAR
+            TelaEscolhaCadastro telaescolhacadastro = new TelaEscolhaCadastro();
             this.Hide();
             telaescolhacadastro.Show();
         }
@@ -37,7 +37,7 @@ namespace SOS_Animal
             if (campoNomeCadastro.Text == "NOME COMPLETO")
             {
                 campoNomeCadastro.Text = "";
-            }           
+            }
         }
 
         private void campoNomeCadastro_Leave(object sender, EventArgs e)
@@ -88,6 +88,37 @@ namespace SOS_Animal
             this.ActiveControl = null;
         }
 
+        private void CriarTabela(string connectionString)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "CREATE TABLE IF NOT EXISTS Usuarios (Nome VARCHAR(100), Senha VARCHAR(100), Email VARCHAR(100))";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void AdicionarUsuario(string connectionString, string nome, string senha, string email)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO Usuarios (Nome, Senha, Email) VALUES (@Nome, @Senha, @Email)";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", nome);
+                    command.Parameters.AddWithValue("@Senha", senha);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
             // Obtém os valores dos campos de texto
@@ -95,8 +126,11 @@ namespace SOS_Animal
             string senha = campoSenhaCadastro.Text;
             string email = campoEmailCadastro.Text;
 
-            // Salva as informações no banco de dados
-            BancoDeDados.SalvarCadastro(nome, senha, email);
+            // Cria a tabela se não existir
+            CriarTabela("Server=localhost;Database=usuários;Uid=root;Pwd=;");
+
+            // Adiciona o usuário à tabela
+            AdicionarUsuario("Server=localhost;Database=usuários;Uid=root;Pwd=;", nome, senha, email);
 
             // Limpa os campos de texto após a inserção
             campoNomeCadastro.Clear();

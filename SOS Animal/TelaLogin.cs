@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SOS_Animal
 {
@@ -16,8 +17,7 @@ namespace SOS_Animal
 
         public TelaLogin()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void campoEmailLogin_Enter(object sender, EventArgs e)
@@ -77,8 +77,41 @@ namespace SOS_Animal
 
         private void botaoEntrarLogin_Click(object sender, EventArgs e)
         {
-            
-        }
+            string email = campoEmailLogin.Text;
+            string senha = campoSenhaLogin.Text;
 
+            // Defina a string de conexão com as configurações corretas
+            string connectionString = "Server=localhost;Database=usuários;Uid=root;Pwd=;";
+
+            // Crie uma consulta para verificar os dados de login
+            string query = "SELECT * FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Senha", senha);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) // Se houver um registro correspondente
+                        {
+                            // Abra a TelaCadastro
+                            TelaCadastro telaCadastro = new TelaCadastro();
+                            this.Hide();
+                            telaCadastro.Show();
+                        }
+                        else
+                        {
+                            // Exiba uma mensagem de erro de login
+                            avisoErroLogin.Visible = true;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
