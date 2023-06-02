@@ -83,9 +83,59 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolsa_de_dinheiro_1 {
+            get {
+                object obj = ResourceManager.GetObject("bolsa-de-dinheiro 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap escolhafinanceira {
+            get {
+                object obj = ResourceManager.GetObject("escolhafinanceira", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Escolhafinanceiro {
+            get {
+                object obj = ResourceManager.GetObject("Escolhafinanceiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estoque_1 {
             get {
                 object obj = ResourceManager.GetObject("estoque 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estoque_2 {
+            get {
+                object obj = ResourceManager.GetObject("estoque 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moedas_1 {
+            get {
+                object obj = ResourceManager.GetObject("moedas 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -40,13 +40,18 @@
             this.botaoEscolhaEstoque.BackgroundImage = global::SOS_Animal.Properties.Resources.estoque_1;
             this.botaoEscolhaEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botaoEscolhaEstoque.FlatAppearance.BorderSize = 0;
+            this.botaoEscolhaEstoque.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoEscolhaEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.botaoEscolhaEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoEscolhaEstoque.ForeColor = System.Drawing.Color.Transparent;
             this.botaoEscolhaEstoque.Location = new System.Drawing.Point(130, 249);
             this.botaoEscolhaEstoque.Name = "botaoEscolhaEstoque";
             this.botaoEscolhaEstoque.Size = new System.Drawing.Size(200, 200);
             this.botaoEscolhaEstoque.TabIndex = 0;
             this.botaoEscolhaEstoque.UseVisualStyleBackColor = false;
             this.botaoEscolhaEstoque.Click += new System.EventHandler(this.botaoEscolhaEstoque_Click);
+            this.botaoEscolhaEstoque.MouseEnter += new System.EventHandler(this.BotaoEscolhaEstoque_MouseEnter);
+            this.botaoEscolhaEstoque.MouseLeave += new System.EventHandler(this.BotaoEscolhaEstoque_MouseLeave);
             // 
             // botaoEscolhaFinanceiro
             // 

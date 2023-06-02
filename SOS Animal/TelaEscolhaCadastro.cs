@@ -45,5 +45,19 @@ namespace SOS_Animal
             this.Hide();
             telacadastro.Show();
         }
+
+        private void BotaoEscolhaEstoque_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.estoque_2;
+
+            botaoEscolhaEstoque.BackgroundImage = novaImagem;
+        }
+
+        private void BotaoEscolhaEstoque_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.estoque_1;
+
+            botaoEscolhaEstoque.BackgroundImage = novaImagem;
+        }
     }
 }
