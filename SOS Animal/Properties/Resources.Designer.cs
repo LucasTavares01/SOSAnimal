@@ -63,6 +63,36 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap animal_care_1 {
+            get {
+                object obj = ResourceManager.GetObject("animal-care 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bolsa_de_dinheiro__1__1 {
+            get {
+                object obj = ResourceManager.GetObject("bolsa-de-dinheiro (1) 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estoque_1 {
+            get {
+                object obj = ResourceManager.GetObject("estoque 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TelaCadastro {
             get {
                 object obj = ResourceManager.GetObject("TelaCadastro", resourceCulture);
@@ -86,6 +116,16 @@ namespace SOS_Animal.Properties {
         internal static System.Drawing.Bitmap TelaLogin {
             get {
                 object obj = ResourceManager.GetObject("TelaLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vector {
+            get {
+                object obj = ResourceManager.GetObject("Vector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
