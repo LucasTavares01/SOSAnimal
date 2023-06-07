@@ -13,7 +13,7 @@ namespace SOS_Animal
 {
     public partial class TelaLogin : Form
     {
-        TelaEscolhaCadastro telaescolhacadastro = new TelaEscolhaCadastro(); //INSTANCIA A TELAESCOLHACADASTRO PARA O BOTAO CADASTRAR
+        TelaCadastro telacadastro = new TelaCadastro(); //INSTANCIA A TELACADASTRO PARA O BOTAO CADASTRAR
 
         public TelaLogin()
         {
@@ -62,7 +62,7 @@ namespace SOS_Animal
         private void BotaoCadastrarLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telaescolhacadastro.Show();
+            telacadastro.Show();
         }
 
         private void botaoFechar_Click(object sender, EventArgs e)
