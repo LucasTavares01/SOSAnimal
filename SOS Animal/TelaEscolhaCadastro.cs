@@ -14,7 +14,7 @@ namespace SOS_Animal
 {
     public partial class TelaEscolhaCadastro : Form
     {
-        TelaCadastro telacadastro = new TelaCadastro(); //INSTANCIA A TELACADASTRO PARA O BOTAO CADASTRAR
+        TelaEscolhaFinanceiro telaescolhafinanceiro = new TelaEscolhaFinanceiro(); //INSTANCIA A TELACADASTRO PARA O BOTAO CADASTRAR
 
         public TelaEscolhaCadastro()
         {
@@ -31,19 +31,55 @@ namespace SOS_Animal
         private void botaoEscolhaEstoque_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telacadastro.Show();
+            //telacadastro.Show();
         }
 
         private void botaoEscolhaFinanceiro_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telacadastro.Show();
+            telaescolhafinanceiro.Show();
         }
 
         private void botaoEscolhaControleAnimal_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telacadastro.Show();
+            //telacadastro.Show();
+        }
+
+        private void botaoEscolhaEstoque_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoEstoque2;
+            botaoEscolhaEstoque.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEscolhaEstoque_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoEstoque1;
+            botaoEscolhaEstoque.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEscolhaFinanceiro_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoFinanceiro2;
+            botaoEscolhaFinanceiro.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEscolhaFinanceiro_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoFinanceiro1;
+            botaoEscolhaFinanceiro.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEscolhaControleAnimal_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoControleAnimais2;
+            botaoEscolhaControleAnimal.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEscolhaControleAnimal_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoControleAnimais1;
+            botaoEscolhaControleAnimal.BackgroundImage = novaImagem;
         }
     }
 }

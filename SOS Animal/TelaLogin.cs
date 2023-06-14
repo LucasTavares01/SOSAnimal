@@ -100,9 +100,9 @@ namespace SOS_Animal
                         if (reader.Read()) // Se houver um registro correspondente
                         {
                             // Abra a TelaCadastro
-                            TelaCadastro telaCadastro = new TelaCadastro();
+                            TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
                             this.Hide();
-                            telaCadastro.Show();
+                            telaEscolhaCadastro.Show();
                         }
                         else
                         {

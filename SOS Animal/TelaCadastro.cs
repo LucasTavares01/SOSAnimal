@@ -27,9 +27,9 @@ namespace SOS_Animal
 
         private void botaoVoltarCadastro_Click(object sender, EventArgs e)
         {
-            TelaEscolhaCadastro telaescolhacadastro = new TelaEscolhaCadastro();
+            TelaLogin telaLogin = new TelaLogin();
             this.Hide();
-            telaescolhacadastro.Show();
+            telaLogin.Show();
         }
 
         private void campoNomeCadastro_Enter(object sender, EventArgs e)
