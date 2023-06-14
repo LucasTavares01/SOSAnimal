@@ -40,5 +40,19 @@ namespace SOS_Animal
             Image novaImagem = Properties.Resources.botaoDespesas1;
             botaoDespesas.BackgroundImage = novaImagem;
         }
+
+        private void botaoVoltarFinanceiro_Click(object sender, EventArgs e)
+        {
+            TelaEscolhaCadastro telaescolhacadastro = new TelaEscolhaCadastro();
+            this.Hide();
+            telaescolhacadastro.Show();
+        }
+
+        private void botaoFecharFinanceiro_Click(object sender, EventArgs e)
+        {
+            TelaLogin telalogin = new TelaLogin();
+            this.Hide();
+            telalogin.Show();
+        }
     }
 }

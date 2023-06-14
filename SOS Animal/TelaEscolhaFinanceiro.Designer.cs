@@ -30,6 +30,8 @@
         {
             this.botaoReceitas = new System.Windows.Forms.Button();
             this.botaoDespesas = new System.Windows.Forms.Button();
+            this.botaoVoltarFinanceiro = new System.Windows.Forms.Button();
+            this.botaoFecharFinanceiro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // botaoReceitas
@@ -66,6 +68,38 @@
             this.botaoDespesas.MouseEnter += new System.EventHandler(this.botaoDespesas_MouseEnter);
             this.botaoDespesas.MouseLeave += new System.EventHandler(this.botaoDespesas_MouseLeave);
             // 
+            // botaoVoltarFinanceiro
+            // 
+            this.botaoVoltarFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarFinanceiro.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoVoltar;
+            this.botaoVoltarFinanceiro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoVoltarFinanceiro.FlatAppearance.BorderSize = 0;
+            this.botaoVoltarFinanceiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarFinanceiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.botaoVoltarFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoVoltarFinanceiro.Location = new System.Drawing.Point(12, 12);
+            this.botaoVoltarFinanceiro.Name = "botaoVoltarFinanceiro";
+            this.botaoVoltarFinanceiro.Size = new System.Drawing.Size(44, 44);
+            this.botaoVoltarFinanceiro.TabIndex = 7;
+            this.botaoVoltarFinanceiro.UseVisualStyleBackColor = false;
+            this.botaoVoltarFinanceiro.Click += new System.EventHandler(this.botaoVoltarFinanceiro_Click);
+            // 
+            // botaoFecharFinanceiro
+            // 
+            this.botaoFecharFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharFinanceiro.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoFechar;
+            this.botaoFecharFinanceiro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoFecharFinanceiro.FlatAppearance.BorderSize = 0;
+            this.botaoFecharFinanceiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharFinanceiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
+            this.botaoFecharFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoFecharFinanceiro.Location = new System.Drawing.Point(1124, 12);
+            this.botaoFecharFinanceiro.Name = "botaoFecharFinanceiro";
+            this.botaoFecharFinanceiro.Size = new System.Drawing.Size(44, 44);
+            this.botaoFecharFinanceiro.TabIndex = 6;
+            this.botaoFecharFinanceiro.UseVisualStyleBackColor = false;
+            this.botaoFecharFinanceiro.Click += new System.EventHandler(this.botaoFecharFinanceiro_Click);
+            // 
             // TelaEscolhaFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -73,6 +107,8 @@
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.TelaEscolhaFinanceiro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1180, 660);
+            this.Controls.Add(this.botaoVoltarFinanceiro);
+            this.Controls.Add(this.botaoFecharFinanceiro);
             this.Controls.Add(this.botaoDespesas);
             this.Controls.Add(this.botaoReceitas);
             this.DoubleBuffered = true;
@@ -87,5 +123,7 @@
 
         private System.Windows.Forms.Button botaoReceitas;
         private System.Windows.Forms.Button botaoDespesas;
+        private System.Windows.Forms.Button botaoVoltarFinanceiro;
+        private System.Windows.Forms.Button botaoFecharFinanceiro;
     }
 }
