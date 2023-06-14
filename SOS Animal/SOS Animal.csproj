@@ -194,6 +194,30 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoEntrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoEntrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoFechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoVoltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarDados2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarDados1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

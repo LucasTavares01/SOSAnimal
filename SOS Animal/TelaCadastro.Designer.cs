@@ -74,38 +74,57 @@
             // 
             // botaoCadastrar
             // 
-            this.botaoCadastrar.Location = new System.Drawing.Point(670, 492);
+            this.botaoCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrar.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoCadastrarDados1;
+            this.botaoCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoCadastrar.FlatAppearance.BorderSize = 0;
+            this.botaoCadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoCadastrar.Location = new System.Drawing.Point(621, 490);
             this.botaoCadastrar.Name = "botaoCadastrar";
-            this.botaoCadastrar.Size = new System.Drawing.Size(213, 116);
+            this.botaoCadastrar.Size = new System.Drawing.Size(278, 116);
             this.botaoCadastrar.TabIndex = 4;
-            this.botaoCadastrar.Text = "CADASTRAR";
-            this.botaoCadastrar.UseVisualStyleBackColor = true;
+            this.botaoCadastrar.UseVisualStyleBackColor = false;
             this.botaoCadastrar.Click += new System.EventHandler(this.botaoCadastrar_Click);
             // 
             // botaoFecharCadastro
             // 
-            this.botaoFecharCadastro.Location = new System.Drawing.Point(1107, 12);
+            this.botaoFecharCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharCadastro.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoFechar;
+            this.botaoFecharCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoFecharCadastro.FlatAppearance.BorderSize = 0;
+            this.botaoFecharCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoFecharCadastro.Location = new System.Drawing.Point(1125, 12);
             this.botaoFecharCadastro.Name = "botaoFecharCadastro";
-            this.botaoFecharCadastro.Size = new System.Drawing.Size(61, 44);
+            this.botaoFecharCadastro.Size = new System.Drawing.Size(43, 44);
             this.botaoFecharCadastro.TabIndex = 0;
-            this.botaoFecharCadastro.Text = "FECHAR";
-            this.botaoFecharCadastro.UseVisualStyleBackColor = true;
+            this.botaoFecharCadastro.UseVisualStyleBackColor = false;
             this.botaoFecharCadastro.Click += new System.EventHandler(this.botaoFecharCadastro_Click);
             // 
             // botaoVoltarCadastro
             // 
-            this.botaoVoltarCadastro.Location = new System.Drawing.Point(1040, 12);
+            this.botaoVoltarCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarCadastro.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoVoltar;
+            this.botaoVoltarCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoVoltarCadastro.FlatAppearance.BorderSize = 0;
+            this.botaoVoltarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoVoltarCadastro.Location = new System.Drawing.Point(334, 12);
             this.botaoVoltarCadastro.Name = "botaoVoltarCadastro";
-            this.botaoVoltarCadastro.Size = new System.Drawing.Size(61, 44);
+            this.botaoVoltarCadastro.Size = new System.Drawing.Size(50, 44);
             this.botaoVoltarCadastro.TabIndex = 5;
-            this.botaoVoltarCadastro.Text = "VOLTAR";
-            this.botaoVoltarCadastro.UseVisualStyleBackColor = true;
+            this.botaoVoltarCadastro.UseVisualStyleBackColor = false;
             this.botaoVoltarCadastro.Click += new System.EventHandler(this.botaoVoltarCadastro_Click);
             // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.TelaCadastro;
             this.ClientSize = new System.Drawing.Size(1180, 660);
             this.Controls.Add(this.botaoVoltarCadastro);

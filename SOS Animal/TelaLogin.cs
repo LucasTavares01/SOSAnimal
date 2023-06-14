@@ -113,5 +113,29 @@ namespace SOS_Animal
                 }
             }
         }
+
+        private void botaoCadastrarLogin_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoCadastrar2;
+            botaoCadastrarLogin.BackgroundImage = novaImagem;
+        }
+
+        private void botaoCadastrarLogin_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoCadastrar1;
+            botaoCadastrarLogin.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEntrarLogin_MouseEnter(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoEntrar2;
+            botaoEntrarLogin.BackgroundImage = novaImagem;
+        }
+
+        private void botaoEntrarLogin_MouseLeave(object sender, EventArgs e)
+        {
+            Image novaImagem = Properties.Resources.botaoEntrar1;
+            botaoEntrarLogin.BackgroundImage = novaImagem;
+        }
     }
 }

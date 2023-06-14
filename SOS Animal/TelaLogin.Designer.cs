@@ -78,32 +78,54 @@
             // 
             // botaoEntrarLogin
             // 
-            this.botaoEntrarLogin.Location = new System.Drawing.Point(673, 501);
+            this.botaoEntrarLogin.BackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoEntrar1;
+            this.botaoEntrarLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoEntrarLogin.FlatAppearance.BorderSize = 0;
+            this.botaoEntrarLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoEntrarLogin.Location = new System.Drawing.Point(636, 481);
             this.botaoEntrarLogin.Name = "botaoEntrarLogin";
-            this.botaoEntrarLogin.Size = new System.Drawing.Size(211, 62);
+            this.botaoEntrarLogin.Size = new System.Drawing.Size(319, 107);
             this.botaoEntrarLogin.TabIndex = 4;
-            this.botaoEntrarLogin.Text = "ENTRAR";
-            this.botaoEntrarLogin.UseVisualStyleBackColor = true;
+            this.botaoEntrarLogin.UseVisualStyleBackColor = false;
             this.botaoEntrarLogin.Click += new System.EventHandler(this.botaoEntrarLogin_Click);
+            this.botaoEntrarLogin.MouseEnter += new System.EventHandler(this.botaoEntrarLogin_MouseEnter);
+            this.botaoEntrarLogin.MouseLeave += new System.EventHandler(this.botaoEntrarLogin_MouseLeave);
             // 
             // botaoCadastrarLogin
             // 
-            this.botaoCadastrarLogin.Location = new System.Drawing.Point(110, 460);
+            this.botaoCadastrarLogin.BackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrarLogin.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoCadastrar1;
+            this.botaoCadastrarLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoCadastrarLogin.FlatAppearance.BorderSize = 0;
+            this.botaoCadastrarLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrarLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoCadastrarLogin.Location = new System.Drawing.Point(36, 481);
             this.botaoCadastrarLogin.Name = "botaoCadastrarLogin";
-            this.botaoCadastrarLogin.Size = new System.Drawing.Size(148, 103);
+            this.botaoCadastrarLogin.Size = new System.Drawing.Size(314, 103);
             this.botaoCadastrarLogin.TabIndex = 5;
-            this.botaoCadastrarLogin.Text = "CADASTRAR";
-            this.botaoCadastrarLogin.UseVisualStyleBackColor = true;
+            this.botaoCadastrarLogin.UseVisualStyleBackColor = false;
             this.botaoCadastrarLogin.Click += new System.EventHandler(this.BotaoCadastrarLogin_Click);
+            this.botaoCadastrarLogin.MouseEnter += new System.EventHandler(this.botaoCadastrarLogin_MouseEnter);
+            this.botaoCadastrarLogin.MouseLeave += new System.EventHandler(this.botaoCadastrarLogin_MouseLeave);
             // 
             // botaoFechar
             // 
-            this.botaoFechar.Location = new System.Drawing.Point(1107, 12);
+            this.botaoFechar.BackColor = System.Drawing.Color.Transparent;
+            this.botaoFechar.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoFechar;
+            this.botaoFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoFechar.FlatAppearance.BorderSize = 0;
+            this.botaoFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoFechar.Location = new System.Drawing.Point(1126, 12);
             this.botaoFechar.Name = "botaoFechar";
-            this.botaoFechar.Size = new System.Drawing.Size(61, 44);
+            this.botaoFechar.Size = new System.Drawing.Size(42, 42);
             this.botaoFechar.TabIndex = 1;
-            this.botaoFechar.Text = "FECHAR";
-            this.botaoFechar.UseVisualStyleBackColor = true;
+            this.botaoFechar.UseVisualStyleBackColor = false;
             this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
             // 
             // TelaLogin
