@@ -119,11 +119,11 @@
             this.botaoFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.botaoFechar.FlatAppearance.BorderSize = 0;
             this.botaoFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botaoFechar.Location = new System.Drawing.Point(1126, 12);
             this.botaoFechar.Name = "botaoFechar";
-            this.botaoFechar.Size = new System.Drawing.Size(42, 42);
+            this.botaoFechar.Size = new System.Drawing.Size(44, 44);
             this.botaoFechar.TabIndex = 1;
             this.botaoFechar.UseVisualStyleBackColor = false;
             this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);

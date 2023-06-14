@@ -34,6 +34,7 @@
             this.botaoCadastrar = new System.Windows.Forms.Button();
             this.botaoFecharCadastro = new System.Windows.Forms.Button();
             this.botaoVoltarCadastro = new System.Windows.Forms.Button();
+            this.avisoNomeInvalido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // campoEmailCadastro
@@ -45,6 +46,7 @@
             this.campoEmailCadastro.Size = new System.Drawing.Size(450, 25);
             this.campoEmailCadastro.TabIndex = 2;
             this.campoEmailCadastro.Text = "E-MAIL";
+            this.campoEmailCadastro.TextChanged += new System.EventHandler(this.campoEmailCadastro_TextChanged);
             this.campoEmailCadastro.Enter += new System.EventHandler(this.campoEmailCadastro_Enter);
             this.campoEmailCadastro.Leave += new System.EventHandler(this.campoEmailCadastro_Leave);
             // 
@@ -57,6 +59,7 @@
             this.campoNomeCadastro.Size = new System.Drawing.Size(460, 25);
             this.campoNomeCadastro.TabIndex = 1;
             this.campoNomeCadastro.Text = "NOME COMPLETO";
+            this.campoNomeCadastro.TextChanged += new System.EventHandler(this.campoNomeCadastro_TextChanged);
             this.campoNomeCadastro.Enter += new System.EventHandler(this.campoNomeCadastro_Enter);
             this.campoNomeCadastro.Leave += new System.EventHandler(this.campoNomeCadastro_Leave);
             // 
@@ -81,12 +84,14 @@
             this.botaoCadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.botaoCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoCadastrar.Location = new System.Drawing.Point(621, 490);
+            this.botaoCadastrar.Location = new System.Drawing.Point(614, 490);
             this.botaoCadastrar.Name = "botaoCadastrar";
             this.botaoCadastrar.Size = new System.Drawing.Size(278, 116);
             this.botaoCadastrar.TabIndex = 4;
             this.botaoCadastrar.UseVisualStyleBackColor = false;
             this.botaoCadastrar.Click += new System.EventHandler(this.botaoCadastrar_Click);
+            this.botaoCadastrar.MouseEnter += new System.EventHandler(this.botaoCadastrar_MouseEnter);
+            this.botaoCadastrar.MouseLeave += new System.EventHandler(this.botaoCadastrar_MouseLeave);
             // 
             // botaoFecharCadastro
             // 
@@ -95,11 +100,11 @@
             this.botaoFecharCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.botaoFecharCadastro.FlatAppearance.BorderSize = 0;
             this.botaoFecharCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoFecharCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoFecharCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFecharCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botaoFecharCadastro.Location = new System.Drawing.Point(1125, 12);
             this.botaoFecharCadastro.Name = "botaoFecharCadastro";
-            this.botaoFecharCadastro.Size = new System.Drawing.Size(43, 44);
+            this.botaoFecharCadastro.Size = new System.Drawing.Size(44, 44);
             this.botaoFecharCadastro.TabIndex = 0;
             this.botaoFecharCadastro.UseVisualStyleBackColor = false;
             this.botaoFecharCadastro.Click += new System.EventHandler(this.botaoFecharCadastro_Click);
@@ -111,14 +116,27 @@
             this.botaoVoltarCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.botaoVoltarCadastro.FlatAppearance.BorderSize = 0;
             this.botaoVoltarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoVoltarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
             this.botaoVoltarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botaoVoltarCadastro.Location = new System.Drawing.Point(334, 12);
             this.botaoVoltarCadastro.Name = "botaoVoltarCadastro";
-            this.botaoVoltarCadastro.Size = new System.Drawing.Size(50, 44);
+            this.botaoVoltarCadastro.Size = new System.Drawing.Size(44, 44);
             this.botaoVoltarCadastro.TabIndex = 5;
             this.botaoVoltarCadastro.UseVisualStyleBackColor = false;
             this.botaoVoltarCadastro.Click += new System.EventHandler(this.botaoVoltarCadastro_Click);
+            // 
+            // avisoNomeInvalido
+            // 
+            this.avisoNomeInvalido.AutoSize = true;
+            this.avisoNomeInvalido.BackColor = System.Drawing.Color.IndianRed;
+            this.avisoNomeInvalido.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold);
+            this.avisoNomeInvalido.ForeColor = System.Drawing.Color.White;
+            this.avisoNomeInvalido.Location = new System.Drawing.Point(681, 476);
+            this.avisoNomeInvalido.Name = "avisoNomeInvalido";
+            this.avisoNomeInvalido.Size = new System.Drawing.Size(143, 15);
+            this.avisoNomeInvalido.TabIndex = 6;
+            this.avisoNomeInvalido.Text = "NOME OU E-MAIL INVÁLIDOS";
+            this.avisoNomeInvalido.Visible = false;
             // 
             // TelaCadastro
             // 
@@ -127,6 +145,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.TelaCadastro;
             this.ClientSize = new System.Drawing.Size(1180, 660);
+            this.Controls.Add(this.avisoNomeInvalido);
             this.Controls.Add(this.botaoVoltarCadastro);
             this.Controls.Add(this.botaoFecharCadastro);
             this.Controls.Add(this.botaoCadastrar);
@@ -151,5 +170,6 @@
         private System.Windows.Forms.Button botaoCadastrar;
         private System.Windows.Forms.Button botaoFecharCadastro;
         private System.Windows.Forms.Button botaoVoltarCadastro;
+        private System.Windows.Forms.Label avisoNomeInvalido;
     }
 }
