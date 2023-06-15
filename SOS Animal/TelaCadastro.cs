@@ -133,6 +133,9 @@ namespace SOS_Animal
                 return; // Sai do método para evitar a inserção inválida
             }
 
+            // Cria a tabela se não existir
+            CriarTabela("Server=localhost;Database=usuários;Uid=root;Pwd=;");
+
             // Verifica se o email já está cadastrado
             if (VerificarCadastro("Server=localhost;Database=usuários;Uid=root;Pwd=;", email))
             {
@@ -140,8 +143,7 @@ namespace SOS_Animal
                 return; // Sai do método para evitar a inserção inválida
             }
 
-            // Cria a tabela se não existir
-            CriarTabela("Server=localhost;Database=usuários;Uid=root;Pwd=;");
+            
 
             // Adiciona o usuário à tabela
             AdicionarUsuario("Server=localhost;Database=usuários;Uid=root;Pwd=;", nome, senha, email);

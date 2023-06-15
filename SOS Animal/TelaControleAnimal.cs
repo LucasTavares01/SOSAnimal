@@ -22,6 +22,25 @@ namespace SOS_Animal
             connection = new MySqlConnection(connectionString);
             connection.Open();
 
+            // Verificar se a tabela já existe
+            string checkTableQuery = "SHOW TABLES LIKE 'controle_de_animais'";
+            MySqlCommand checkTableCommand = new MySqlCommand(checkTableQuery, connection);
+            object result = checkTableCommand.ExecuteScalar();
+
+            if (result == null) // A tabela não existe, então vamos criá-la
+            {
+                // Criar a tabela controle_de_animais
+                string createTableQuery = "CREATE TABLE controle_de_animais (" +
+                    "ID_ANIMAL INT AUTO_INCREMENT PRIMARY KEY," +
+                    "NOME VARCHAR(50) NOT NULL," +
+                    "IDADE INT," +
+                    "RACA VARCHAR(50)," +
+                    "PORTE VARCHAR(50)" +
+                    ")";
+                MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
+                createTableCommand.ExecuteNonQuery();
+            }
+
             // Buscar os dados do banco de dados
             string query = "SELECT * FROM controle_de_animais";
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -54,6 +73,7 @@ namespace SOS_Animal
         }
 
 
+
         private void botaoCadastrarCachorro_Click(object sender, EventArgs e)
         {
             try
@@ -65,15 +85,15 @@ namespace SOS_Animal
                 string porte = textPorteCachorro.Text;
 
                 // Inserir os dados na tabela controle_de_animais
-                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE, ACOES) " +
-                    "VALUES (@NOME, @IDADE, @RACA, @PORTE, @ACOES)";
+                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
+                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@NOME", nome);
                 command.Parameters.AddWithValue("@IDADE", idadeCachorro);
                 command.Parameters.AddWithValue("@RACA", raca);
                 command.Parameters.AddWithValue("@PORTE", porte);
-                command.Parameters.AddWithValue("@ACOES", "");
+                
 
                 command.ExecuteNonQuery();
 
