@@ -30,19 +30,6 @@
         {
             this.panelControleAnimal = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.botaoGato = new System.Windows.Forms.Button();
-            this.botaoCachorro = new System.Windows.Forms.Button();
-            this.botaoControleAnimal = new System.Windows.Forms.Button();
-            this.panelCadastrarCachorro = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.botaoCadastrarCachorro = new System.Windows.Forms.Button();
-            this.textPorteCachorro = new System.Windows.Forms.TextBox();
-            this.textRacaCachorro = new System.Windows.Forms.TextBox();
-            this.textIdadeCachorro = new System.Windows.Forms.TextBox();
-            this.textNomeCachorro = new System.Windows.Forms.TextBox();
-            this.textIDCachorro = new System.Windows.Forms.TextBox();
             this.panelCadastrarGato = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,11 +39,23 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.botaoFechar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.botaoGato = new System.Windows.Forms.Button();
+            this.botaoCachorro = new System.Windows.Forms.Button();
+            this.botaoControleAnimal = new System.Windows.Forms.Button();
+            this.panelCadastrarCachorro = new System.Windows.Forms.Panel();
+            this.botaoCadastrarCachorro = new System.Windows.Forms.Button();
+            this.textPorteCachorro = new System.Windows.Forms.TextBox();
+            this.textRacaCachorro = new System.Windows.Forms.TextBox();
+            this.textIdadeCachorro = new System.Windows.Forms.TextBox();
+            this.textNomeCachorro = new System.Windows.Forms.TextBox();
+            this.textIDCachorro = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelControleAnimal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelCadastrarGato.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelCadastrarCachorro.SuspendLayout();
-            this.panelCadastrarGato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControleAnimal
@@ -75,132 +74,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 349);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::SOS_Animal.Properties.Resources.barraTabelaControleAnimal;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(820, 38);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais;
-            this.panel1.Controls.Add(this.botaoGato);
-            this.panel1.Controls.Add(this.botaoCachorro);
-            this.panel1.Controls.Add(this.botaoControleAnimal);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 660);
-            this.panel1.TabIndex = 0;
-            // 
-            // botaoGato
-            // 
-            this.botaoGato.Location = new System.Drawing.Point(62, 442);
-            this.botaoGato.Name = "botaoGato";
-            this.botaoGato.Size = new System.Drawing.Size(130, 93);
-            this.botaoGato.TabIndex = 2;
-            this.botaoGato.Text = "cadastrar gato";
-            this.botaoGato.UseVisualStyleBackColor = true;
-            this.botaoGato.Click += new System.EventHandler(this.botaoGato_Click);
-            // 
-            // botaoCachorro
-            // 
-            this.botaoCachorro.Location = new System.Drawing.Point(62, 328);
-            this.botaoCachorro.Name = "botaoCachorro";
-            this.botaoCachorro.Size = new System.Drawing.Size(130, 93);
-            this.botaoCachorro.TabIndex = 1;
-            this.botaoCachorro.Text = "cadastrar cachorro";
-            this.botaoCachorro.UseVisualStyleBackColor = true;
-            this.botaoCachorro.Click += new System.EventHandler(this.botaoCachorro_Click);
-            // 
-            // botaoControleAnimal
-            // 
-            this.botaoControleAnimal.Location = new System.Drawing.Point(62, 211);
-            this.botaoControleAnimal.Name = "botaoControleAnimal";
-            this.botaoControleAnimal.Size = new System.Drawing.Size(130, 93);
-            this.botaoControleAnimal.TabIndex = 0;
-            this.botaoControleAnimal.Text = "controle animal";
-            this.botaoControleAnimal.UseVisualStyleBackColor = true;
-            this.botaoControleAnimal.Click += new System.EventHandler(this.botaoControleAnimal_Click);
-            // 
-            // panelCadastrarCachorro
-            // 
-            this.panelCadastrarCachorro.Controls.Add(this.label1);
-            this.panelCadastrarCachorro.Controls.Add(this.botaoCadastrarCachorro);
-            this.panelCadastrarCachorro.Controls.Add(this.textPorteCachorro);
-            this.panelCadastrarCachorro.Controls.Add(this.textRacaCachorro);
-            this.panelCadastrarCachorro.Controls.Add(this.textIdadeCachorro);
-            this.panelCadastrarCachorro.Controls.Add(this.textNomeCachorro);
-            this.panelCadastrarCachorro.Controls.Add(this.textIDCachorro);
-            this.panelCadastrarCachorro.Location = new System.Drawing.Point(260, 104);
-            this.panelCadastrarCachorro.Name = "panelCadastrarCachorro";
-            this.panelCadastrarCachorro.Size = new System.Drawing.Size(920, 555);
-            this.panelCadastrarCachorro.TabIndex = 3;
-            this.panelCadastrarCachorro.VisibleChanged += new System.EventHandler(this.panelCadastrarCachorro_VisibleChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(416, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "CACHORRO";
-            // 
-            // botaoCadastrarCachorro
-            // 
-            this.botaoCadastrarCachorro.Location = new System.Drawing.Point(399, 477);
-            this.botaoCadastrarCachorro.Name = "botaoCadastrarCachorro";
-            this.botaoCadastrarCachorro.Size = new System.Drawing.Size(110, 23);
-            this.botaoCadastrarCachorro.TabIndex = 5;
-            this.botaoCadastrarCachorro.Text = "CADASTRAR";
-            this.botaoCadastrarCachorro.UseVisualStyleBackColor = true;
-            this.botaoCadastrarCachorro.Click += new System.EventHandler(this.botaoCadastrarCachorro_Click);
-            // 
-            // textPorteCachorro
-            // 
-            this.textPorteCachorro.Location = new System.Drawing.Point(399, 381);
-            this.textPorteCachorro.Name = "textPorteCachorro";
-            this.textPorteCachorro.Size = new System.Drawing.Size(100, 20);
-            this.textPorteCachorro.TabIndex = 4;
-            this.textPorteCachorro.Text = "PORTE";
-            // 
-            // textRacaCachorro
-            // 
-            this.textRacaCachorro.Location = new System.Drawing.Point(399, 328);
-            this.textRacaCachorro.Name = "textRacaCachorro";
-            this.textRacaCachorro.Size = new System.Drawing.Size(100, 20);
-            this.textRacaCachorro.TabIndex = 3;
-            this.textRacaCachorro.Text = "RACA";
-            // 
-            // textIdadeCachorro
-            // 
-            this.textIdadeCachorro.Location = new System.Drawing.Point(399, 275);
-            this.textIdadeCachorro.Name = "textIdadeCachorro";
-            this.textIdadeCachorro.Size = new System.Drawing.Size(100, 20);
-            this.textIdadeCachorro.TabIndex = 2;
-            this.textIdadeCachorro.Text = "IDADE";
-            // 
-            // textNomeCachorro
-            // 
-            this.textNomeCachorro.Location = new System.Drawing.Point(399, 220);
-            this.textNomeCachorro.Name = "textNomeCachorro";
-            this.textNomeCachorro.Size = new System.Drawing.Size(100, 20);
-            this.textNomeCachorro.TabIndex = 1;
-            this.textNomeCachorro.Text = "NOME";
-            // 
-            // textIDCachorro
-            // 
-            this.textIDCachorro.Location = new System.Drawing.Point(399, 172);
-            this.textIDCachorro.Name = "textIDCachorro";
-            this.textIDCachorro.Size = new System.Drawing.Size(100, 20);
-            this.textIDCachorro.TabIndex = 0;
-            this.textIDCachorro.Text = "ID";
             // 
             // panelCadastrarGato
             // 
@@ -284,6 +157,124 @@
             this.botaoFechar.UseVisualStyleBackColor = true;
             this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais;
+            this.panel1.Controls.Add(this.botaoGato);
+            this.panel1.Controls.Add(this.botaoCachorro);
+            this.panel1.Controls.Add(this.botaoControleAnimal);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(260, 660);
+            this.panel1.TabIndex = 0;
+            // 
+            // botaoGato
+            // 
+            this.botaoGato.Location = new System.Drawing.Point(62, 442);
+            this.botaoGato.Name = "botaoGato";
+            this.botaoGato.Size = new System.Drawing.Size(130, 93);
+            this.botaoGato.TabIndex = 2;
+            this.botaoGato.Text = "cadastrar gato";
+            this.botaoGato.UseVisualStyleBackColor = true;
+            this.botaoGato.Click += new System.EventHandler(this.botaoGato_Click);
+            // 
+            // botaoCachorro
+            // 
+            this.botaoCachorro.Location = new System.Drawing.Point(62, 328);
+            this.botaoCachorro.Name = "botaoCachorro";
+            this.botaoCachorro.Size = new System.Drawing.Size(130, 93);
+            this.botaoCachorro.TabIndex = 1;
+            this.botaoCachorro.Text = "cadastrar cachorro";
+            this.botaoCachorro.UseVisualStyleBackColor = true;
+            this.botaoCachorro.Click += new System.EventHandler(this.botaoCachorro_Click);
+            // 
+            // botaoControleAnimal
+            // 
+            this.botaoControleAnimal.Location = new System.Drawing.Point(62, 211);
+            this.botaoControleAnimal.Name = "botaoControleAnimal";
+            this.botaoControleAnimal.Size = new System.Drawing.Size(130, 93);
+            this.botaoControleAnimal.TabIndex = 0;
+            this.botaoControleAnimal.Text = "controle animal";
+            this.botaoControleAnimal.UseVisualStyleBackColor = true;
+            this.botaoControleAnimal.Click += new System.EventHandler(this.botaoControleAnimal_Click);
+            // 
+            // panelCadastrarCachorro
+            // 
+            this.panelCadastrarCachorro.BackgroundImage = global::SOS_Animal.Properties.Resources.fundoCachorro;
+            this.panelCadastrarCachorro.Controls.Add(this.botaoCadastrarCachorro);
+            this.panelCadastrarCachorro.Controls.Add(this.textPorteCachorro);
+            this.panelCadastrarCachorro.Controls.Add(this.textRacaCachorro);
+            this.panelCadastrarCachorro.Controls.Add(this.textIdadeCachorro);
+            this.panelCadastrarCachorro.Controls.Add(this.textNomeCachorro);
+            this.panelCadastrarCachorro.Controls.Add(this.textIDCachorro);
+            this.panelCadastrarCachorro.Location = new System.Drawing.Point(260, 50);
+            this.panelCadastrarCachorro.Name = "panelCadastrarCachorro";
+            this.panelCadastrarCachorro.Size = new System.Drawing.Size(920, 610);
+            this.panelCadastrarCachorro.TabIndex = 3;
+            this.panelCadastrarCachorro.VisibleChanged += new System.EventHandler(this.panelCadastrarCachorro_VisibleChanged);
+            // 
+            // botaoCadastrarCachorro
+            // 
+            this.botaoCadastrarCachorro.Location = new System.Drawing.Point(399, 563);
+            this.botaoCadastrarCachorro.Name = "botaoCadastrarCachorro";
+            this.botaoCadastrarCachorro.Size = new System.Drawing.Size(110, 23);
+            this.botaoCadastrarCachorro.TabIndex = 5;
+            this.botaoCadastrarCachorro.Text = "CADASTRAR";
+            this.botaoCadastrarCachorro.UseVisualStyleBackColor = true;
+            this.botaoCadastrarCachorro.Click += new System.EventHandler(this.botaoCadastrarCachorro_Click);
+            // 
+            // textPorteCachorro
+            // 
+            this.textPorteCachorro.Location = new System.Drawing.Point(399, 465);
+            this.textPorteCachorro.Name = "textPorteCachorro";
+            this.textPorteCachorro.Size = new System.Drawing.Size(100, 20);
+            this.textPorteCachorro.TabIndex = 4;
+            this.textPorteCachorro.Text = "PORTE";
+            // 
+            // textRacaCachorro
+            // 
+            this.textRacaCachorro.Location = new System.Drawing.Point(399, 370);
+            this.textRacaCachorro.Name = "textRacaCachorro";
+            this.textRacaCachorro.Size = new System.Drawing.Size(100, 20);
+            this.textRacaCachorro.TabIndex = 3;
+            this.textRacaCachorro.Text = "RACA";
+            // 
+            // textIdadeCachorro
+            // 
+            this.textIdadeCachorro.Location = new System.Drawing.Point(399, 275);
+            this.textIdadeCachorro.Name = "textIdadeCachorro";
+            this.textIdadeCachorro.Size = new System.Drawing.Size(100, 20);
+            this.textIdadeCachorro.TabIndex = 2;
+            this.textIdadeCachorro.Text = "IDADE";
+            // 
+            // textNomeCachorro
+            // 
+            this.textNomeCachorro.Location = new System.Drawing.Point(285, 198);
+            this.textNomeCachorro.Name = "textNomeCachorro";
+            this.textNomeCachorro.Size = new System.Drawing.Size(344, 20);
+            this.textNomeCachorro.TabIndex = 1;
+            this.textNomeCachorro.Text = "NOME";
+            // 
+            // textIDCachorro
+            // 
+            this.textIDCachorro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textIDCachorro.Location = new System.Drawing.Point(399, 103);
+            this.textIDCachorro.Name = "textIDCachorro";
+            this.textIDCachorro.Size = new System.Drawing.Size(100, 13);
+            this.textIDCachorro.TabIndex = 0;
+            this.textIDCachorro.Text = "ID";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SOS_Animal.Properties.Resources.barraTabelaControleAnimal;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(60, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(820, 38);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // TelaControleAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,12 +292,12 @@
             this.Text = "TelaControleAnimal";
             this.Load += new System.EventHandler(this.TelaControleAnimal_Load);
             this.panelControleAnimal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelCadastrarGato.ResumeLayout(false);
+            this.panelCadastrarGato.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panelCadastrarCachorro.ResumeLayout(false);
             this.panelCadastrarCachorro.PerformLayout();
-            this.panelCadastrarGato.ResumeLayout(false);
-            this.panelCadastrarGato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +310,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelCadastrarCachorro;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button botaoCadastrarCachorro;
         private System.Windows.Forms.TextBox textPorteCachorro;
         private System.Windows.Forms.TextBox textRacaCachorro;
