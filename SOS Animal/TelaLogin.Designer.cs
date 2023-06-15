@@ -31,9 +31,9 @@
             this.campoEmailLogin = new System.Windows.Forms.TextBox();
             this.campoSenhaLogin = new System.Windows.Forms.TextBox();
             this.avisoErroLogin = new System.Windows.Forms.Label();
-            this.botaoEntrarLogin = new System.Windows.Forms.Button();
             this.botaoCadastrarLogin = new System.Windows.Forms.Button();
             this.botaoFechar = new System.Windows.Forms.Button();
+            this.botaoEntrarLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // campoEmailLogin
@@ -76,24 +76,6 @@
             this.avisoErroLogin.Text = "E-MAIL OU SENHA INCORRETO";
             this.avisoErroLogin.Visible = false;
             // 
-            // botaoEntrarLogin
-            // 
-            this.botaoEntrarLogin.BackColor = System.Drawing.Color.Transparent;
-            this.botaoEntrarLogin.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoEntrar1;
-            this.botaoEntrarLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.botaoEntrarLogin.FlatAppearance.BorderSize = 0;
-            this.botaoEntrarLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoEntrarLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.botaoEntrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoEntrarLogin.Location = new System.Drawing.Point(636, 481);
-            this.botaoEntrarLogin.Name = "botaoEntrarLogin";
-            this.botaoEntrarLogin.Size = new System.Drawing.Size(319, 107);
-            this.botaoEntrarLogin.TabIndex = 4;
-            this.botaoEntrarLogin.UseVisualStyleBackColor = false;
-            this.botaoEntrarLogin.Click += new System.EventHandler(this.botaoEntrarLogin_Click);
-            this.botaoEntrarLogin.MouseEnter += new System.EventHandler(this.botaoEntrarLogin_MouseEnter);
-            this.botaoEntrarLogin.MouseLeave += new System.EventHandler(this.botaoEntrarLogin_MouseLeave);
-            // 
             // botaoCadastrarLogin
             // 
             this.botaoCadastrarLogin.BackColor = System.Drawing.Color.Transparent;
@@ -128,16 +110,33 @@
             this.botaoFechar.UseVisualStyleBackColor = false;
             this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
             // 
+            // botaoEntrarLogin
+            // 
+            this.botaoEntrarLogin.BackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoEntrar1;
+            this.botaoEntrarLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoEntrarLogin.FlatAppearance.BorderSize = 0;
+            this.botaoEntrarLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoEntrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoEntrarLogin.Location = new System.Drawing.Point(632, 479);
+            this.botaoEntrarLogin.Name = "botaoEntrarLogin";
+            this.botaoEntrarLogin.Size = new System.Drawing.Size(319, 107);
+            this.botaoEntrarLogin.TabIndex = 6;
+            this.botaoEntrarLogin.UseVisualStyleBackColor = false;
+            this.botaoEntrarLogin.Click += new System.EventHandler(this.botaoEntrarLogin_Click);
+            this.botaoEntrarLogin.MouseEnter += new System.EventHandler(this.botaoEntrarLogin_MouseEnter);
+            this.botaoEntrarLogin.MouseLeave += new System.EventHandler(this.botaoEntrarLogin_MouseLeave);
+            // 
             // TelaLogin
             // 
-            this.AcceptButton = this.botaoEntrarLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.TelaLogin;
             this.ClientSize = new System.Drawing.Size(1180, 660);
+            this.Controls.Add(this.botaoEntrarLogin);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.botaoCadastrarLogin);
-            this.Controls.Add(this.botaoEntrarLogin);
             this.Controls.Add(this.avisoErroLogin);
             this.Controls.Add(this.campoSenhaLogin);
             this.Controls.Add(this.campoEmailLogin);
@@ -157,9 +156,9 @@
         private System.Windows.Forms.TextBox campoEmailLogin;
         private System.Windows.Forms.TextBox campoSenhaLogin;
         private System.Windows.Forms.Label avisoErroLogin;
-        private System.Windows.Forms.Button botaoEntrarLogin;
         private System.Windows.Forms.Button botaoCadastrarLogin;
         private System.Windows.Forms.Button botaoFechar;
+        private System.Windows.Forms.Button botaoEntrarLogin;
     }
 }
 

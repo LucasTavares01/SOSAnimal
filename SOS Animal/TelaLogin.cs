@@ -131,6 +131,5 @@ namespace SOS_Animal
                 botaoEntrarLogin_Click(sender, e); // Aciona o evento do botão botaoEntrarLogin
             }
         }
-
     }
 }
