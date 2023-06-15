@@ -258,5 +258,61 @@ namespace SOS_Animal
                 }
             }
         }
+
+        private void LimparCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == textoPadrao)
+            {
+                textBox.Text = "";
+            }
+        }
+
+        private void RestaurarCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == "")
+            {
+                textBox.Text = textoPadrao;
+            }
+        }
+
+        private void textNomeCachorro_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textNomeCachorro, "NOME");
+        }
+
+        private void textNomeCachorro_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textNomeCachorro, "NOME");
+        }
+
+        private void textIdadeCachorro_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textIdadeCachorro, "IDADE");
+        }
+
+        private void textIdadeCachorro_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textIdadeCachorro, "IDADE");
+        }
+
+        private void textRacaCachorro_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textRacaCachorro, "RAÇA");
+        }
+
+        private void textRacaCachorro_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textRacaCachorro, "RAÇA");
+        }
+
+        private void textPorteCachorro_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textPorteCachorro, "PORTE");
+        }
+
+        private void textPorteCachorro_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textPorteCachorro, "PORTE");
+        }
     }
 }
