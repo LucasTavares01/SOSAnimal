@@ -63,6 +63,16 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barraTabelaControleAnimal {
+            get {
+                object obj = ResourceManager.GetObject("barraTabelaControleAnimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botaoCadastrar1 {
             get {
                 object obj = ResourceManager.GetObject("botaoCadastrar1", resourceCulture);
@@ -236,6 +246,26 @@ namespace SOS_Animal.Properties {
         internal static System.Drawing.Bitmap botaoVoltar {
             get {
                 object obj = ResourceManager.GetObject("botaoVoltar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap listaControleAnimal {
+            get {
+                object obj = ResourceManager.GetObject("listaControleAnimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap painelLateralControleAnimais {
+            get {
+                object obj = ResourceManager.GetObject("painelLateralControleAnimais", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

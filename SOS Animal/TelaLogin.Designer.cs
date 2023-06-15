@@ -130,6 +130,7 @@
             // 
             // TelaLogin
             // 
+            this.AcceptButton = this.botaoEntrarLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.TelaLogin;
@@ -144,6 +145,7 @@
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FECHAR";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TelaLogin_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TelaLogin_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();

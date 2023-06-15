@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -13,56 +7,39 @@ namespace SOS_Animal
 {
     public partial class TelaLogin : Form
     {
-        TelaCadastro telacadastro = new TelaCadastro(); //INSTANCIA A TELACADASTRO PARA O BOTAO CADASTRAR
+        private TelaCadastro telaCadastro = new TelaCadastro();
 
         public TelaLogin()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void campoEmailLogin_Enter(object sender, EventArgs e)
         {
-            if (campoEmailLogin.Text == "E-MAIL")
-            {
-                campoEmailLogin.Text = "";
-            }
-
-            avisoErroLogin.Visible = false;
+            LimparCampoTexto(campoEmailLogin, "E-MAIL");
         }
 
         private void campoEmailLogin_Leave(object sender, EventArgs e)
         {
-            if (campoEmailLogin.Text == "")
-            {
-                campoEmailLogin.Text = "E-MAIL";
-            }
-
-            avisoErroLogin.Visible = false;
+            RestaurarCampoTexto(campoEmailLogin, "E-MAIL");
         }
 
         private void campoSenhaLogin_Enter(object sender, EventArgs e)
         {
-            if (campoSenhaLogin.Text == "SENHA")
-            {
-                campoSenhaLogin.Text = "";
-            }
-
+            LimparCampoTexto(campoSenhaLogin, "SENHA");
             campoSenhaLogin.PasswordChar = '•';
         }
 
         private void campoSenhaLogin_Leave(object sender, EventArgs e)
         {
-            if (campoSenhaLogin.Text == "")
-            {
-                campoSenhaLogin.PasswordChar = '\0';
-                campoSenhaLogin.Text = "SENHA";
-            }
+            RestaurarCampoTexto(campoSenhaLogin, "SENHA");
+            campoSenhaLogin.PasswordChar = '\0';
         }
 
         private void BotaoCadastrarLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telacadastro.Show();
+            telaCadastro.Show();
         }
 
         private void botaoFechar_Click(object sender, EventArgs e)
@@ -70,7 +47,7 @@ namespace SOS_Animal
             Application.Exit();
         }
 
-        private void TelaLogin_MouseDown(object sender, MouseEventArgs e) //Quando clicar na tela, todas as ciaxas selecionadas serão desselecionadas
+        private void TelaLogin_MouseDown(object sender, MouseEventArgs e)
         {
             this.ActiveControl = null;
         }
@@ -80,62 +57,80 @@ namespace SOS_Animal
             string email = campoEmailLogin.Text;
             string senha = campoSenhaLogin.Text;
 
-            // Defina a string de conexão com as configurações corretas
             string connectionString = "Server=localhost;Database=usuários;Uid=root;Pwd=;";
-
-            // Crie uma consulta para verificar os dados de login
             string query = "SELECT * FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
             {
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Senha", senha);
+
                 connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@Senha", senha);
-
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read()) // Se houver um registro correspondente
-                        {
-                            // Abra a TelaCadastro
-                            TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
-                            this.Hide();
-                            telaEscolhaCadastro.Show();
-                        }
-                        else
-                        {
-                            // Exiba uma mensagem de erro de login
-                            avisoErroLogin.Visible = true;
-                        }
+                        TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
+                        this.Hide();
+                        telaEscolhaCadastro.Show();
+                    }
+                    else
+                    {
+                        avisoErroLogin.Visible = true;
                     }
                 }
             }
         }
 
+        private void LimparCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == textoPadrao)
+            {
+                textBox.Text = "";
+            }
+
+            avisoErroLogin.Visible = false;
+        }
+
+        private void RestaurarCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == "")
+            {
+                textBox.Text = textoPadrao;
+            }
+
+            avisoErroLogin.Visible = false;
+        }
+
         private void botaoCadastrarLogin_MouseEnter(object sender, EventArgs e)
         {
-            Image novaImagem = Properties.Resources.botaoCadastrar2;
-            botaoCadastrarLogin.BackgroundImage = novaImagem;
+            botaoCadastrarLogin.BackgroundImage = Properties.Resources.botaoCadastrar2;
         }
 
         private void botaoCadastrarLogin_MouseLeave(object sender, EventArgs e)
         {
-            Image novaImagem = Properties.Resources.botaoCadastrar1;
-            botaoCadastrarLogin.BackgroundImage = novaImagem;
+            botaoCadastrarLogin.BackgroundImage = Properties.Resources.botaoCadastrar1;
         }
 
         private void botaoEntrarLogin_MouseEnter(object sender, EventArgs e)
         {
-            Image novaImagem = Properties.Resources.botaoEntrar2;
-            botaoEntrarLogin.BackgroundImage = novaImagem;
+            botaoEntrarLogin.BackgroundImage = Properties.Resources.botaoEntrar2;
         }
 
         private void botaoEntrarLogin_MouseLeave(object sender, EventArgs e)
         {
-            Image novaImagem = Properties.Resources.botaoEntrar1;
-            botaoEntrarLogin.BackgroundImage = novaImagem;
+            botaoEntrarLogin.BackgroundImage = Properties.Resources.botaoEntrar1;
         }
+
+        private void TelaLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Impede que o caractere Enter seja inserido no campo de texto
+                botaoEntrarLogin_Click(sender, e); // Aciona o evento do botão botaoEntrarLogin
+            }
+        }
+
     }
 }

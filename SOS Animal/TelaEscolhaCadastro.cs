@@ -15,6 +15,8 @@ namespace SOS_Animal
     public partial class TelaEscolhaCadastro : Form
     {
         TelaEscolhaFinanceiro telaescolhafinanceiro = new TelaEscolhaFinanceiro(); //INSTANCIA A TELACADASTRO PARA O BOTAO CADASTRAR
+        TelaControleAnimal telacontroleanimal = new TelaControleAnimal();
+
 
         public TelaEscolhaCadastro()
         {
@@ -43,7 +45,7 @@ namespace SOS_Animal
         private void botaoEscolhaControleAnimal_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //telacadastro.Show();
+            telacontroleanimal.Show();
         }
 
         private void botaoEscolhaEstoque_MouseEnter(object sender, EventArgs e)
