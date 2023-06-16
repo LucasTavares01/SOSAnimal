@@ -63,6 +63,26 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatarCachorro {
+            get {
+                object obj = ResourceManager.GetObject("avatarCachorro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avatarGato {
+            get {
+                object obj = ResourceManager.GetObject("avatarGato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barraTabelaControleAnimal {
             get {
                 object obj = ResourceManager.GetObject("barraTabelaControleAnimal", resourceCulture);

@@ -19,7 +19,6 @@ namespace SOS_Animal
             InitializeComponent();
         }
 
-
         /////////////////////  CRIAR TABELA CONTROLE DE ANIMAIS //////////////////////
 
         private void TelaControleAnimal_Load(object sender, EventArgs e)
@@ -41,14 +40,15 @@ namespace SOS_Animal
                     "NOME VARCHAR(50) NOT NULL," +
                     "IDADE INT," +
                     "RACA VARCHAR(50)," +
-                    "PORTE VARCHAR(50)" +
+                    "PORTE VARCHAR(50)," +
+                    "GATOCACHORRO VARCHAR(10)" +
                     ")";
                 MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
                 createTableCommand.ExecuteNonQuery();
             }
 
             // Buscar os dados do banco de dados
-            string query = "SELECT * FROM controle_de_animais";
+            string query = "SELECT ID_ANIMAL, NOME, IDADE, RACA, PORTE, GATOCACHORRO FROM controle_de_animais";
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader = command.ExecuteReader();
 
@@ -60,6 +60,7 @@ namespace SOS_Animal
                 string idade = reader["IDADE"].ToString();
                 string raca = reader["RACA"].ToString();
                 string porte = reader["PORTE"].ToString();
+                string gatoCachorro = reader["GATOCACHORRO"].ToString();
 
                 // Criar uma instância do UserControl ControleAnimal
                 ControleAnimal controleAnimal = new ControleAnimal();
@@ -76,9 +77,8 @@ namespace SOS_Animal
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
 
             reader.Close();
-
-
         }
+
 
         /////////////////////  TELA CONTROLE ANIMAL /////////////////////////
 
@@ -245,16 +245,19 @@ namespace SOS_Animal
                 string raca = textRacaCachorro.Text;
                 string porte = textPorteCachorro.Text;
 
+                // Definir o valor da coluna gatocachorro como 1 (cachorro)
+                string gatoCachorro = "1";
+
                 // Inserir os dados na tabela controle_de_animais
-                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
-                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
+                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE, GATOCACHORRO) " +
+                    "VALUES (@NOME, @IDADE, @RACA, @PORTE, @GATOCACHORRO)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@NOME", nome);
                 command.Parameters.AddWithValue("@IDADE", idadeCachorro);
                 command.Parameters.AddWithValue("@RACA", raca);
                 command.Parameters.AddWithValue("@PORTE", porte);
-
+                command.Parameters.AddWithValue("@GATOCACHORRO", gatoCachorro);
 
                 command.ExecuteNonQuery();
 
@@ -266,8 +269,7 @@ namespace SOS_Animal
                 // Atualizar o valor do ID na TextBox
                 AtualizarIDCachorro();
 
-                PreencherValoresPadrao();
-
+                PreencherValoresPadrao();     
 
                 // Remover todos os controles do FlowLayoutPanel
                 flowControleAnimal.Controls.Clear();
@@ -285,10 +287,12 @@ namespace SOS_Animal
                     string idadeValue = reader["IDADE"].ToString();
                     string racaValue = reader["RACA"].ToString();
                     string porteValue = reader["PORTE"].ToString();
+                    string GC = reader["GATOCACHORRO"].ToString();
 
                     // Criar uma instância do UserControl ControleAnimal
                     ControleAnimal controleAnimal = new ControleAnimal();
                     controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
+                    controleAnimal.trocarImagem(GC);
 
                     // Definir a posição e tamanho do UserControl
                     controleAnimal.Location = new Point(0, 0);
@@ -304,17 +308,7 @@ namespace SOS_Animal
             {
                 MessageBox.Show("Erro ao cadastrar cachorro: " + ex.Message);
             }
-        }
-
-        private void PreencherValoresPadrao()
-        {
-
-            textNomeCachorro.Text = "NOME";
-            textIdadeCachorro.Text = "IDADE";
-            textRacaCachorro.Text = "RAÇA";
-            textPorteCachorro.Text = "PORTE";
-        }
-
+        }      
 
         private void AtualizarIDCachorro()
         {
@@ -434,15 +428,19 @@ namespace SOS_Animal
                 string raca = textRacaGato.Text;
                 string porte = textPorteGato.Text;
 
+                // Definir o valor da coluna gatocachorro como 0 (gato)
+                string gatoCachorro = "0";
+
                 // Inserir os dados na tabela controle_de_animais
-                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
-                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
+                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE, GATOCACHORRO) " +
+                    "VALUES (@NOME, @IDADE, @RACA, @PORTE, @GATOCACHORRO)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@NOME", nome);
                 command.Parameters.AddWithValue("@IDADE", idadeGato);
                 command.Parameters.AddWithValue("@RACA", raca);
                 command.Parameters.AddWithValue("@PORTE", porte);
+                command.Parameters.AddWithValue("@GATOCACHORRO", gatoCachorro);
 
                 command.ExecuteNonQuery();
 
@@ -472,10 +470,12 @@ namespace SOS_Animal
                     string idadeValue = reader["IDADE"].ToString();
                     string racaValue = reader["RACA"].ToString();
                     string porteValue = reader["PORTE"].ToString();
+                    string GC = reader["GATOCACHORRO"].ToString();
 
                     // Criar uma instância do UserControl ControleAnimal
                     ControleAnimal controleAnimal = new ControleAnimal();
                     controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
+                    controleAnimal.trocarImagem(GC);
 
                     // Definir a posição e tamanho do UserControl
                     controleAnimal.Location = new Point(0, 0);
@@ -514,8 +514,6 @@ namespace SOS_Animal
                 MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
             }
         }
-
-
 
         ////////////////////////// METODOS EM COMUM ///////////////////////////
 
@@ -573,6 +571,19 @@ namespace SOS_Animal
             }
         }
 
-        
+        private void PreencherValoresPadrao()
+        {
+
+            textNomeCachorro.Text = "NOME";
+            textIdadeCachorro.Text = "IDADE";
+            textRacaCachorro.Text = "RAÇA";
+            textPorteCachorro.Text = "PORTE";
+
+            textNomeGato.Text = "NOME";
+            textIdadeGato.Text = "IDADE";
+            textRacaGato.Text = "RAÇA";
+            textPorteGato.Text = "PORTE";
+        }
+
     }
 }

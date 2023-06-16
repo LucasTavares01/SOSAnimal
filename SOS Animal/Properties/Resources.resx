@@ -121,6 +121,9 @@
   <data name="botaoCadastrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoCadastrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="botaoFinanceiro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoFinanceiro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="botaoReceitas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoReceitas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,9 +135,6 @@
   </data>
   <data name="TelaEscolhaFinanceiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\TelaEscolhaFinanceiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="botaoEntrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoEntrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="controleAnimal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\controleAnimal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +148,17 @@
   <data name="cadastroCachorro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\cadastroCachorro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="botaoDespesas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoDespesas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="controleAnimal2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\controleAnimal2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botaoControleAnimais2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoControleAnimais2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TelaCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\TelaCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botaoCadastrarDados2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoCadastrarDados2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,14 +166,17 @@
   <data name="botaoEntrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoEntrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="botaoControleAnimais1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoControleAnimais1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="botaoFechar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoFechar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botaoCadastrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoCadastrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="botaoCadastrarCachorro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoCadastrarCachorro1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fundoCachorro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\fundoCachorro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botaoReceitas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoReceitas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,17 +187,11 @@
   <data name="TelaEscolhaCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\TelaEscolhaCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TelaLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\TelaLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="listaControleAnimal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\listaControleAnimal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botaoEstoque2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoEstoque2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="botaoDespesas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoDespesas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cadastroGato1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\cadastroGato1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,28 +211,31 @@
   <data name="botaoVoltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\botaoVoltar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fundoCachorro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\fundoCachorro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botaoCadastrarCachorro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoCadastrarCachorro1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TelaCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\TelaCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botaoDespesas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoDespesas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="botaoFinanceiro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoFinanceiro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botaoEntrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoEntrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="botaoCadastrarDados1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoCadastrarDados1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filtro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\filtro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="botaoDespesas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoDespesas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TelaLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\TelaLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="painelLateralControleAnimais1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\painelLateralControleAnimais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="botaoControleAnimais1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\botaoControleAnimais1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botaoCadastrarDados1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\botaoCadastrarDados1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filtro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\filtro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="avatarCachorro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\avatarCachorro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatarGato" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\avatarGato.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

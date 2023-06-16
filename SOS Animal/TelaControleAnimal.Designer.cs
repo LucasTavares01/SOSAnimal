@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaControleAnimal));
             this.panelControleAnimal = new System.Windows.Forms.Panel();
-            this.flowControleAnimal = new System.Windows.Forms.FlowLayoutPanel();
-            this.botaoFechar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.botaoCadastroGato = new System.Windows.Forms.Button();
-            this.botaoCadastroCachorro = new System.Windows.Forms.Button();
-            this.botaoControleAnimal = new System.Windows.Forms.Button();
             this.btnOrdenarPorId = new System.Windows.Forms.Button();
             this.btnOrdenarRaca = new System.Windows.Forms.Button();
             this.btnOrdenarPorPorte = new System.Windows.Forms.Button();
             this.btnOrdenarPorIdade = new System.Windows.Forms.Button();
             this.btnOrdenarPorNome = new System.Windows.Forms.Button();
+            this.flowControleAnimal = new System.Windows.Forms.FlowLayoutPanel();
             this.barraTabelaControleAnimal = new System.Windows.Forms.PictureBox();
+            this.botaoFechar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.botaoCadastroGato = new System.Windows.Forms.Button();
+            this.botaoCadastroCachorro = new System.Windows.Forms.Button();
+            this.botaoControleAnimal = new System.Windows.Forms.Button();
             this.panelCadastrarGato = new System.Windows.Forms.Panel();
             this.botaoCadastrarGato = new System.Windows.Forms.Button();
             this.textPorteGato = new System.Windows.Forms.TextBox();
@@ -57,8 +57,8 @@
             this.textNomeCachorro = new System.Windows.Forms.TextBox();
             this.textIDCachorro = new System.Windows.Forms.TextBox();
             this.panelControleAnimal.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panelCadastrarGato.SuspendLayout();
             this.panelCadastrarCachorro.SuspendLayout();
             this.SuspendLayout();
@@ -77,98 +77,6 @@
             this.panelControleAnimal.Name = "panelControleAnimal";
             this.panelControleAnimal.Size = new System.Drawing.Size(920, 610);
             this.panelControleAnimal.TabIndex = 1;
-            // 
-            // flowControleAnimal
-            // 
-            this.flowControleAnimal.AutoScroll = true;
-            this.flowControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flowControleAnimal.Location = new System.Drawing.Point(60, 47);
-            this.flowControleAnimal.Name = "flowControleAnimal";
-            this.flowControleAnimal.Size = new System.Drawing.Size(820, 524);
-            this.flowControleAnimal.TabIndex = 0;
-            // 
-            // botaoFechar
-            // 
-            this.botaoFechar.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoFechar;
-            this.botaoFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.botaoFechar.FlatAppearance.BorderSize = 0;
-            this.botaoFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
-            this.botaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoFechar.Location = new System.Drawing.Point(1134, 2);
-            this.botaoFechar.Name = "botaoFechar";
-            this.botaoFechar.Size = new System.Drawing.Size(44, 44);
-            this.botaoFechar.TabIndex = 5;
-            this.botaoFechar.UseVisualStyleBackColor = true;
-            this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais1;
-            this.panel1.Controls.Add(this.botaoCadastroGato);
-            this.panel1.Controls.Add(this.botaoCadastroCachorro);
-            this.panel1.Controls.Add(this.botaoControleAnimal);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 660);
-            this.panel1.TabIndex = 0;
-            // 
-            // botaoCadastroGato
-            // 
-            this.botaoCadastroGato.BackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroGato.BackgroundImage = global::SOS_Animal.Properties.Resources.cadastroGato1;
-            this.botaoCadastroGato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.botaoCadastroGato.FlatAppearance.BorderSize = 0;
-            this.botaoCadastroGato.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroGato.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroGato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoCadastroGato.Location = new System.Drawing.Point(62, 394);
-            this.botaoCadastroGato.Name = "botaoCadastroGato";
-            this.botaoCadastroGato.Size = new System.Drawing.Size(170, 60);
-            this.botaoCadastroGato.TabIndex = 2;
-            this.botaoCadastroGato.UseVisualStyleBackColor = false;
-            this.botaoCadastroGato.Click += new System.EventHandler(this.botaoCadastroGato_Click);
-            this.botaoCadastroGato.MouseEnter += new System.EventHandler(this.botaoCadastroGato_MouseEnter);
-            this.botaoCadastroGato.MouseLeave += new System.EventHandler(this.botaoCadastroGato_MouseLeave);
-            // 
-            // botaoCadastroCachorro
-            // 
-            this.botaoCadastroCachorro.BackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroCachorro.BackgroundImage = global::SOS_Animal.Properties.Resources.cadastroCachorro1;
-            this.botaoCadastroCachorro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.botaoCadastroCachorro.FlatAppearance.BorderSize = 0;
-            this.botaoCadastroCachorro.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroCachorro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroCachorro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.botaoCadastroCachorro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoCadastroCachorro.Location = new System.Drawing.Point(62, 318);
-            this.botaoCadastroCachorro.Name = "botaoCadastroCachorro";
-            this.botaoCadastroCachorro.Size = new System.Drawing.Size(170, 60);
-            this.botaoCadastroCachorro.TabIndex = 1;
-            this.botaoCadastroCachorro.UseVisualStyleBackColor = false;
-            this.botaoCadastroCachorro.Click += new System.EventHandler(this.botaoCadastroCachorro_Click);
-            this.botaoCadastroCachorro.MouseEnter += new System.EventHandler(this.botaoCadastroCachorro_MouseEnter);
-            this.botaoCadastroCachorro.MouseLeave += new System.EventHandler(this.botaoCadastroCachorro_MouseLeave);
-            // 
-            // botaoControleAnimal
-            // 
-            this.botaoControleAnimal.BackColor = System.Drawing.Color.Transparent;
-            this.botaoControleAnimal.BackgroundImage = global::SOS_Animal.Properties.Resources.controleAnimal1;
-            this.botaoControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.botaoControleAnimal.FlatAppearance.BorderSize = 0;
-            this.botaoControleAnimal.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.botaoControleAnimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.botaoControleAnimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.botaoControleAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoControleAnimal.Location = new System.Drawing.Point(62, 242);
-            this.botaoControleAnimal.Name = "botaoControleAnimal";
-            this.botaoControleAnimal.Size = new System.Drawing.Size(170, 60);
-            this.botaoControleAnimal.TabIndex = 0;
-            this.botaoControleAnimal.UseVisualStyleBackColor = false;
-            this.botaoControleAnimal.Click += new System.EventHandler(this.botaoControleAnimal_Click);
-            this.botaoControleAnimal.MouseEnter += new System.EventHandler(this.botaoControleAnimal_MouseEnter);
-            this.botaoControleAnimal.MouseLeave += new System.EventHandler(this.botaoControleAnimal_MouseLeave);
             // 
             // btnOrdenarPorId
             // 
@@ -260,6 +168,15 @@
             this.btnOrdenarPorNome.UseVisualStyleBackColor = false;
             this.btnOrdenarPorNome.Click += new System.EventHandler(this.btnOrdenarPorNome_Click);
             // 
+            // flowControleAnimal
+            // 
+            this.flowControleAnimal.AutoScroll = true;
+            this.flowControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowControleAnimal.Location = new System.Drawing.Point(60, 47);
+            this.flowControleAnimal.Name = "flowControleAnimal";
+            this.flowControleAnimal.Size = new System.Drawing.Size(820, 524);
+            this.flowControleAnimal.TabIndex = 0;
+            // 
             // barraTabelaControleAnimal
             // 
             this.barraTabelaControleAnimal.BackColor = System.Drawing.Color.Transparent;
@@ -270,6 +187,89 @@
             this.barraTabelaControleAnimal.Size = new System.Drawing.Size(820, 38);
             this.barraTabelaControleAnimal.TabIndex = 1;
             this.barraTabelaControleAnimal.TabStop = false;
+            // 
+            // botaoFechar
+            // 
+            this.botaoFechar.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoFechar;
+            this.botaoFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoFechar.FlatAppearance.BorderSize = 0;
+            this.botaoFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
+            this.botaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoFechar.Location = new System.Drawing.Point(1134, 2);
+            this.botaoFechar.Name = "botaoFechar";
+            this.botaoFechar.Size = new System.Drawing.Size(44, 44);
+            this.botaoFechar.TabIndex = 5;
+            this.botaoFechar.UseVisualStyleBackColor = true;
+            this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais1;
+            this.panel1.Controls.Add(this.botaoCadastroGato);
+            this.panel1.Controls.Add(this.botaoCadastroCachorro);
+            this.panel1.Controls.Add(this.botaoControleAnimal);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(260, 660);
+            this.panel1.TabIndex = 0;
+            // 
+            // botaoCadastroGato
+            // 
+            this.botaoCadastroGato.BackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroGato.BackgroundImage = global::SOS_Animal.Properties.Resources.cadastroGato1;
+            this.botaoCadastroGato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoCadastroGato.FlatAppearance.BorderSize = 0;
+            this.botaoCadastroGato.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroGato.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroGato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoCadastroGato.Location = new System.Drawing.Point(62, 394);
+            this.botaoCadastroGato.Name = "botaoCadastroGato";
+            this.botaoCadastroGato.Size = new System.Drawing.Size(170, 60);
+            this.botaoCadastroGato.TabIndex = 2;
+            this.botaoCadastroGato.UseVisualStyleBackColor = false;
+            this.botaoCadastroGato.Click += new System.EventHandler(this.botaoCadastroGato_Click);
+            this.botaoCadastroGato.MouseEnter += new System.EventHandler(this.botaoCadastroGato_MouseEnter);
+            this.botaoCadastroGato.MouseLeave += new System.EventHandler(this.botaoCadastroGato_MouseLeave);
+            // 
+            // botaoCadastroCachorro
+            // 
+            this.botaoCadastroCachorro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroCachorro.BackgroundImage = global::SOS_Animal.Properties.Resources.cadastroCachorro1;
+            this.botaoCadastroCachorro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoCadastroCachorro.FlatAppearance.BorderSize = 0;
+            this.botaoCadastroCachorro.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroCachorro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroCachorro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastroCachorro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoCadastroCachorro.Location = new System.Drawing.Point(62, 318);
+            this.botaoCadastroCachorro.Name = "botaoCadastroCachorro";
+            this.botaoCadastroCachorro.Size = new System.Drawing.Size(170, 60);
+            this.botaoCadastroCachorro.TabIndex = 1;
+            this.botaoCadastroCachorro.UseVisualStyleBackColor = false;
+            this.botaoCadastroCachorro.Click += new System.EventHandler(this.botaoCadastroCachorro_Click);
+            this.botaoCadastroCachorro.MouseEnter += new System.EventHandler(this.botaoCadastroCachorro_MouseEnter);
+            this.botaoCadastroCachorro.MouseLeave += new System.EventHandler(this.botaoCadastroCachorro_MouseLeave);
+            // 
+            // botaoControleAnimal
+            // 
+            this.botaoControleAnimal.BackColor = System.Drawing.Color.Transparent;
+            this.botaoControleAnimal.BackgroundImage = global::SOS_Animal.Properties.Resources.controleAnimal1;
+            this.botaoControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoControleAnimal.FlatAppearance.BorderSize = 0;
+            this.botaoControleAnimal.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.botaoControleAnimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoControleAnimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoControleAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoControleAnimal.Location = new System.Drawing.Point(62, 242);
+            this.botaoControleAnimal.Name = "botaoControleAnimal";
+            this.botaoControleAnimal.Size = new System.Drawing.Size(170, 60);
+            this.botaoControleAnimal.TabIndex = 0;
+            this.botaoControleAnimal.UseVisualStyleBackColor = false;
+            this.botaoControleAnimal.Click += new System.EventHandler(this.botaoControleAnimal_Click);
+            this.botaoControleAnimal.MouseEnter += new System.EventHandler(this.botaoControleAnimal_MouseEnter);
+            this.botaoControleAnimal.MouseLeave += new System.EventHandler(this.botaoControleAnimal_MouseLeave);
             // 
             // panelCadastrarGato
             // 
@@ -461,17 +461,17 @@
             this.ClientSize = new System.Drawing.Size(1180, 660);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelControleAnimal);
             this.Controls.Add(this.panelCadastrarGato);
             this.Controls.Add(this.panelCadastrarCachorro);
+            this.Controls.Add(this.panelControleAnimal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaControleAnimal";
             this.Load += new System.EventHandler(this.TelaControleAnimal_Load);
             this.panelControleAnimal.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panelCadastrarGato.ResumeLayout(false);
             this.panelCadastrarGato.PerformLayout();
             this.panelCadastrarCachorro.ResumeLayout(false);

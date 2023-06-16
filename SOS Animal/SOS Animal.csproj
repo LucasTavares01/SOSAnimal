@@ -335,6 +335,12 @@
   <ItemGroup>
     <None Include="Imagens\filtro2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\avatarCachorro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\avatarGato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

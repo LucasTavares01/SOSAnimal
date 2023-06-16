@@ -33,6 +33,8 @@
             this.labelIdade = new System.Windows.Forms.Label();
             this.labelRaca = new System.Windows.Forms.Label();
             this.labelPorte = new System.Windows.Forms.Label();
+            this.avatarAnimal = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // labelID
@@ -90,6 +92,14 @@
             this.labelPorte.Text = "PORTE";
             this.labelPorte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // avatarAnimal
+            // 
+            this.avatarAnimal.Location = new System.Drawing.Point(14, 11);
+            this.avatarAnimal.Name = "avatarAnimal";
+            this.avatarAnimal.Size = new System.Drawing.Size(36, 36);
+            this.avatarAnimal.TabIndex = 5;
+            this.avatarAnimal.TabStop = false;
+            // 
             // ControleAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +107,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.listaControleAnimal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.avatarAnimal);
             this.Controls.Add(this.labelPorte);
             this.Controls.Add(this.labelRaca);
             this.Controls.Add(this.labelIdade);
@@ -105,6 +116,7 @@
             this.DoubleBuffered = true;
             this.Name = "ControleAnimal";
             this.Size = new System.Drawing.Size(822, 64);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +129,6 @@
         public System.Windows.Forms.Label labelIdade;
         public System.Windows.Forms.Label labelRaca;
         public System.Windows.Forms.Label labelPorte;
+        private System.Windows.Forms.PictureBox avatarAnimal;
     }
 }
