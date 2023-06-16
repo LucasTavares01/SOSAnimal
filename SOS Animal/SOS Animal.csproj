@@ -302,6 +302,39 @@
   <ItemGroup>
     <None Include="Imagens\cadastroGato.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\controleAnimal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastroCachorro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastroCachorro2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastroGato1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastroGato2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\controleAnimal2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarCachorro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarCachorro2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoGato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\filtro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\filtro2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

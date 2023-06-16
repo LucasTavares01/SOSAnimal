@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SOS_Animal
@@ -13,7 +15,7 @@ namespace SOS_Animal
 
         public TelaControleAnimal()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void TelaControleAnimal_Load(object sender, EventArgs e)
@@ -70,6 +72,8 @@ namespace SOS_Animal
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
 
             reader.Close();
+
+
         }
 
 
@@ -93,7 +97,7 @@ namespace SOS_Animal
                 command.Parameters.AddWithValue("@IDADE", idadeCachorro);
                 command.Parameters.AddWithValue("@RACA", raca);
                 command.Parameters.AddWithValue("@PORTE", porte);
-                
+
 
                 command.ExecuteNonQuery();
 
@@ -147,7 +151,7 @@ namespace SOS_Animal
 
         private void PreencherValoresPadrao()
         {
-          
+
             textNomeCachorro.Text = "NOME";
             textIdadeCachorro.Text = "IDADE";
             textRacaCachorro.Text = "RAÇA";
@@ -176,12 +180,6 @@ namespace SOS_Animal
                 MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
             }
         }
-
-
-
-
-
-
 
         private void LimparTextBoxes()
         {
@@ -223,8 +221,12 @@ namespace SOS_Animal
                     connection.Close();
                 }
 
-                // Sair do formulário
-                this.Close();
+                // Sair do formulário             
+
+                TelaLogin telaLogin = new TelaLogin();
+                this.Hide();
+                telaLogin.Show();
+
             }
             catch (Exception ex)
             {
@@ -313,6 +315,91 @@ namespace SOS_Animal
         private void textPorteCachorro_Leave(object sender, EventArgs e)
         {
             RestaurarCampoTexto(textPorteCachorro, "PORTE");
+        }
+
+        private void botaoControleAnimal_MouseEnter(object sender, EventArgs e)
+        {
+            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal2;
+        }
+
+        private void botaoControleAnimal_MouseLeave(object sender, EventArgs e)
+        {
+            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal1;
+        }
+
+        private void botaoCadastroCachorro_MouseEnter(object sender, EventArgs e)
+        {
+            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro2;
+        }
+
+        private void botaoCadastroCachorro_MouseLeave(object sender, EventArgs e)
+        {
+            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro1;
+        }
+
+        private void botaoCadastroGato_MouseEnter(object sender, EventArgs e)
+        {
+            botaoCadastroGato.BackgroundImage = Properties.Resources.cadastroGato2;
+        }
+
+        private void botaoCadastroGato_MouseLeave(object sender, EventArgs e)
+        {
+            botaoCadastroGato.BackgroundImage = Properties.Resources.cadastroGato1;
+        }
+
+        private void botaoCadastrarCachorro_MouseEnter(object sender, EventArgs e)
+        {
+            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro2;
+        }
+
+        private void botaoCadastrarCachorro_MouseLeave(object sender, EventArgs e)
+        {
+            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro1;
+        }
+
+        private void btnOrdenarPorNome_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelNome.Text, c2.labelNome.Text));
+            AtualizarControlesOrdenados(controles);
+        }
+
+
+        private void btnOrdenarPorId_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            AtualizarControlesOrdenados(controles);
+        }
+
+        private void btnOrdenarPorIdade_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => int.Parse(c1.labelIdade.Text).CompareTo(int.Parse(c2.labelIdade.Text)));
+            AtualizarControlesOrdenados(controles);
+        }
+
+        private void btnOrdenarRaca_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelRaca.Text, c2.labelRaca.Text));
+            AtualizarControlesOrdenados(controles);
+        }
+
+        private void btnOrdenarPorPorte_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelPorte.Text, c2.labelPorte.Text));
+            AtualizarControlesOrdenados(controles);
+        }
+
+        private void AtualizarControlesOrdenados(List<ControleAnimal> controles)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            foreach (ControleAnimal controle in controles)
+            {
+                flowLayoutPanel1.Controls.Add(controle);
+            }
         }
     }
 }

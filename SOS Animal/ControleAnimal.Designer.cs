@@ -38,47 +38,57 @@
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(50, 21);
+            this.labelID.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.Location = new System.Drawing.Point(59, 17);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
+            this.labelID.Size = new System.Drawing.Size(25, 23);
             this.labelID.TabIndex = 0;
             this.labelID.Text = "ID";
+            this.labelID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(119, 21);
+            this.labelNome.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNome.Location = new System.Drawing.Point(193, 16);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(39, 13);
+            this.labelNome.Size = new System.Drawing.Size(56, 23);
             this.labelNome.TabIndex = 1;
             this.labelNome.Text = "NOME";
+            this.labelNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelIdade
             // 
             this.labelIdade.AutoSize = true;
-            this.labelIdade.Location = new System.Drawing.Point(204, 21);
+            this.labelIdade.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdade.Location = new System.Drawing.Point(345, 16);
             this.labelIdade.Name = "labelIdade";
-            this.labelIdade.Size = new System.Drawing.Size(40, 13);
+            this.labelIdade.Size = new System.Drawing.Size(57, 23);
             this.labelIdade.TabIndex = 2;
             this.labelIdade.Text = "IDADE";
+            this.labelIdade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelRaca
             // 
             this.labelRaca.AutoSize = true;
-            this.labelRaca.Location = new System.Drawing.Point(298, 21);
+            this.labelRaca.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRaca.Location = new System.Drawing.Point(475, 17);
             this.labelRaca.Name = "labelRaca";
-            this.labelRaca.Size = new System.Drawing.Size(36, 13);
+            this.labelRaca.Size = new System.Drawing.Size(54, 23);
             this.labelRaca.TabIndex = 3;
             this.labelRaca.Text = "RACA";
+            this.labelRaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelPorte
             // 
             this.labelPorte.AutoSize = true;
-            this.labelPorte.Location = new System.Drawing.Point(391, 21);
+            this.labelPorte.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPorte.Location = new System.Drawing.Point(598, 17);
             this.labelPorte.Name = "labelPorte";
-            this.labelPorte.Size = new System.Drawing.Size(44, 13);
+            this.labelPorte.Size = new System.Drawing.Size(63, 23);
             this.labelPorte.TabIndex = 4;
             this.labelPorte.Text = "PORTE";
+            this.labelPorte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ControleAnimal
             // 
@@ -102,10 +112,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.Label labelNome;
-        private System.Windows.Forms.Label labelIdade;
-        private System.Windows.Forms.Label labelRaca;
-        private System.Windows.Forms.Label labelPorte;
+        public System.Windows.Forms.Label labelID;
+        public System.Windows.Forms.Label labelNome;
+        public System.Windows.Forms.Label labelIdade;
+        public System.Windows.Forms.Label labelRaca;
+        public System.Windows.Forms.Label labelPorte;
     }
 }
