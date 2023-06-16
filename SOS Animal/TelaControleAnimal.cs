@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SOS_Animal
@@ -15,8 +16,11 @@ namespace SOS_Animal
 
         public TelaControleAnimal()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
+
+
+        /////////////////////  CRIAR TABELA CONTROLE DE ANIMAIS //////////////////////
 
         private void TelaControleAnimal_Load(object sender, EventArgs e)
         {
@@ -63,10 +67,10 @@ namespace SOS_Animal
 
                 // Definir a posição e tamanho do UserControl
                 controleAnimal.Location = new Point(0, 0);
-                controleAnimal.Size = new Size(flowLayoutPanel1.Width, controleAnimal.Height);
+                controleAnimal.Size = new Size(flowControleAnimal.Width, controleAnimal.Height);
 
                 // Adicionar o ControleAnimal ao FlowLayoutPanel
-                flowLayoutPanel1.Controls.Add(controleAnimal);
+                flowControleAnimal.Controls.Add(controleAnimal);
             }
 
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
@@ -76,205 +80,109 @@ namespace SOS_Animal
 
         }
 
+        /////////////////////  TELA CONTROLE ANIMAL /////////////////////////
 
-
-        private void botaoCadastrarCachorro_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Obter os valores das TextBoxes
-                string nome = textNomeCachorro.Text;
-                string idadeCachorro = textIdadeCachorro.Text;
-                string raca = textRacaCachorro.Text;
-                string porte = textPorteCachorro.Text;
-
-                // Inserir os dados na tabela controle_de_animais
-                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
-                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
-
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@NOME", nome);
-                command.Parameters.AddWithValue("@IDADE", idadeCachorro);
-                command.Parameters.AddWithValue("@RACA", raca);
-                command.Parameters.AddWithValue("@PORTE", porte);
-
-
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Cadastro do cachorro realizado com sucesso!");
-
-                // Limpar as TextBoxes após o cadastro
-                LimparTextBoxes();
-
-                // Atualizar o valor do ID na TextBox
-                AtualizarIDCachorro();
-
-                PreencherValoresPadrao();
-
-
-                // Remover todos os controles do FlowLayoutPanel
-                flowLayoutPanel1.Controls.Clear();
-
-                // Buscar os dados do banco de dados novamente
-                string selectQuery = "SELECT * FROM controle_de_animais";
-                MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
-                MySqlDataReader reader = selectCommand.ExecuteReader();
-
-                // Criar os UserPanels e preencher as Labels com os dados
-                while (reader.Read())
-                {
-                    string idAnimalValue = reader["ID_ANIMAL"].ToString();
-                    string nomeValue = reader["NOME"].ToString();
-                    string idadeValue = reader["IDADE"].ToString();
-                    string racaValue = reader["RACA"].ToString();
-                    string porteValue = reader["PORTE"].ToString();
-
-                    // Criar uma instância do UserControl ControleAnimal
-                    ControleAnimal controleAnimal = new ControleAnimal();
-                    controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
-
-                    // Definir a posição e tamanho do UserControl
-                    controleAnimal.Location = new Point(0, 0);
-                    controleAnimal.Size = new Size(flowLayoutPanel1.Width, controleAnimal.Height);
-
-                    // Adicionar o ControleAnimal ao FlowLayoutPanel
-                    flowLayoutPanel1.Controls.Add(controleAnimal);
-                }
-
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao cadastrar cachorro: " + ex.Message);
-            }
-        }
-
-        private void PreencherValoresPadrao()
-        {
-
-            textNomeCachorro.Text = "NOME";
-            textIdadeCachorro.Text = "IDADE";
-            textRacaCachorro.Text = "RAÇA";
-            textPorteCachorro.Text = "PORTE";
-        }
-
-
-        private void AtualizarIDCachorro()
-        {
-            try
-            {
-                // Obter o último ID cadastrado
-                string query = "SELECT MAX(ID_ANIMAL) FROM controle_de_animais";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                object result = command.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
-                {
-                    int latestID = Convert.ToInt32(result);
-                    int nextID = latestID + 1;
-                    textIDCachorro.Text = nextID.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
-            }
-        }
-
-        private void LimparTextBoxes()
-        {
-            textIDCachorro.Text = "";
-            textNomeCachorro.Text = "";
-            textIdadeCachorro.Text = "";
-            textRacaCachorro.Text = "";
-            textPorteCachorro.Text = "";
-        }
-
-        private void botaoControleAnimal_Click(object sender, EventArgs e)
+        private void botaoControleAnimal_Click(object sender, EventArgs e) /////// BOTAO PARA ATIVAR O PAINEL CONTROLE ANIMAL
         {
             panelControleAnimal.Visible = true;
             panelCadastrarCachorro.Visible = false;
             panelCadastrarGato.Visible = false;
         }
 
-        private void botaoCachorro_Click(object sender, EventArgs e)
+        private void botaoControleAnimal_MouseEnter(object sender, EventArgs e)
+        {
+            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal2;
+        }
+
+        private void botaoControleAnimal_MouseLeave(object sender, EventArgs e)
+        {
+            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal1;
+        }
+
+        private void btnOrdenarPorId_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowControleAnimal.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro(btnOrdenarPorId);
+        }
+
+        private void btnOrdenarPorNome_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowControleAnimal.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelNome.Text, c2.labelNome.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro(btnOrdenarPorNome);
+        }
+
+        private void btnOrdenarPorIdade_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowControleAnimal.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => int.Parse(c1.labelIdade.Text).CompareTo(int.Parse(c2.labelIdade.Text)));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro(btnOrdenarPorIdade);
+        }
+
+        private void btnOrdenarRaca_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowControleAnimal.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelRaca.Text, c2.labelRaca.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro(btnOrdenarRaca);
+        }
+
+        private void btnOrdenarPorPorte_Click(object sender, EventArgs e)
+        {
+            List<ControleAnimal> controles = flowControleAnimal.Controls.OfType<ControleAnimal>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelPorte.Text, c2.labelPorte.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro(btnOrdenarPorPorte);
+        }
+
+        private void AtualizarControlesOrdenados(List<ControleAnimal> controles)
+        {
+            flowControleAnimal.Controls.Clear();
+            foreach (ControleAnimal controle in controles)
+            {
+                flowControleAnimal.Controls.Add(controle);
+            }
+        }
+
+        private void AtualizarImagemFiltro(Button botaoClicado)
+        {
+            // Define a imagem 2 (filtro2) para o botão clicado
+            botaoClicado.Image = Properties.Resources.filtro2;
+
+            // Define a imagem 1 (filtro1) para os outros botões
+            btnOrdenarPorId.Image = btnOrdenarPorId == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorNome.Image = btnOrdenarPorNome == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorIdade.Image = btnOrdenarPorIdade == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarRaca.Image = btnOrdenarRaca == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorPorte.Image = btnOrdenarPorPorte == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+        }
+
+        /////////////////////  TELA CADASTRAR CACHORRO /////////////////////////
+
+        private void botaoCadastroCachorro_Click(object sender, EventArgs e)
         {
             panelControleAnimal.Visible = false;
             panelCadastrarCachorro.Visible = true;
             panelCadastrarGato.Visible = false;
         }
 
-        private void botaoGato_Click(object sender, EventArgs e)
+        private void botaoCadastroCachorro_MouseEnter(object sender, EventArgs e)
         {
-            panelControleAnimal.Visible = false;
-            panelCadastrarCachorro.Visible = false;
-            panelCadastrarGato.Visible = true;
+            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro2;
         }
 
-        private void botaoFechar_Click(object sender, EventArgs e)
+        private void botaoCadastroCachorro_MouseLeave(object sender, EventArgs e)
         {
-            try
-            {
-                // Fechar a conexão com o banco de dados
-                if (connection != null && connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                // Sair do formulário             
-
-                TelaLogin telaLogin = new TelaLogin();
-                this.Hide();
-                telaLogin.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao fechar o formulário: " + ex.Message);
-            }
-        }
-
-        private void panelCadastrarCachorro_VisibleChanged(object sender, EventArgs e)
-        {
-            if (panelCadastrarCachorro.Visible)
-            {
-                // Limpar a TextBox de ID
-                textIDCachorro.Clear();
-
-                try
-                {
-                    // Obter o próximo ID disponível
-                    string query = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'usuários' AND TABLE_NAME = 'controle_de_animais';";
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        int nextID = Convert.ToInt32(result);
-                        textIDCachorro.Text = nextID.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
-                }
-            }
-        }
-
-        private void LimparCampoTexto(TextBox textBox, string textoPadrao)
-        {
-            if (textBox.Text == textoPadrao)
-            {
-                textBox.Text = "";
-            }
-        }
-
-        private void RestaurarCampoTexto(TextBox textBox, string textoPadrao)
-        {
-            if (textBox.Text == "")
-            {
-                textBox.Text = textoPadrao;
-            }
+            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro1;
         }
 
         private void textNomeCachorro_Enter(object sender, EventArgs e)
@@ -317,25 +225,147 @@ namespace SOS_Animal
             RestaurarCampoTexto(textPorteCachorro, "PORTE");
         }
 
-        private void botaoControleAnimal_MouseEnter(object sender, EventArgs e)
+        private void botaoCadastrarCachorro_MouseEnter(object sender, EventArgs e)
         {
-            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal2;
+            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro2;
         }
 
-        private void botaoControleAnimal_MouseLeave(object sender, EventArgs e)
+        private void botaoCadastrarCachorro_MouseLeave(object sender, EventArgs e)
         {
-            botaoControleAnimal.BackgroundImage = Properties.Resources.controleAnimal1;
+            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro1;
         }
 
-        private void botaoCadastroCachorro_MouseEnter(object sender, EventArgs e)
+        private void botaoCadastrarCachorro_Click(object sender, EventArgs e)
         {
-            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro2;
+            try
+            {
+                // Obter os valores das TextBoxes
+                string nome = textNomeCachorro.Text;
+                string idadeCachorro = textIdadeCachorro.Text;
+                string raca = textRacaCachorro.Text;
+                string porte = textPorteCachorro.Text;
+
+                // Inserir os dados na tabela controle_de_animais
+                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
+                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NOME", nome);
+                command.Parameters.AddWithValue("@IDADE", idadeCachorro);
+                command.Parameters.AddWithValue("@RACA", raca);
+                command.Parameters.AddWithValue("@PORTE", porte);
+
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro do cachorro realizado com sucesso!");
+
+                // Limpar as TextBoxes após o cadastro
+                LimparTextBoxes();
+
+                // Atualizar o valor do ID na TextBox
+                AtualizarIDCachorro();
+
+                PreencherValoresPadrao();
+
+
+                // Remover todos os controles do FlowLayoutPanel
+                flowControleAnimal.Controls.Clear();
+
+                // Buscar os dados do banco de dados novamente
+                string selectQuery = "SELECT * FROM controle_de_animais";
+                MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = selectCommand.ExecuteReader();
+
+                // Criar os UserPanels e preencher as Labels com os dados
+                while (reader.Read())
+                {
+                    string idAnimalValue = reader["ID_ANIMAL"].ToString();
+                    string nomeValue = reader["NOME"].ToString();
+                    string idadeValue = reader["IDADE"].ToString();
+                    string racaValue = reader["RACA"].ToString();
+                    string porteValue = reader["PORTE"].ToString();
+
+                    // Criar uma instância do UserControl ControleAnimal
+                    ControleAnimal controleAnimal = new ControleAnimal();
+                    controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
+
+                    // Definir a posição e tamanho do UserControl
+                    controleAnimal.Location = new Point(0, 0);
+                    controleAnimal.Size = new Size(flowControleAnimal.Width, controleAnimal.Height);
+
+                    // Adicionar o ControleAnimal ao FlowLayoutPanel
+                    flowControleAnimal.Controls.Add(controleAnimal);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar cachorro: " + ex.Message);
+            }
         }
 
-        private void botaoCadastroCachorro_MouseLeave(object sender, EventArgs e)
+        private void PreencherValoresPadrao()
         {
-            botaoCadastroCachorro.BackgroundImage = Properties.Resources.cadastroCachorro1;
+
+            textNomeCachorro.Text = "NOME";
+            textIdadeCachorro.Text = "IDADE";
+            textRacaCachorro.Text = "RAÇA";
+            textPorteCachorro.Text = "PORTE";
         }
+
+
+        private void AtualizarIDCachorro()
+        {
+            try
+            {
+                // Obter o último ID cadastrado
+                string query = "SELECT MAX(ID_ANIMAL) FROM controle_de_animais";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    int latestID = Convert.ToInt32(result);
+                    int nextID = latestID + 1;
+                    textIDCachorro.Text = nextID.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
+            }
+        }
+
+        private void panelCadastrarCachorro_VisibleChanged(object sender, EventArgs e)
+        {
+            if (panelCadastrarCachorro.Visible)
+            {
+                // Limpar a TextBox de ID
+                textIDCachorro.Clear();
+
+                try
+                {
+                    // Obter o próximo ID disponível
+                    string query = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'usuários' AND TABLE_NAME = 'controle_de_animais';";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        int nextID = Convert.ToInt32(result);
+                        textIDCachorro.Text = nextID.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
+                }
+            }
+        }        
+
+        /////////////////////  TELA CADASTRAR GATO ///////////////////////// 
 
         private void botaoCadastroGato_MouseEnter(object sender, EventArgs e)
         {
@@ -347,59 +377,202 @@ namespace SOS_Animal
             botaoCadastroGato.BackgroundImage = Properties.Resources.cadastroGato1;
         }
 
-        private void botaoCadastrarCachorro_MouseEnter(object sender, EventArgs e)
+        private void botaoCadastroGato_Click(object sender, EventArgs e)
         {
-            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro2;
+            panelControleAnimal.Visible = false;
+            panelCadastrarCachorro.Visible = false;
+            panelCadastrarGato.Visible = true;
         }
 
-        private void botaoCadastrarCachorro_MouseLeave(object sender, EventArgs e)
+        private void textNomeGato_Enter(object sender, EventArgs e)
         {
-            botaoCadastrarCachorro.BackgroundImage = Properties.Resources.botaoCadastrarCachorro1;
+            LimparCampoTexto(textNomeGato, "NOME");
         }
 
-        private void btnOrdenarPorNome_Click(object sender, EventArgs e)
+        private void textNomeGato_Leave(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => string.Compare(c1.labelNome.Text, c2.labelNome.Text));
-            AtualizarControlesOrdenados(controles);
+            RestaurarCampoTexto(textNomeGato, "NOME");
         }
 
-
-        private void btnOrdenarPorId_Click(object sender, EventArgs e)
+        private void textIdadeGato_Enter(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
-            AtualizarControlesOrdenados(controles);
+            LimparCampoTexto(textIdadeGato, "IDADE");
         }
 
-        private void btnOrdenarPorIdade_Click(object sender, EventArgs e)
+        private void textIdadeGato_Leave(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelIdade.Text).CompareTo(int.Parse(c2.labelIdade.Text)));
-            AtualizarControlesOrdenados(controles);
+            RestaurarCampoTexto(textIdadeGato, "IDADE");
         }
 
-        private void btnOrdenarRaca_Click(object sender, EventArgs e)
+        private void textRacaGato_Enter(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => string.Compare(c1.labelRaca.Text, c2.labelRaca.Text));
-            AtualizarControlesOrdenados(controles);
+            LimparCampoTexto(textRacaGato, "RAÇA");
         }
 
-        private void btnOrdenarPorPorte_Click(object sender, EventArgs e)
+        private void textRacaGato_Leave(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowLayoutPanel1.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => string.Compare(c1.labelPorte.Text, c2.labelPorte.Text));
-            AtualizarControlesOrdenados(controles);
+            RestaurarCampoTexto(textRacaGato, "RAÇA");
         }
 
-        private void AtualizarControlesOrdenados(List<ControleAnimal> controles)
+        private void textPorteGato_Enter(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
-            foreach (ControleAnimal controle in controles)
+            LimparCampoTexto(textPorteGato, "PORTE");
+        }
+
+        private void textPorteGato_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textPorteGato, "PORTE");
+        }
+
+        private void botaoCadastrarGato_Click(object sender, EventArgs e)
+        {
+            try
             {
-                flowLayoutPanel1.Controls.Add(controle);
+                // Obter os valores das TextBoxes
+                string nome = textNomeGato.Text;
+                string idadeGato = textIdadeGato.Text;
+                string raca = textRacaGato.Text;
+                string porte = textPorteGato.Text;
+
+                // Inserir os dados na tabela controle_de_animais
+                string query = "INSERT INTO controle_de_animais (NOME, IDADE, RACA, PORTE) " +
+                    "VALUES (@NOME, @IDADE, @RACA, @PORTE)";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NOME", nome);
+                command.Parameters.AddWithValue("@IDADE", idadeGato);
+                command.Parameters.AddWithValue("@RACA", raca);
+                command.Parameters.AddWithValue("@PORTE", porte);
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro do gato realizado com sucesso!");
+
+                // Limpar as TextBoxes após o cadastro
+                LimparTextBoxes();
+
+                // Atualizar o valor do ID na TextBox
+                AtualizarIDGato();
+
+                PreencherValoresPadrao();
+
+                // Remover todos os controles do FlowLayoutPanel
+                flowControleAnimal.Controls.Clear();
+
+                // Buscar os dados do banco de dados novamente
+                string selectQuery = "SELECT * FROM controle_de_animais";
+                MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = selectCommand.ExecuteReader();
+
+                // Criar os UserPanels e preencher as Labels com os dados
+                while (reader.Read())
+                {
+                    string idAnimalValue = reader["ID_ANIMAL"].ToString();
+                    string nomeValue = reader["NOME"].ToString();
+                    string idadeValue = reader["IDADE"].ToString();
+                    string racaValue = reader["RACA"].ToString();
+                    string porteValue = reader["PORTE"].ToString();
+
+                    // Criar uma instância do UserControl ControleAnimal
+                    ControleAnimal controleAnimal = new ControleAnimal();
+                    controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
+
+                    // Definir a posição e tamanho do UserControl
+                    controleAnimal.Location = new Point(0, 0);
+                    controleAnimal.Size = new Size(flowControleAnimal.Width, controleAnimal.Height);
+
+                    // Adicionar o ControleAnimal ao FlowLayoutPanel
+                    flowControleAnimal.Controls.Add(controleAnimal);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar gato: " + ex.Message);
             }
         }
+
+        private void AtualizarIDGato()
+        {
+            try
+            {
+                // Obter o último ID cadastrado
+                string query = "SELECT MAX(ID_ANIMAL) FROM controle_de_animais";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    int latestID = Convert.ToInt32(result);
+                    int nextID = latestID + 1;
+                    textIDGato.Text = nextID.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
+            }
+        }
+
+
+
+        ////////////////////////// METODOS EM COMUM ///////////////////////////
+
+        private void LimparCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == textoPadrao)
+            {
+                textBox.Text = "";
+            }
+        }
+
+        private void RestaurarCampoTexto(TextBox textBox, string textoPadrao)
+        {
+            if (textBox.Text == "")
+            {
+                textBox.Text = textoPadrao;
+            }
+        }
+
+        private void LimparTextBoxes()
+        {
+            textIDCachorro.Text = "";
+            textNomeCachorro.Text = "";
+            textIdadeCachorro.Text = "";
+            textRacaCachorro.Text = "";
+            textPorteCachorro.Text = "";
+
+            textIDGato.Text = "";
+            textNomeGato.Text = "";
+            textIdadeGato.Text = "";
+            textRacaGato.Text = "";
+            textPorteGato.Text = "";
+        }
+
+        private void botaoFechar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Fechar a conexão com o banco de dados
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                // Sair do formulário             
+
+                TelaLogin telaLogin = new TelaLogin();
+                this.Hide();
+                telaLogin.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao fechar o formulário: " + ex.Message);
+            }
+        }
+
+        
     }
 }

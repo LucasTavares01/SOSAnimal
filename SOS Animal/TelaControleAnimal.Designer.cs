@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaControleAnimal));
             this.panelControleAnimal = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowControleAnimal = new System.Windows.Forms.FlowLayoutPanel();
             this.botaoFechar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.botaoCadastroGato = new System.Windows.Forms.Button();
@@ -41,14 +41,14 @@
             this.btnOrdenarPorPorte = new System.Windows.Forms.Button();
             this.btnOrdenarPorIdade = new System.Windows.Forms.Button();
             this.btnOrdenarPorNome = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.barraTabelaControleAnimal = new System.Windows.Forms.PictureBox();
             this.panelCadastrarGato = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.botaoCadastrarGato = new System.Windows.Forms.Button();
+            this.textPorteGato = new System.Windows.Forms.TextBox();
+            this.textRacaGato = new System.Windows.Forms.TextBox();
+            this.textIdadeGato = new System.Windows.Forms.TextBox();
+            this.textNomeGato = new System.Windows.Forms.TextBox();
+            this.textIDGato = new System.Windows.Forms.TextBox();
             this.panelCadastrarCachorro = new System.Windows.Forms.Panel();
             this.botaoCadastrarCachorro = new System.Windows.Forms.Button();
             this.textPorteCachorro = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.textIDCachorro = new System.Windows.Forms.TextBox();
             this.panelControleAnimal.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).BeginInit();
             this.panelCadastrarGato.SuspendLayout();
             this.panelCadastrarCachorro.SuspendLayout();
             this.SuspendLayout();
@@ -71,21 +71,21 @@
             this.panelControleAnimal.Controls.Add(this.btnOrdenarPorPorte);
             this.panelControleAnimal.Controls.Add(this.btnOrdenarPorIdade);
             this.panelControleAnimal.Controls.Add(this.btnOrdenarPorNome);
-            this.panelControleAnimal.Controls.Add(this.flowLayoutPanel1);
-            this.panelControleAnimal.Controls.Add(this.pictureBox1);
+            this.panelControleAnimal.Controls.Add(this.flowControleAnimal);
+            this.panelControleAnimal.Controls.Add(this.barraTabelaControleAnimal);
             this.panelControleAnimal.Location = new System.Drawing.Point(260, 50);
             this.panelControleAnimal.Name = "panelControleAnimal";
             this.panelControleAnimal.Size = new System.Drawing.Size(920, 610);
             this.panelControleAnimal.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // flowControleAnimal
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(60, 47);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 524);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowControleAnimal.AutoScroll = true;
+            this.flowControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowControleAnimal.Location = new System.Drawing.Point(60, 47);
+            this.flowControleAnimal.Name = "flowControleAnimal";
+            this.flowControleAnimal.Size = new System.Drawing.Size(820, 524);
+            this.flowControleAnimal.TabIndex = 0;
             // 
             // botaoFechar
             // 
@@ -128,7 +128,7 @@
             this.botaoCadastroGato.Size = new System.Drawing.Size(170, 60);
             this.botaoCadastroGato.TabIndex = 2;
             this.botaoCadastroGato.UseVisualStyleBackColor = false;
-            this.botaoCadastroGato.Click += new System.EventHandler(this.botaoGato_Click);
+            this.botaoCadastroGato.Click += new System.EventHandler(this.botaoCadastroGato_Click);
             this.botaoCadastroGato.MouseEnter += new System.EventHandler(this.botaoCadastroGato_MouseEnter);
             this.botaoCadastroGato.MouseLeave += new System.EventHandler(this.botaoCadastroGato_MouseLeave);
             // 
@@ -147,7 +147,7 @@
             this.botaoCadastroCachorro.Size = new System.Drawing.Size(170, 60);
             this.botaoCadastroCachorro.TabIndex = 1;
             this.botaoCadastroCachorro.UseVisualStyleBackColor = false;
-            this.botaoCadastroCachorro.Click += new System.EventHandler(this.botaoCachorro_Click);
+            this.botaoCadastroCachorro.Click += new System.EventHandler(this.botaoCadastroCachorro_Click);
             this.botaoCadastroCachorro.MouseEnter += new System.EventHandler(this.botaoCadastroCachorro_MouseEnter);
             this.botaoCadastroCachorro.MouseLeave += new System.EventHandler(this.botaoCadastroCachorro_MouseLeave);
             // 
@@ -175,6 +175,7 @@
             this.btnOrdenarPorId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorId.BackgroundImage = global::SOS_Animal.Properties.Resources.filtro1;
             this.btnOrdenarPorId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorId.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorId.FlatAppearance.BorderSize = 0;
             this.btnOrdenarPorId.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnOrdenarPorId.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
@@ -192,10 +193,11 @@
             this.btnOrdenarRaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarRaca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarRaca.BackgroundImage")));
             this.btnOrdenarRaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarRaca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarRaca.FlatAppearance.BorderSize = 0;
             this.btnOrdenarRaca.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarRaca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarRaca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarRaca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarRaca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarRaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenarRaca.Location = new System.Drawing.Point(519, 11);
             this.btnOrdenarRaca.Name = "btnOrdenarRaca";
@@ -209,10 +211,11 @@
             this.btnOrdenarPorPorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorPorte.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorPorte.BackgroundImage")));
             this.btnOrdenarPorPorte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorPorte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorPorte.FlatAppearance.BorderSize = 0;
             this.btnOrdenarPorPorte.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorPorte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorPorte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorPorte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorPorte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorPorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenarPorPorte.Location = new System.Drawing.Point(640, 11);
             this.btnOrdenarPorPorte.Name = "btnOrdenarPorPorte";
@@ -226,10 +229,11 @@
             this.btnOrdenarPorIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorIdade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorIdade.BackgroundImage")));
             this.btnOrdenarPorIdade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorIdade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorIdade.FlatAppearance.BorderSize = 0;
             this.btnOrdenarPorIdade.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorIdade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorIdade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorIdade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorIdade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorIdade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenarPorIdade.Location = new System.Drawing.Point(386, 11);
             this.btnOrdenarPorIdade.Name = "btnOrdenarPorIdade";
@@ -243,10 +247,11 @@
             this.btnOrdenarPorNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorNome.BackgroundImage")));
             this.btnOrdenarPorNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorNome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorNome.FlatAppearance.BorderSize = 0;
             this.btnOrdenarPorNome.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorNome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnOrdenarPorNome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorNome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorNome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
             this.btnOrdenarPorNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenarPorNome.Location = new System.Drawing.Point(234, 11);
             this.btnOrdenarPorNome.Name = "btnOrdenarPorNome";
@@ -255,95 +260,104 @@
             this.btnOrdenarPorNome.UseVisualStyleBackColor = false;
             this.btnOrdenarPorNome.Click += new System.EventHandler(this.btnOrdenarPorNome_Click);
             // 
-            // pictureBox1
+            // barraTabelaControleAnimal
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::SOS_Animal.Properties.Resources.barraTabelaControleAnimal;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(820, 38);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.barraTabelaControleAnimal.BackColor = System.Drawing.Color.Transparent;
+            this.barraTabelaControleAnimal.BackgroundImage = global::SOS_Animal.Properties.Resources.barraTabelaControleAnimal;
+            this.barraTabelaControleAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.barraTabelaControleAnimal.Location = new System.Drawing.Point(60, 3);
+            this.barraTabelaControleAnimal.Name = "barraTabelaControleAnimal";
+            this.barraTabelaControleAnimal.Size = new System.Drawing.Size(820, 38);
+            this.barraTabelaControleAnimal.TabIndex = 1;
+            this.barraTabelaControleAnimal.TabStop = false;
             // 
             // panelCadastrarGato
             // 
             this.panelCadastrarGato.BackgroundImage = global::SOS_Animal.Properties.Resources.fundoGato;
-            this.panelCadastrarGato.Controls.Add(this.button1);
-            this.panelCadastrarGato.Controls.Add(this.textBox6);
-            this.panelCadastrarGato.Controls.Add(this.textBox7);
-            this.panelCadastrarGato.Controls.Add(this.textBox8);
-            this.panelCadastrarGato.Controls.Add(this.textBox9);
-            this.panelCadastrarGato.Controls.Add(this.textBox10);
+            this.panelCadastrarGato.Controls.Add(this.botaoCadastrarGato);
+            this.panelCadastrarGato.Controls.Add(this.textPorteGato);
+            this.panelCadastrarGato.Controls.Add(this.textRacaGato);
+            this.panelCadastrarGato.Controls.Add(this.textIdadeGato);
+            this.panelCadastrarGato.Controls.Add(this.textNomeGato);
+            this.panelCadastrarGato.Controls.Add(this.textIDGato);
             this.panelCadastrarGato.Location = new System.Drawing.Point(260, 50);
             this.panelCadastrarGato.Name = "panelCadastrarGato";
             this.panelCadastrarGato.Size = new System.Drawing.Size(920, 610);
             this.panelCadastrarGato.TabIndex = 4;
             // 
-            // button1
+            // botaoCadastrarGato
             // 
-            this.button1.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoCadastrarCachorro1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(385, 538);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 67);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = true;
+            this.botaoCadastrarGato.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoCadastrarCachorro1;
+            this.botaoCadastrarGato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoCadastrarGato.FlatAppearance.BorderSize = 0;
+            this.botaoCadastrarGato.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrarGato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoCadastrarGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoCadastrarGato.Location = new System.Drawing.Point(385, 538);
+            this.botaoCadastrarGato.Name = "botaoCadastrarGato";
+            this.botaoCadastrarGato.Size = new System.Drawing.Size(213, 67);
+            this.botaoCadastrarGato.TabIndex = 5;
+            this.botaoCadastrarGato.UseVisualStyleBackColor = true;
+            this.botaoCadastrarGato.Click += new System.EventHandler(this.botaoCadastrarGato_Click);
             // 
-            // textBox6
+            // textPorteGato
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
-            this.textBox6.Location = new System.Drawing.Point(297, 487);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(350, 31);
-            this.textBox6.TabIndex = 4;
-            this.textBox6.Text = "PORTE";
+            this.textPorteGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPorteGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textPorteGato.Location = new System.Drawing.Point(297, 487);
+            this.textPorteGato.Name = "textPorteGato";
+            this.textPorteGato.Size = new System.Drawing.Size(350, 31);
+            this.textPorteGato.TabIndex = 4;
+            this.textPorteGato.Text = "PORTE";
+            this.textPorteGato.Enter += new System.EventHandler(this.textPorteGato_Enter);
+            this.textPorteGato.Leave += new System.EventHandler(this.textPorteGato_Leave);
             // 
-            // textBox7
+            // textRacaGato
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
-            this.textBox7.Location = new System.Drawing.Point(297, 398);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(350, 31);
-            this.textBox7.TabIndex = 3;
-            this.textBox7.Text = "RACA";
+            this.textRacaGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textRacaGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textRacaGato.Location = new System.Drawing.Point(297, 398);
+            this.textRacaGato.Name = "textRacaGato";
+            this.textRacaGato.Size = new System.Drawing.Size(350, 31);
+            this.textRacaGato.TabIndex = 3;
+            this.textRacaGato.Text = "RAÇA";
+            this.textRacaGato.Enter += new System.EventHandler(this.textRacaGato_Enter);
+            this.textRacaGato.Leave += new System.EventHandler(this.textRacaGato_Leave);
             // 
-            // textBox8
+            // textIdadeGato
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
-            this.textBox8.Location = new System.Drawing.Point(297, 308);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(350, 31);
-            this.textBox8.TabIndex = 2;
-            this.textBox8.Text = "IDADE";
+            this.textIdadeGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textIdadeGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textIdadeGato.Location = new System.Drawing.Point(297, 308);
+            this.textIdadeGato.Name = "textIdadeGato";
+            this.textIdadeGato.Size = new System.Drawing.Size(350, 31);
+            this.textIdadeGato.TabIndex = 2;
+            this.textIdadeGato.Text = "IDADE";
+            this.textIdadeGato.Enter += new System.EventHandler(this.textIdadeGato_Enter);
+            this.textIdadeGato.Leave += new System.EventHandler(this.textIdadeGato_Leave);
             // 
-            // textBox9
+            // textNomeGato
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(297, 212);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(350, 31);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.Text = "NOME";
+            this.textNomeGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNomeGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textNomeGato.Location = new System.Drawing.Point(297, 212);
+            this.textNomeGato.Name = "textNomeGato";
+            this.textNomeGato.Size = new System.Drawing.Size(350, 31);
+            this.textNomeGato.TabIndex = 1;
+            this.textNomeGato.Text = "NOME";
+            this.textNomeGato.Enter += new System.EventHandler(this.textNomeGato_Enter);
+            this.textNomeGato.Leave += new System.EventHandler(this.textNomeGato_Leave);
             // 
-            // textBox10
+            // textIDGato
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(426, 122);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 31);
-            this.textBox10.TabIndex = 0;
-            this.textBox10.Text = "ID";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textIDGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textIDGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textIDGato.Location = new System.Drawing.Point(426, 122);
+            this.textIDGato.Name = "textIDGato";
+            this.textIDGato.Size = new System.Drawing.Size(100, 31);
+            this.textIDGato.TabIndex = 0;
+            this.textIDGato.Text = "ID";
+            this.textIDGato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelCadastrarCachorro
             // 
@@ -457,7 +471,7 @@
             this.Load += new System.EventHandler(this.TelaControleAnimal_Load);
             this.panelControleAnimal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).EndInit();
             this.panelCadastrarGato.ResumeLayout(false);
             this.panelCadastrarGato.PerformLayout();
             this.panelCadastrarCachorro.ResumeLayout(false);
@@ -471,8 +485,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelControleAnimal;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox barraTabelaControleAnimal;
+        private System.Windows.Forms.FlowLayoutPanel flowControleAnimal;
         private System.Windows.Forms.Panel panelCadastrarCachorro;
         private System.Windows.Forms.Button botaoCadastrarCachorro;
         private System.Windows.Forms.TextBox textPorteCachorro;
@@ -481,12 +495,12 @@
         private System.Windows.Forms.TextBox textNomeCachorro;
         private System.Windows.Forms.TextBox textIDCachorro;
         private System.Windows.Forms.Panel panelCadastrarGato;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button botaoCadastrarGato;
+        private System.Windows.Forms.TextBox textPorteGato;
+        private System.Windows.Forms.TextBox textRacaGato;
+        private System.Windows.Forms.TextBox textIdadeGato;
+        private System.Windows.Forms.TextBox textNomeGato;
+        private System.Windows.Forms.TextBox textIDGato;
         private System.Windows.Forms.Button botaoCadastroGato;
         private System.Windows.Forms.Button botaoCadastroCachorro;
         private System.Windows.Forms.Button botaoControleAnimal;
