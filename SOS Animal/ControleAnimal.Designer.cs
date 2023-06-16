@@ -34,6 +34,8 @@
             this.labelRaca = new System.Windows.Forms.Label();
             this.labelPorte = new System.Windows.Forms.Label();
             this.avatarAnimal = new System.Windows.Forms.PictureBox();
+            this.botaoEditar = new System.Windows.Forms.Button();
+            this.botaoRemover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.avatarAnimal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +102,26 @@
             this.avatarAnimal.TabIndex = 5;
             this.avatarAnimal.TabStop = false;
             // 
+            // botaoEditar
+            // 
+            this.botaoEditar.Location = new System.Drawing.Point(690, 11);
+            this.botaoEditar.Name = "botaoEditar";
+            this.botaoEditar.Size = new System.Drawing.Size(55, 33);
+            this.botaoEditar.TabIndex = 6;
+            this.botaoEditar.Text = "button1";
+            this.botaoEditar.UseVisualStyleBackColor = true;
+            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
+            // 
+            // botaoRemover
+            // 
+            this.botaoRemover.Location = new System.Drawing.Point(751, 11);
+            this.botaoRemover.Name = "botaoRemover";
+            this.botaoRemover.Size = new System.Drawing.Size(55, 33);
+            this.botaoRemover.TabIndex = 7;
+            this.botaoRemover.Text = "button2";
+            this.botaoRemover.UseVisualStyleBackColor = true;
+            this.botaoRemover.Click += new System.EventHandler(this.botaoRemover_Click);
+            // 
             // ControleAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +129,8 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.listaControleAnimal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.botaoRemover);
+            this.Controls.Add(this.botaoEditar);
             this.Controls.Add(this.avatarAnimal);
             this.Controls.Add(this.labelPorte);
             this.Controls.Add(this.labelRaca);
@@ -130,5 +154,7 @@
         public System.Windows.Forms.Label labelRaca;
         public System.Windows.Forms.Label labelPorte;
         private System.Windows.Forms.PictureBox avatarAnimal;
+        private System.Windows.Forms.Button botaoEditar;
+        private System.Windows.Forms.Button botaoRemover;
     }
 }

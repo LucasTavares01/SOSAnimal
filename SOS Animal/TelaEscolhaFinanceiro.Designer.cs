@@ -93,7 +93,7 @@
             this.botaoFecharFinanceiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoFecharFinanceiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFecharFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoFecharFinanceiro.Location = new System.Drawing.Point(1124, 12);
+            this.botaoFecharFinanceiro.Location = new System.Drawing.Point(1134, 2);
             this.botaoFecharFinanceiro.Name = "botaoFecharFinanceiro";
             this.botaoFecharFinanceiro.Size = new System.Drawing.Size(44, 44);
             this.botaoFecharFinanceiro.TabIndex = 6;

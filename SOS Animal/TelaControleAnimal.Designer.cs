@@ -284,6 +284,7 @@
             this.panelCadastrarGato.Name = "panelCadastrarGato";
             this.panelCadastrarGato.Size = new System.Drawing.Size(920, 610);
             this.panelCadastrarGato.TabIndex = 4;
+            this.panelCadastrarGato.VisibleChanged += new System.EventHandler(this.panelCadastrarGato_VisibleChanged);
             // 
             // botaoCadastrarGato
             // 
@@ -350,6 +351,7 @@
             // 
             // textIDGato
             // 
+            this.textIDGato.BackColor = System.Drawing.Color.White;
             this.textIDGato.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textIDGato.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold);
             this.textIDGato.Location = new System.Drawing.Point(426, 122);

@@ -19,7 +19,7 @@ namespace SOS_Animal
             InitializeComponent();
         }
 
-        /////////////////////  CRIAR TABELA CONTROLE DE ANIMAIS //////////////////////
+        /////////////////////  CRIAR TABELA CONTROLE DE ANIMAIS //////////////////////  
 
         private void TelaControleAnimal_Load(object sender, EventArgs e)
         {
@@ -75,6 +75,7 @@ namespace SOS_Animal
             }
 
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
+            textIDGato.Enabled = false; // Desativar o campo textIDGato
 
             reader.Close();
         }
@@ -515,6 +516,33 @@ namespace SOS_Animal
             }
         }
 
+        private void panelCadastrarGato_VisibleChanged(object sender, EventArgs e)
+        {
+            if (panelCadastrarGato.Visible)
+            {
+                // Limpar a TextBox de ID
+                textIDGato.Clear();
+
+                try
+                {
+                    // Obter o próximo ID disponível
+                    string query = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'usuários' AND TABLE_NAME = 'controle_de_animais';";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        int nextID = Convert.ToInt32(result);
+                        textIDGato.Text = nextID.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao obter o próximo ID: " + ex.Message);
+                }
+            }
+        }
+
         ////////////////////////// METODOS EM COMUM ///////////////////////////
 
         private void LimparCampoTexto(TextBox textBox, string textoPadrao)
@@ -584,6 +612,5 @@ namespace SOS_Animal
             textRacaGato.Text = "RAÇA";
             textPorteGato.Text = "PORTE";
         }
-
     }
 }
