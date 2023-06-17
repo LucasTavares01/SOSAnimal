@@ -126,6 +126,12 @@
     <Compile Include="ControleAnimal.Designer.cs">
       <DependentUpon>ControleAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despesas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Despesas.Designer.cs">
+      <DependentUpon>Despesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ControleAnimal.resx">
       <DependentUpon>ControleAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despesas.resx">
+      <DependentUpon>Despesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.cs</DependentUpon>
@@ -294,15 +303,6 @@
     <None Include="Imagens\botaoCachorro.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\cadastroCachorro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Imagens\controleAnimal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Imagens\cadastroGato.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Imagens\controleAnimal1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -343,6 +343,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\fundoControleAnimal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\painelLateralFinanceiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoDespesas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoReceitas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\listaDespesasReceitas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastrarDespesas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastrarDespesas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastrarReceitas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cadastrarReceitas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoCadastrarDespesas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoCadastrarReceitas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

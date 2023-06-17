@@ -293,6 +293,46 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cadastrarDespesas1 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarDespesas1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarDespesas2 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarDespesas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarReceitas1 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarReceitas1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadastrarReceitas2 {
+            get {
+                object obj = ResourceManager.GetObject("cadastrarReceitas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cadastroCachorro1 {
             get {
                 object obj = ResourceManager.GetObject("cadastroCachorro1", resourceCulture);
@@ -383,9 +423,39 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fundoCadastrarDespesas {
+            get {
+                object obj = ResourceManager.GetObject("fundoCadastrarDespesas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundoCadastrarReceitas {
+            get {
+                object obj = ResourceManager.GetObject("fundoCadastrarReceitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundoControleAnimal {
             get {
                 object obj = ResourceManager.GetObject("fundoControleAnimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundoDespesas {
+            get {
+                object obj = ResourceManager.GetObject("fundoDespesas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +473,29 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fundoReceitas {
+            get {
+                object obj = ResourceManager.GetObject("fundoReceitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap listaControleAnimal {
             get {
                 object obj = ResourceManager.GetObject("listaControleAnimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap listaDespesasReceitas {
+            get {
+                object obj = ResourceManager.GetObject("listaDespesasReceitas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +516,16 @@ namespace SOS_Animal.Properties {
         internal static System.Drawing.Bitmap painelLateralControleAnimais1 {
             get {
                 object obj = ResourceManager.GetObject("painelLateralControleAnimais1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap painelLateralFinanceiro {
+            get {
+                object obj = ResourceManager.GetObject("painelLateralFinanceiro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

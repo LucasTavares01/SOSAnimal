@@ -38,7 +38,9 @@ namespace SOS_Animal
 
         private void botaoEscolhaFinanceiro_Click(object sender, EventArgs e)
         {
-            
+            TelaFinanceiro telaFinanceiro = new TelaFinanceiro();
+            this.Hide();
+            telaFinanceiro.Show();
         }
 
         private void botaoEscolhaControleAnimal_Click(object sender, EventArgs e)

@@ -422,6 +422,16 @@ namespace SOS_Animal
             RestaurarCampoTexto(textPorteGato, "PORTE");
         }
 
+        private void botaoCadastrarGato_MouseEnter(object sender, EventArgs e)
+        {
+            botaoCadastrarGato.BackgroundImage = Properties.Resources.botaoCadastrarCachorro2;
+        }
+
+        private void botaoCadastrarGato_MouseLeave(object sender, EventArgs e)
+        {
+            botaoCadastrarGato.BackgroundImage = Properties.Resources.botaoCadastrarCachorro1;
+        }
+
         private void botaoCadastrarGato_Click(object sender, EventArgs e)
         {
             try
@@ -621,5 +631,7 @@ namespace SOS_Animal
             this.Hide();
             telaEscolhaCadastro.Show();
         }
+
+        
     }
 }

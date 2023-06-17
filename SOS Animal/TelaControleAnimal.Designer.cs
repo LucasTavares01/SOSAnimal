@@ -319,6 +319,8 @@
             this.botaoCadastrarGato.TabIndex = 5;
             this.botaoCadastrarGato.UseVisualStyleBackColor = true;
             this.botaoCadastrarGato.Click += new System.EventHandler(this.botaoCadastrarGato_Click);
+            this.botaoCadastrarGato.MouseEnter += new System.EventHandler(this.botaoCadastrarGato_MouseEnter);
+            this.botaoCadastrarGato.MouseLeave += new System.EventHandler(this.botaoCadastrarGato_MouseLeave);
             // 
             // textPorteGato
             // 
