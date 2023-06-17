@@ -383,6 +383,16 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fundoControleAnimal {
+            get {
+                object obj = ResourceManager.GetObject("fundoControleAnimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundoGato {
             get {
                 object obj = ResourceManager.GetObject("fundoGato", resourceCulture);

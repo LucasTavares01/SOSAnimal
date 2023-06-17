@@ -102,7 +102,7 @@
             this.botaoFecharCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoFecharCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFecharCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoFecharCadastro.Location = new System.Drawing.Point(1134, 2);
+            this.botaoFecharCadastro.Location = new System.Drawing.Point(1134, 0);
             this.botaoFecharCadastro.Name = "botaoFecharCadastro";
             this.botaoFecharCadastro.Size = new System.Drawing.Size(44, 44);
             this.botaoFecharCadastro.TabIndex = 0;
@@ -118,7 +118,7 @@
             this.botaoVoltarCadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoVoltarCadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
             this.botaoVoltarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoVoltarCadastro.Location = new System.Drawing.Point(326, 2);
+            this.botaoVoltarCadastro.Location = new System.Drawing.Point(326, 0);
             this.botaoVoltarCadastro.Name = "botaoVoltarCadastro";
             this.botaoVoltarCadastro.Size = new System.Drawing.Size(44, 44);
             this.botaoVoltarCadastro.TabIndex = 5;

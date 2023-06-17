@@ -115,7 +115,6 @@ C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\bin\Debug\System.Numerics.Vectors.
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.csproj.CopyComplete
-C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.TelaEscolhaFinanceiro.resources
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.TelaControleAnimal.resources
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.ControleAnimal.resources
 C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\bin\Debug\SOS Animal.exe.config

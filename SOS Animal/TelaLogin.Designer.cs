@@ -105,7 +105,7 @@
             this.botaoFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoFechar.Location = new System.Drawing.Point(1134, 2);
+            this.botaoFechar.Location = new System.Drawing.Point(1134, 0);
             this.botaoFechar.Name = "botaoFechar";
             this.botaoFechar.Size = new System.Drawing.Size(44, 44);
             this.botaoFechar.TabIndex = 1;

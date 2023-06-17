@@ -614,5 +614,12 @@ namespace SOS_Animal
             textRacaGato.Text = "RAÇA";
             textPorteGato.Text = "PORTE";
         }
+
+        private void botaoVoltarCadastro_Click(object sender, EventArgs e)
+        {
+            TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
+            this.Hide();
+            telaEscolhaCadastro.Show();
+        }
     }
 }

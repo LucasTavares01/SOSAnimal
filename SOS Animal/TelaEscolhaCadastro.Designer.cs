@@ -97,7 +97,7 @@
             this.botaoFecharEscolha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoFecharEscolha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(219)))));
             this.botaoFecharEscolha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoFecharEscolha.Location = new System.Drawing.Point(1134, 2);
+            this.botaoFecharEscolha.Location = new System.Drawing.Point(1134, 0);
             this.botaoFecharEscolha.Name = "botaoFecharEscolha";
             this.botaoFecharEscolha.Size = new System.Drawing.Size(44, 44);
             this.botaoFecharEscolha.TabIndex = 3;
