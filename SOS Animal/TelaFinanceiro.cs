@@ -378,12 +378,12 @@ namespace SOS_Animal
 
         private void botaoCadastrarReceitas2_MouseEnter(object sender, EventArgs e)
         {
-            botaoCadastrarReceitas2.BackgroundImage = Properties.Resources.cadastroCachorro2;
+            botaoCadastrarReceitas2.BackgroundImage = Properties.Resources.botaoCadastrarCachorro2;
         }
 
         private void botaoCadastrarReceitas2_MouseLeave(object sender, EventArgs e)
         {
-            botaoCadastrarReceitas2.BackgroundImage = Properties.Resources.cadastroCachorro1;
+            botaoCadastrarReceitas2.BackgroundImage = Properties.Resources.botaoCadastrarCachorro1;
         }
 
         private void botaoCadastrarReceitas2_Click(object sender, EventArgs e)

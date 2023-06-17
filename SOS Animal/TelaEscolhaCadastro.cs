@@ -32,8 +32,9 @@ namespace SOS_Animal
 
         private void botaoEscolhaEstoque_Click(object sender, EventArgs e)
         {
+            TelaControleEstoque telaControleEstoque = new TelaControleEstoque();
             this.Hide();
-            //telacadastro.Show();
+            telaControleEstoque.Show();
         }
 
         private void botaoEscolhaFinanceiro_Click(object sender, EventArgs e)

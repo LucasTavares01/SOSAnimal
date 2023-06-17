@@ -169,3 +169,5 @@ C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.pdb
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.TelaFinanceiro.resources
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.Despesas.resources
 C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.Receitas.resources
+C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.TelaControleEstoque.resources
+C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.ControleEstoque.resources

@@ -126,6 +126,12 @@
     <Compile Include="ControleAnimal.Designer.cs">
       <DependentUpon>ControleAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControleEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleEstoque.Designer.cs">
+      <DependentUpon>ControleEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despesas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="TelaControleAnimal.Designer.cs">
       <DependentUpon>TelaControleAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaControleEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaControleEstoque.Designer.cs">
+      <DependentUpon>TelaControleEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaEscolhaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,9 @@
     <EmbeddedResource Include="ControleAnimal.resx">
       <DependentUpon>ControleAnimal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControleEstoque.resx">
+      <DependentUpon>ControleEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despesas.resx">
       <DependentUpon>Despesas.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaControleAnimal.resx">
       <DependentUpon>TelaControleAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaControleEstoque.resx">
+      <DependentUpon>TelaControleEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaEscolhaCadastro.resx">
       <DependentUpon>TelaEscolhaCadastro.cs</DependentUpon>
@@ -382,6 +400,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\fundoCadastrarReceitas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\fundoCadastrarItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoInserirImagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoInserirImagem2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarItem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoCadastrarItem2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoControleEstoque1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoControleEstoque2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\telaControleEstoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\listaControleEstoque.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

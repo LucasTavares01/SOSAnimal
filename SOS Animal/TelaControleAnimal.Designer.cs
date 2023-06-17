@@ -485,9 +485,9 @@
             this.Controls.Add(this.botaoVoltarCadastro);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panelLateralControleAnimal);
+            this.Controls.Add(this.panelCadastrarCachorro);
             this.Controls.Add(this.panelControleAnimal);
             this.Controls.Add(this.panelCadastrarGato);
-            this.Controls.Add(this.panelCadastrarCachorro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
