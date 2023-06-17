@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,43 +42,15 @@ namespace SOS_Animal
                     "IDADE INT," +
                     "RACA VARCHAR(50)," +
                     "PORTE VARCHAR(50)," +
-                    "GATOCACHORRO VARCHAR(10)" +
+                    "GATOCACHORRO VARCHAR(10)," +
+                    "DADOSIMAGEM BLOB" +
                     ")";
                 MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
                 createTableCommand.ExecuteNonQuery();
-            }
-
-            // Buscar os dados do banco de dados
-            string query = "SELECT ID_ANIMAL, NOME, IDADE, RACA, PORTE, GATOCACHORRO FROM controle_de_animais";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-
-            // Criar os UserPanels e preencher as Labels com os dados
-            while (reader.Read())
-            {
-                string idAnimal = reader["ID_ANIMAL"].ToString();
-                string nome = reader["NOME"].ToString();
-                string idade = reader["IDADE"].ToString();
-                string raca = reader["RACA"].ToString();
-                string porte = reader["PORTE"].ToString();
-                string gatoCachorro = reader["GATOCACHORRO"].ToString();
-
-                // Criar uma instância do UserControl ControleAnimal
-                ControleAnimal controleAnimal = new ControleAnimal();
-                controleAnimal.PreencherLabels(idAnimal, nome, idade, raca, porte);
-
-                // Definir a posição e tamanho do UserControl
-                controleAnimal.Location = new Point(0, 0);
-                controleAnimal.Size = new Size(flowControleAnimal.Width, controleAnimal.Height);
-
-                // Adicionar o ControleAnimal ao FlowLayoutPanel
-                flowControleAnimal.Controls.Add(controleAnimal);
-            }
+            }         
 
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
-            textIDGato.Enabled = false; // Desativar o campo textIDGato
-
-            reader.Close();
+            textIDGato.Enabled = false; // Desativar o campo textIDGato                                        
         }
 
 
@@ -278,7 +251,7 @@ namespace SOS_Animal
                 // Buscar os dados do banco de dados novamente
                 string selectQuery = "SELECT * FROM controle_de_animais";
                 MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
-                MySqlDataReader reader = selectCommand.ExecuteReader();
+                MySqlDataReader reader = selectCommand.ExecuteReader();                  
 
                 // Criar os UserPanels e preencher as Labels com os dados
                 while (reader.Read())
@@ -293,7 +266,7 @@ namespace SOS_Animal
                     // Criar uma instância do UserControl ControleAnimal
                     ControleAnimal controleAnimal = new ControleAnimal();
                     controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
-                    controleAnimal.trocarImagem(GC);
+                    controleAnimal.trocarImagem(GC);                    
 
                     // Definir a posição e tamanho do UserControl
                     controleAnimal.Location = new Point(0, 0);
@@ -601,7 +574,6 @@ namespace SOS_Animal
 
         private void PreencherValoresPadrao()
         {
-
             textNomeCachorro.Text = "NOME";
             textIdadeCachorro.Text = "IDADE";
             textRacaCachorro.Text = "RAÇA";

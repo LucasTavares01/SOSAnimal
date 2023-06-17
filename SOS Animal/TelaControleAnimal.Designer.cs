@@ -463,9 +463,9 @@
             this.ClientSize = new System.Drawing.Size(1180, 660);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelControleAnimal);
             this.Controls.Add(this.panelCadastrarGato);
             this.Controls.Add(this.panelCadastrarCachorro);
-            this.Controls.Add(this.panelControleAnimal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -486,17 +486,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelControleAnimal;
         private System.Windows.Forms.PictureBox barraTabelaControleAnimal;
         private System.Windows.Forms.FlowLayoutPanel flowControleAnimal;
-        private System.Windows.Forms.Panel panelCadastrarCachorro;
         private System.Windows.Forms.Button botaoCadastrarCachorro;
         private System.Windows.Forms.TextBox textPorteCachorro;
         private System.Windows.Forms.TextBox textRacaCachorro;
         private System.Windows.Forms.TextBox textIdadeCachorro;
         private System.Windows.Forms.TextBox textNomeCachorro;
         private System.Windows.Forms.TextBox textIDCachorro;
-        private System.Windows.Forms.Panel panelCadastrarGato;
         private System.Windows.Forms.Button botaoCadastrarGato;
         private System.Windows.Forms.TextBox textPorteGato;
         private System.Windows.Forms.TextBox textRacaGato;
@@ -512,5 +509,8 @@
         private System.Windows.Forms.Button btnOrdenarPorNome;
         private System.Windows.Forms.Button btnOrdenarRaca;
         private System.Windows.Forms.Button btnOrdenarPorId;
+        public System.Windows.Forms.Panel panelControleAnimal;
+        public System.Windows.Forms.Panel panelCadastrarCachorro;
+        public System.Windows.Forms.Panel panelCadastrarGato;
     }
 }

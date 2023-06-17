@@ -110,7 +110,6 @@
             this.botaoEditar.TabIndex = 6;
             this.botaoEditar.Text = "button1";
             this.botaoEditar.UseVisualStyleBackColor = true;
-            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
             // 
             // botaoRemover
             // 
@@ -154,7 +153,7 @@
         public System.Windows.Forms.Label labelRaca;
         public System.Windows.Forms.Label labelPorte;
         private System.Windows.Forms.PictureBox avatarAnimal;
-        private System.Windows.Forms.Button botaoEditar;
         private System.Windows.Forms.Button botaoRemover;
+        public System.Windows.Forms.Button botaoEditar;
     }
 }

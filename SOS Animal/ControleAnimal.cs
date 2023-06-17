@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SOS_Animal
 {
     public partial class ControleAnimal : UserControl
     {
+
         public ControleAnimal()
         {
             InitializeComponent();
@@ -25,8 +27,6 @@ namespace SOS_Animal
             labelIdade.Text = idade;
             labelRaca.Text = raca;
             labelPorte.Text = porte;
-
-
         }
 
         public void trocarImagem(string GC)
@@ -46,8 +46,7 @@ namespace SOS_Animal
                     graphics.DrawImage(originalImage, 0, 0, larguraDesejada, alturaDesejada);
                 }
 
-                avatarAnimal.Image = imagemRedimensionada;
-
+                avatarAnimal.Image = imagemRedimensionada;                
             }
             else if (GC == "1")
             {
@@ -64,16 +63,10 @@ namespace SOS_Animal
                     graphics.DrawImage(originalImage, 0, 0, larguraDesejada, alturaDesejada);
                 }
 
-                avatarAnimal.Image = imagemRedimensionada;
-
+                avatarAnimal.Image = imagemRedimensionada;            
             }
         }
-
-        private void botaoEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void botaoRemover_Click(object sender, EventArgs e)
         {
             // Obtém o contêiner pai do UserControl
@@ -107,6 +100,20 @@ namespace SOS_Animal
                     }
                 }
             }
-
         }
-}}
+
+
+
+        
+
+
+
+
+
+
+
+
+
+    }
+}
+
