@@ -47,7 +47,37 @@ namespace SOS_Animal
                     ")";
                 MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
                 createTableCommand.ExecuteNonQuery();
-            }         
+            }
+
+            // Buscar os dados do banco de dados novamente
+            string selectQuery = "SELECT * FROM controle_de_animais";
+            MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
+            MySqlDataReader reader = selectCommand.ExecuteReader();
+
+            // Criar os UserPanels e preencher as Labels com os dados
+            while (reader.Read())
+            {
+                string idAnimalValue = reader["ID_ANIMAL"].ToString();
+                string nomeValue = reader["NOME"].ToString();
+                string idadeValue = reader["IDADE"].ToString();
+                string racaValue = reader["RACA"].ToString();
+                string porteValue = reader["PORTE"].ToString();
+                string GC = reader["GATOCACHORRO"].ToString();
+
+                // Criar uma instância do UserControl ControleAnimal
+                ControleAnimal controleAnimal = new ControleAnimal();
+                controleAnimal.PreencherLabels(idAnimalValue, nomeValue, idadeValue, racaValue, porteValue);
+                controleAnimal.trocarImagem(GC);
+
+                // Definir a posição e tamanho do UserControl
+                controleAnimal.Location = new Point(0, 0);
+                controleAnimal.Size = new Size(flowControleAnimal.Width, controleAnimal.Height);
+
+                // Adicionar o ControleAnimal ao FlowLayoutPanel
+                flowControleAnimal.Controls.Add(controleAnimal);
+            }
+
+            reader.Close();
 
             textIDCachorro.Enabled = false; // Desativar o campo textIDCachorro
             textIDGato.Enabled = false; // Desativar o campo textIDGato                                        
