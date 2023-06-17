@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaControleAnimal));
             this.botaoVoltarCadastro = new System.Windows.Forms.Button();
             this.botaoFechar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLateralControleAnimal = new System.Windows.Forms.Panel();
             this.botaoCadastroGato = new System.Windows.Forms.Button();
             this.botaoCadastroCachorro = new System.Windows.Forms.Button();
             this.botaoControleAnimal = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.textIdadeCachorro = new System.Windows.Forms.TextBox();
             this.textNomeCachorro = new System.Windows.Forms.TextBox();
             this.textIDCachorro = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.panelLateralControleAnimal.SuspendLayout();
             this.panelControleAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).BeginInit();
             this.panelCadastrarGato.SuspendLayout();
@@ -95,16 +95,16 @@
             this.botaoFechar.UseVisualStyleBackColor = true;
             this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
             // 
-            // panel1
+            // panelLateralControleAnimal
             // 
-            this.panel1.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais1;
-            this.panel1.Controls.Add(this.botaoCadastroGato);
-            this.panel1.Controls.Add(this.botaoCadastroCachorro);
-            this.panel1.Controls.Add(this.botaoControleAnimal);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 660);
-            this.panel1.TabIndex = 0;
+            this.panelLateralControleAnimal.BackgroundImage = global::SOS_Animal.Properties.Resources.painelLateralControleAnimais1;
+            this.panelLateralControleAnimal.Controls.Add(this.botaoCadastroGato);
+            this.panelLateralControleAnimal.Controls.Add(this.botaoCadastroCachorro);
+            this.panelLateralControleAnimal.Controls.Add(this.botaoControleAnimal);
+            this.panelLateralControleAnimal.Location = new System.Drawing.Point(0, 0);
+            this.panelLateralControleAnimal.Name = "panelLateralControleAnimal";
+            this.panelLateralControleAnimal.Size = new System.Drawing.Size(260, 660);
+            this.panelLateralControleAnimal.TabIndex = 0;
             // 
             // botaoCadastroGato
             // 
@@ -482,16 +482,16 @@
             this.ClientSize = new System.Drawing.Size(1180, 660);
             this.Controls.Add(this.botaoVoltarCadastro);
             this.Controls.Add(this.botaoFechar);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelControleAnimal);
+            this.Controls.Add(this.panelLateralControleAnimal);
             this.Controls.Add(this.panelCadastrarGato);
             this.Controls.Add(this.panelCadastrarCachorro);
+            this.Controls.Add(this.panelControleAnimal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaControleAnimal";
             this.Load += new System.EventHandler(this.TelaControleAnimal_Load);
-            this.panel1.ResumeLayout(false);
+            this.panelLateralControleAnimal.ResumeLayout(false);
             this.panelControleAnimal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barraTabelaControleAnimal)).EndInit();
             this.panelCadastrarGato.ResumeLayout(false);
@@ -505,7 +505,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLateralControleAnimal;
         private System.Windows.Forms.PictureBox barraTabelaControleAnimal;
         private System.Windows.Forms.FlowLayoutPanel flowControleAnimal;
         private System.Windows.Forms.Button botaoCadastrarCachorro;

@@ -166,3 +166,4 @@ C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.csproj.CoreCo
 C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.csproj.CopyComplete
 C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.exe
 C:\Users\aluno\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS Animal.pdb
+C:\Users\lucas\Downloads\SOSAnimal\SOS Animal\obj\Debug\SOS_Animal.TelaFinanceiro.resources
