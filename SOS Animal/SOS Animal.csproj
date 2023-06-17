@@ -132,6 +132,12 @@
     <Compile Include="Despesas.Designer.cs">
       <DependentUpon>Despesas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Receitas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Receitas.Designer.cs">
+      <DependentUpon>Receitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despesas.resx">
       <DependentUpon>Despesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receitas.resx">
+      <DependentUpon>Receitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.cs</DependentUpon>

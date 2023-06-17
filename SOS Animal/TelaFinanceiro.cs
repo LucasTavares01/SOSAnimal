@@ -30,10 +30,13 @@ namespace SOS_Animal
             connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            // Verificar se a tabela já existe
+            // Verificar se as tabelas já existem
             string checkTableQuery = "SHOW TABLES LIKE 'despesas'";
+            string checkTableQuery2 = "SHOW TABLES LIKE 'receitas'";
             MySqlCommand checkTableCommand = new MySqlCommand(checkTableQuery, connection);
+            MySqlCommand checkTableCommand2 = new MySqlCommand(checkTableQuery2, connection);
             object result = checkTableCommand.ExecuteScalar();
+            object result2 = checkTableCommand2.ExecuteScalar();
 
             if (result == null) // A tabela não existe, então vamos criá-la
             {
@@ -49,40 +52,81 @@ namespace SOS_Animal
                 createTableCommand.ExecuteNonQuery();
             }
 
+            if (result2 == null) // A tabela não existe, então vamos criá-la
+            {
+                // Criar a tabela receitas
+                string createTableQuery2 = "CREATE TABLE receitas (" +
+                    "ID_RECEITAS INT AUTO_INCREMENT PRIMARY KEY," +
+                    "DATA VARCHAR(50)," +
+                    "CATEGORIA VARCHAR(50)," +
+                    "VALOR VARCHAR(50)," +
+                    "DESCRICAO VARCHAR(50)" +
+                    ")";
+                MySqlCommand createTableCommand2 = new MySqlCommand(createTableQuery2, connection);
+                createTableCommand2.ExecuteNonQuery();
+            }
+
             // Buscar os dados do banco de dados novamente
             string selectQuery = "SELECT * FROM despesas";
+            string selectQuery2 = "SELECT * FROM receitas";
             MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
+            MySqlCommand selectCommand2 = new MySqlCommand(selectQuery2, connection);
             MySqlDataReader reader = selectCommand.ExecuteReader();
 
             // Criar os UserPanels e preencher as Labels com os dados
             while (reader.Read())
-            {                
+            {
                 string dataValue = reader["DATA"].ToString();
                 string categoriaValue = reader["CATEGORIA"].ToString();
                 string valorValue = reader["VALOR"].ToString();
                 string descricaoValue = reader["DESCRICAO"].ToString();
 
-
-                // Criar uma instância do UserControl ControleAnimal
+                // Criar uma instância do UserControl Despesas
                 Despesas despesas = new Despesas();
                 despesas.PreencherLabels(dataValue, categoriaValue, valorValue, descricaoValue);
-                //despesas.trocarImagem(GC);
 
                 // Definir a posição e tamanho do UserControl
                 despesas.Location = new Point(0, 0);
                 despesas.Size = new Size(flowDespesas.Width, despesas.Height);
 
-                // Adicionar o ControleAnimal ao FlowLayoutPanel
+                // Adicionar o ControleAnimal ao FlowDespesas
                 flowDespesas.Controls.Add(despesas);
             }
 
-            reader.Close();                                                   
+            reader.Close(); // Fechar o primeiro MySqlDataReader
+
+            MySqlDataReader reader2 = selectCommand2.ExecuteReader();
+
+            // Criar os UserPanels e preencher as Labels com os dados
+            while (reader2.Read())
+            {
+                string dataValue2 = reader2["DATA"].ToString();
+                string categoriaValue2 = reader2["CATEGORIA"].ToString();
+                string valorValue2 = reader2["VALOR"].ToString();
+                string descricaoValue2 = reader2["DESCRICAO"].ToString();
+
+                // Criar uma instância do UserControl Receitas
+                Receitas receitas = new Receitas();
+                receitas.PreencherLabels(dataValue2, categoriaValue2, valorValue2, descricaoValue2);
+
+                // Definir a posição e tamanho do UserControl
+                receitas.Location = new Point(0, 0);
+                receitas.Size = new Size(flowDespesas.Width, receitas.Height);
+
+                // Adicionar o ControleAnimal ao FlowReceitas
+                flowReceitas.Controls.Add(receitas);
+            }
+
+            reader2.Close();
         }
 
-        private void AtualizarControlesOrdenados(List<ControleAnimal> controles)
+
+
+
+        private void AtualizarControlesOrdenados(List<Despesas> controles)
         {
             flowDespesas.Controls.Clear();
-            foreach (ControleAnimal controle in controles)
+            foreach (Despesas controle in controles)
             {
                 flowDespesas.Controls.Add(controle);
             }
@@ -188,8 +232,8 @@ namespace SOS_Animal
 
         private void btnOrdenarPorData_Click(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowDespesas.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            List<Despesas> controles = flowDespesas.Controls.OfType<Despesas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelData.Text, c2.labelData.Text));
             AtualizarControlesOrdenados(controles);
 
             AtualizarImagemFiltro(btnOrdenarPorData);
@@ -197,8 +241,8 @@ namespace SOS_Animal
 
         private void btnOrdenarPorCategoria_Click(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowDespesas.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            List<Despesas> controles = flowDespesas.Controls.OfType<Despesas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelCategoria.Text, c2.labelCategoria.Text));
             AtualizarControlesOrdenados(controles);
 
             AtualizarImagemFiltro(btnOrdenarPorCategoria);
@@ -206,8 +250,8 @@ namespace SOS_Animal
 
         private void btnOrdenarPorValor_Click(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowDespesas.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            List<Despesas> controles = flowDespesas.Controls.OfType<Despesas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelValor.Text, c2.labelValor.Text));
             AtualizarControlesOrdenados(controles);
 
             AtualizarImagemFiltro(btnOrdenarPorValor);
@@ -215,8 +259,8 @@ namespace SOS_Animal
 
         private void btnOrdenarDescricao_Click(object sender, EventArgs e)
         {
-            List<ControleAnimal> controles = flowDespesas.Controls.OfType<ControleAnimal>().ToList();
-            controles.Sort((c1, c2) => int.Parse(c1.labelID.Text).CompareTo(int.Parse(c2.labelID.Text)));
+            List<Despesas> controles = flowDespesas.Controls.OfType<Despesas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelDescricao.Text, c2.labelDescricao.Text));
             AtualizarControlesOrdenados(controles);
 
             AtualizarImagemFiltro(btnOrdenarDescricao);
@@ -295,7 +339,7 @@ namespace SOS_Animal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar gato: " + ex.Message);
+                MessageBox.Show("Erro ao cadastrar Despesa: " + ex.Message);
             }
         }
 
@@ -344,7 +388,69 @@ namespace SOS_Animal
 
         private void botaoCadastrarReceitas2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Obter os valores das TextBoxes
+                string data = textDataReceitas.Text;
+                string categoria = textCategoriaReceitas.Text;
+                string valor = textValorReceitas.Text;
+                string descricao = textDescricaoReceitas.Text;
 
+                // Inserir os dados na tabela receitas
+                string query = "INSERT INTO receitas (DATA, CATEGORIA, VALOR, DESCRICAO) " +
+                    "VALUES (@DATA, @CATEGORIA, @VALOR, @DESCRICAO)";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@DATA", data);
+                command.Parameters.AddWithValue("@CATEGORIA", categoria);
+                command.Parameters.AddWithValue("@VALOR", valor);
+                command.Parameters.AddWithValue("@DESCRICAO", descricao);
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro de receita realizado com sucesso!");
+
+                // Limpar as TextBoxes após o cadastro
+                LimparTextBoxes();
+
+                PreencherValoresPadrao();
+
+                // Remover todos os controles do FlowLayoutPanel
+                flowReceitas.Controls.Clear();
+
+                // Buscar os dados do banco de dados novamente
+                string selectQuery = "SELECT * FROM receitas";
+                MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = selectCommand.ExecuteReader();
+
+                // Criar os UserPanels e preencher as Labels com os dados
+                while (reader.Read())
+                {
+                    string dataValue = reader["DATA"].ToString();
+                    string categoriaValue = reader["CATEGORIA"].ToString();
+                    string valorValue = reader["VALOR"].ToString();
+                    string descricaoValue = reader["DESCRICAO"].ToString();
+
+
+                    // Criar uma instância do UserControl ControleAnimal
+                    Receitas receitas = new Receitas();
+                    receitas.PreencherLabels(dataValue, categoriaValue, valorValue, descricaoValue);
+                    //receitas.trocarImagem(GC);
+
+                    // Definir a posição e tamanho do UserControl
+                    receitas.Location = new Point(0, 0);
+                    receitas.Size = new Size(flowReceitas.Width, receitas.Height);
+
+                    // Adicionar o ControleAnimal ao FlowLayoutPanel
+                    flowReceitas.Controls.Add(receitas);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar Receita: " + ex.Message);
+            }
         }
 
         private void textDataDespesas_Enter(object sender, EventArgs e)
@@ -385,6 +491,46 @@ namespace SOS_Animal
         private void textDescricaoDespesas_Leave(object sender, EventArgs e)
         {
             RestaurarCampoTexto(textDescricaoDespesas, "DESCRIÇÃO");
+        }
+
+        private void textDataReceitas_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textDataReceitas, "DATA");
+        }
+
+        private void textDataReceitas_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textDataReceitas, "DATA");
+        }
+
+        private void textCategoriaReceitas_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textCategoriaReceitas, "CATEGORIA");
+        }
+
+        private void textCategoriaReceitas_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textCategoriaReceitas, "CATEGORIA");
+        }
+
+        private void textValorReceitas_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textValorReceitas, "VALOR");
+        }
+
+        private void textValorReceitas_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textValorReceitas, "VALOR");
+        }
+
+        private void textDescricaoReceitas_Enter(object sender, EventArgs e)
+        {
+            LimparCampoTexto(textDescricaoReceitas, "DESCRIÇÃO");
+        }
+
+        private void textDescricaoReceitas_Leave(object sender, EventArgs e)
+        {
+            RestaurarCampoTexto(textDescricaoReceitas, "DESCRIÇÃO");
         }
     }
 }

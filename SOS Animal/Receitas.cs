@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SOS_Animal
 {
-    public partial class Despesas : UserControl
-    {       
-        public Despesas()
+    public partial class Receitas : UserControl
+    {
+        public Receitas()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace SOS_Animal
             labelData.Text = data;
             labelCategoria.Text = categoria;
             labelValor.Text = valor;
-            labelDescricao.Text = descricao;            
+            labelDescricao.Text = descricao;
         }
 
         private void botaoRemover_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace SOS_Animal
                     connection.Open();
 
                     // Constrói a instrução SQL para excluir o registro do banco de dados
-                    string sql = "DELETE FROM despesas WHERE DATA = @DATA";
+                    string sql = "DELETE FROM receitas WHERE DATA = @DATA";
 
 
                     using (MySqlCommand command = new MySqlCommand(sql, connection))
@@ -61,94 +61,5 @@ namespace SOS_Animal
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //private void botaoRemover_Click(object sender, EventArgs e)
-        //{
-        //    // Obtém o contêiner pai do UserControl
-        //    var parentContainer = this.Parent as Panel;
-
-        //    if (parentContainer != null)
-        //    {
-        //        // Remove o UserControl do contêiner pai
-        //        parentContainer.Controls.Remove(this);
-
-        //        // Obtém o ID do animal que está sendo removido
-        //        string idAnimal = labelID.Text;
-
-        //        // Realiza a exclusão do registro no banco de dados
-        //        string connectionString = "Server=localhost;Database=usuários;Uid=root;Pwd=;";
-        //        using (MySqlConnection connection = new MySqlConnection(connectionString))
-        //        {
-        //            connection.Open();
-
-        //            // Constrói a instrução SQL para excluir o registro do banco de dados
-        //            string sql = "DELETE FROM controle_de_animais WHERE ID_ANIMAL = @id";
-
-
-        //            using (MySqlCommand command = new MySqlCommand(sql, connection))
-        //            {
-        //                // Define o parâmetro @id na instrução SQL com o valor do ID do animal
-        //                command.Parameters.AddWithValue("@id", idAnimal);
-
-        //                // Executa a instrução SQL
-        //                command.ExecuteNonQuery();
-        //            }
-        //        }
-        //    }
-        //}
-
-    }  
+    }
 }
