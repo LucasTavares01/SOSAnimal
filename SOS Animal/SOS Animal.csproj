@@ -428,6 +428,21 @@
   <ItemGroup>
     <None Include="Imagens\listaControleEstoque.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoDeletar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoDeletar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoEditar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\botaoEditar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\brinquedosPet.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

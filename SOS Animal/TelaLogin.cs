@@ -66,30 +66,52 @@ namespace SOS_Animal
             string senha = campoSenhaLogin.Text;
 
             string connectionString = "Server=localhost;Database=usuários;Uid=root;Pwd=;";
-            string query = "SELECT * FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+
+            // Verificar se a tabela Usuarios existe
+            string checkTableQuery = "SHOW TABLES LIKE 'Usuarios'";
+            bool tabelaUsuariosExiste;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
-            using (MySqlCommand command = new MySqlCommand(query, connection))
+            using (MySqlCommand checkTableCommand = new MySqlCommand(checkTableQuery, connection))
             {
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Senha", senha);
-
                 connection.Open();
-                using (MySqlDataReader reader = command.ExecuteReader())
+                object result = checkTableCommand.ExecuteScalar();
+                tabelaUsuariosExiste = (result != null);
+            }
+
+            if (tabelaUsuariosExiste)
+            {
+                string query = "SELECT * FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    if (reader.Read())
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Senha", senha);
+
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
-                        this.Hide();
-                        telaEscolhaCadastro.Show();
-                    }
-                    else
-                    {
-                        avisoErroLogin.Visible = true;
+                        if (reader.Read())
+                        {
+                            TelaEscolhaCadastro telaEscolhaCadastro = new TelaEscolhaCadastro();
+                            this.Hide();
+                            telaEscolhaCadastro.Show();
+                        }
+                        else
+                        {
+                            avisoErroLogin.Visible = true;
+                        }
                     }
                 }
             }
+
+            else
+            {
+                avisoErroLogin.Visible = true;
+            }
         }
+
 
         private void LimparCampoTexto(TextBox textBox, string textoPadrao)
         {
@@ -155,6 +177,15 @@ namespace SOS_Animal
             {
                 e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
                 botaoEntrarLogin.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void campoEmailLogin_TextChanged(object sender, EventArgs e)
+        {
+            if (campoEmailLogin.Text != "E-MAIL")
+            {
+                campoEmailLogin.Text = campoEmailLogin.Text.ToLower();
+                campoEmailLogin.SelectionStart = campoEmailLogin.Text.Length;
             }
         }
     }

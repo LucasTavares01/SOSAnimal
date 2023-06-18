@@ -105,6 +105,7 @@
             this.panelLateralControleAnimal.Name = "panelLateralControleAnimal";
             this.panelLateralControleAnimal.Size = new System.Drawing.Size(260, 660);
             this.panelLateralControleAnimal.TabIndex = 0;
+            this.panelLateralControleAnimal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLateralControleAnimal_MouseDown);
             // 
             // botaoCadastroGato
             // 
@@ -204,6 +205,7 @@
             this.textPorteGato.Size = new System.Drawing.Size(350, 31);
             this.textPorteGato.TabIndex = 4;
             this.textPorteGato.Text = "PORTE";
+            this.textPorteGato.TextChanged += new System.EventHandler(this.textPorteGato_TextChanged);
             this.textPorteGato.Enter += new System.EventHandler(this.textPorteGato_Enter);
             this.textPorteGato.Leave += new System.EventHandler(this.textPorteGato_Leave);
             // 
@@ -216,6 +218,7 @@
             this.textRacaGato.Size = new System.Drawing.Size(350, 31);
             this.textRacaGato.TabIndex = 3;
             this.textRacaGato.Text = "RAÇA";
+            this.textRacaGato.TextChanged += new System.EventHandler(this.textRacaGato_TextChanged);
             this.textRacaGato.Enter += new System.EventHandler(this.textRacaGato_Enter);
             this.textRacaGato.Leave += new System.EventHandler(this.textRacaGato_Leave);
             // 
@@ -228,6 +231,7 @@
             this.textIdadeGato.Size = new System.Drawing.Size(350, 31);
             this.textIdadeGato.TabIndex = 2;
             this.textIdadeGato.Text = "IDADE";
+            this.textIdadeGato.TextChanged += new System.EventHandler(this.textIdadeGato_TextChanged);
             this.textIdadeGato.Enter += new System.EventHandler(this.textIdadeGato_Enter);
             this.textIdadeGato.Leave += new System.EventHandler(this.textIdadeGato_Leave);
             // 
@@ -240,6 +244,7 @@
             this.textNomeGato.Size = new System.Drawing.Size(350, 31);
             this.textNomeGato.TabIndex = 1;
             this.textNomeGato.Text = "NOME";
+            this.textNomeGato.TextChanged += new System.EventHandler(this.textNomeGato_TextChanged);
             this.textNomeGato.Enter += new System.EventHandler(this.textNomeGato_Enter);
             this.textNomeGato.Leave += new System.EventHandler(this.textNomeGato_Leave);
             // 
@@ -269,6 +274,7 @@
             this.panelCadastrarCachorro.Size = new System.Drawing.Size(920, 610);
             this.panelCadastrarCachorro.TabIndex = 3;
             this.panelCadastrarCachorro.VisibleChanged += new System.EventHandler(this.panelCadastrarCachorro_VisibleChanged);
+            this.panelCadastrarCachorro.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCadastrarCachorro_MouseDown);
             // 
             // botaoCadastrarCachorro
             // 
@@ -298,6 +304,7 @@
             this.textPorteCachorro.Size = new System.Drawing.Size(350, 31);
             this.textPorteCachorro.TabIndex = 4;
             this.textPorteCachorro.Text = "PORTE";
+            this.textPorteCachorro.TextChanged += new System.EventHandler(this.textPorteCachorro_TextChanged);
             this.textPorteCachorro.Enter += new System.EventHandler(this.textPorteCachorro_Enter);
             this.textPorteCachorro.Leave += new System.EventHandler(this.textPorteCachorro_Leave);
             // 
@@ -310,6 +317,7 @@
             this.textRacaCachorro.Size = new System.Drawing.Size(350, 31);
             this.textRacaCachorro.TabIndex = 3;
             this.textRacaCachorro.Text = "RAÇA";
+            this.textRacaCachorro.TextChanged += new System.EventHandler(this.textRacaCachorro_TextChanged);
             this.textRacaCachorro.Enter += new System.EventHandler(this.textRacaCachorro_Enter);
             this.textRacaCachorro.Leave += new System.EventHandler(this.textRacaCachorro_Leave);
             // 
@@ -322,6 +330,7 @@
             this.textIdadeCachorro.Size = new System.Drawing.Size(350, 31);
             this.textIdadeCachorro.TabIndex = 2;
             this.textIdadeCachorro.Text = "IDADE";
+            this.textIdadeCachorro.TextChanged += new System.EventHandler(this.textIdadeCachorro_TextChanged);
             this.textIdadeCachorro.Enter += new System.EventHandler(this.textIdadeCachorro_Enter);
             this.textIdadeCachorro.Leave += new System.EventHandler(this.textIdadeCachorro_Leave);
             // 
@@ -334,6 +343,7 @@
             this.textNomeCachorro.Size = new System.Drawing.Size(350, 31);
             this.textNomeCachorro.TabIndex = 1;
             this.textNomeCachorro.Text = "NOME";
+            this.textNomeCachorro.TextChanged += new System.EventHandler(this.textNomeCachorro_TextChanged);
             this.textNomeCachorro.Enter += new System.EventHandler(this.textNomeCachorro_Enter);
             this.textNomeCachorro.Leave += new System.EventHandler(this.textNomeCachorro_Leave);
             // 
@@ -485,9 +495,9 @@
             this.Controls.Add(this.botaoVoltarCadastro);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panelLateralControleAnimal);
-            this.Controls.Add(this.panelCadastrarCachorro);
             this.Controls.Add(this.panelControleAnimal);
             this.Controls.Add(this.panelCadastrarGato);
+            this.Controls.Add(this.panelCadastrarCachorro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

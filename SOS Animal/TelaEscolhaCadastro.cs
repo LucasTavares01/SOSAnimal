@@ -35,6 +35,7 @@ namespace SOS_Animal
             TelaControleEstoque telaControleEstoque = new TelaControleEstoque();
             this.Hide();
             telaControleEstoque.Show();
+            telaControleEstoque.panelControleEstoque.Visible = true;
         }
 
         private void botaoEscolhaFinanceiro_Click(object sender, EventArgs e)
@@ -42,12 +43,16 @@ namespace SOS_Animal
             TelaFinanceiro telaFinanceiro = new TelaFinanceiro();
             this.Hide();
             telaFinanceiro.Show();
+            telaFinanceiro.panelDespesas.Visible = true;
         }
 
         private void botaoEscolhaControleAnimal_Click(object sender, EventArgs e)
         {
             this.Hide();
             telacontroleanimal.Show();
+            telacontroleanimal.panelCadastrarCachorro.Visible = false;
+            telacontroleanimal.panelCadastrarGato.Visible = false;
+            telacontroleanimal.panelControleAnimal.Visible = true;
         }
 
         private void botaoEscolhaEstoque_MouseEnter(object sender, EventArgs e)

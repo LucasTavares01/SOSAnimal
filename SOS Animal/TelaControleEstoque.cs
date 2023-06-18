@@ -163,9 +163,17 @@ namespace SOS_Animal
             try
             {
                 // Obter a imagem selecionada
-                Image imagem = picboxItem.Image;
+                Image imagem;
+                if (picboxItem.Image != null)
+                {
+                    imagem = picboxItem.Image;
+                }
+                else
+                {
+                    // Carregar a imagem "brinquedosPet" dos recursos
+                    imagem = Properties.Resources.brinquedosPet;
+                }
 
-                // Converter a imagem em bytes
                 byte[] imagemBytes = null;
                 using (MemoryStream stream = new MemoryStream())
                 {
@@ -280,6 +288,7 @@ namespace SOS_Animal
             textNomeItem.Text = "";
             textDescricaoItem.Text = "";
             textDoadoPorItem.Text = "";
+            picboxItem.Image = null;
         }
 
         private void PreencherValoresPadrao()

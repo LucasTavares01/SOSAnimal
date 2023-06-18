@@ -92,11 +92,16 @@
             // 
             // botaoRemover
             // 
+            this.botaoRemover.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoDeletar1;
+            this.botaoRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoRemover.FlatAppearance.BorderSize = 0;
+            this.botaoRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botaoRemover.Location = new System.Drawing.Point(746, 64);
             this.botaoRemover.Name = "botaoRemover";
-            this.botaoRemover.Size = new System.Drawing.Size(55, 33);
+            this.botaoRemover.Size = new System.Drawing.Size(30, 30);
             this.botaoRemover.TabIndex = 9;
-            this.botaoRemover.Text = "button2";
             this.botaoRemover.UseVisualStyleBackColor = true;
             this.botaoRemover.Click += new System.EventHandler(this.botaoRemover_Click);
             this.botaoRemover.MouseEnter += new System.EventHandler(this.botaoRemover_MouseEnter);
@@ -104,11 +109,16 @@
             // 
             // botaoEditar
             // 
-            this.botaoEditar.Location = new System.Drawing.Point(685, 64);
+            this.botaoEditar.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoEditar1;
+            this.botaoEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.botaoEditar.FlatAppearance.BorderSize = 0;
+            this.botaoEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botaoEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.botaoEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoEditar.Location = new System.Drawing.Point(716, 64);
             this.botaoEditar.Name = "botaoEditar";
-            this.botaoEditar.Size = new System.Drawing.Size(55, 33);
+            this.botaoEditar.Size = new System.Drawing.Size(30, 30);
             this.botaoEditar.TabIndex = 8;
-            this.botaoEditar.Text = "button1";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
             this.botaoEditar.MouseEnter += new System.EventHandler(this.botaoEditar_MouseEnter);

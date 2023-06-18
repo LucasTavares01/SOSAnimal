@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaControleEstoque));
             this.botaoVoltarCadastro = new System.Windows.Forms.Button();
             this.botaoFechar = new System.Windows.Forms.Button();
             this.panelLateralControleEstoque = new System.Windows.Forms.Panel();
             this.botaoCadastrarItem = new System.Windows.Forms.Button();
             this.botaoControleEstoque = new System.Windows.Forms.Button();
-            this.panelControleEstoque = new System.Windows.Forms.Panel();
-            this.flowControleEstoque = new System.Windows.Forms.FlowLayoutPanel();
             this.panelCadastrarItem = new System.Windows.Forms.Panel();
             this.picboxItem = new System.Windows.Forms.PictureBox();
             this.botaoInserirImagem = new System.Windows.Forms.Button();
@@ -43,10 +42,17 @@
             this.textNomeItem = new System.Windows.Forms.TextBox();
             this.textDataItem = new System.Windows.Forms.TextBox();
             this.botaoCadastrarItem2 = new System.Windows.Forms.Button();
+            this.panelControleEstoque = new System.Windows.Forms.Panel();
+            this.flowControleEstoque = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnOrdenarPorId = new System.Windows.Forms.Button();
+            this.btnOrdenarRaca = new System.Windows.Forms.Button();
+            this.btnOrdenarPorPorte = new System.Windows.Forms.Button();
+            this.btnOrdenarPorIdade = new System.Windows.Forms.Button();
+            this.btnOrdenarPorNome = new System.Windows.Forms.Button();
             this.panelLateralControleEstoque.SuspendLayout();
-            this.panelControleEstoque.SuspendLayout();
             this.panelCadastrarItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
+            this.panelControleEstoque.SuspendLayout();
             this.SuspendLayout();
             // 
             // botaoVoltarCadastro
@@ -128,25 +134,6 @@
             this.botaoControleEstoque.Click += new System.EventHandler(this.botaoControleEstoque_Click);
             this.botaoControleEstoque.MouseEnter += new System.EventHandler(this.botaoControleEstoque_MouseEnter);
             this.botaoControleEstoque.MouseLeave += new System.EventHandler(this.botaoControleEstoque_MouseLeave);
-            // 
-            // panelControleEstoque
-            // 
-            this.panelControleEstoque.BackgroundImage = global::SOS_Animal.Properties.Resources.telaControleEstoque;
-            this.panelControleEstoque.Controls.Add(this.flowControleEstoque);
-            this.panelControleEstoque.Location = new System.Drawing.Point(260, 0);
-            this.panelControleEstoque.Name = "panelControleEstoque";
-            this.panelControleEstoque.Size = new System.Drawing.Size(920, 660);
-            this.panelControleEstoque.TabIndex = 14;
-            // 
-            // flowControleEstoque
-            // 
-            this.flowControleEstoque.AutoScroll = true;
-            this.flowControleEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.flowControleEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flowControleEstoque.Location = new System.Drawing.Point(60, 220);
-            this.flowControleEstoque.Name = "flowControleEstoque";
-            this.flowControleEstoque.Size = new System.Drawing.Size(810, 400);
-            this.flowControleEstoque.TabIndex = 1;
             // 
             // panelCadastrarItem
             // 
@@ -257,6 +244,115 @@
             this.botaoCadastrarItem2.MouseEnter += new System.EventHandler(this.botaoCadastrarItem2_MouseEnter);
             this.botaoCadastrarItem2.MouseLeave += new System.EventHandler(this.botaoCadastrarItem2_MouseLeave);
             // 
+            // panelControleEstoque
+            // 
+            this.panelControleEstoque.BackgroundImage = global::SOS_Animal.Properties.Resources.telaControleEstoque;
+            this.panelControleEstoque.Controls.Add(this.btnOrdenarPorId);
+            this.panelControleEstoque.Controls.Add(this.btnOrdenarRaca);
+            this.panelControleEstoque.Controls.Add(this.btnOrdenarPorPorte);
+            this.panelControleEstoque.Controls.Add(this.btnOrdenarPorIdade);
+            this.panelControleEstoque.Controls.Add(this.btnOrdenarPorNome);
+            this.panelControleEstoque.Controls.Add(this.flowControleEstoque);
+            this.panelControleEstoque.Location = new System.Drawing.Point(260, 0);
+            this.panelControleEstoque.Name = "panelControleEstoque";
+            this.panelControleEstoque.Size = new System.Drawing.Size(920, 660);
+            this.panelControleEstoque.TabIndex = 14;
+            // 
+            // flowControleEstoque
+            // 
+            this.flowControleEstoque.AutoScroll = true;
+            this.flowControleEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.flowControleEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowControleEstoque.Location = new System.Drawing.Point(60, 220);
+            this.flowControleEstoque.Name = "flowControleEstoque";
+            this.flowControleEstoque.Size = new System.Drawing.Size(810, 400);
+            this.flowControleEstoque.TabIndex = 1;
+            // 
+            // btnOrdenarPorId
+            // 
+            this.btnOrdenarPorId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorId.BackgroundImage = global::SOS_Animal.Properties.Resources.filtro1;
+            this.btnOrdenarPorId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorId.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorId.FlatAppearance.BorderSize = 0;
+            this.btnOrdenarPorId.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorId.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorId.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenarPorId.Location = new System.Drawing.Point(71, 181);
+            this.btnOrdenarPorId.Name = "btnOrdenarPorId";
+            this.btnOrdenarPorId.Size = new System.Drawing.Size(20, 20);
+            this.btnOrdenarPorId.TabIndex = 14;
+            this.btnOrdenarPorId.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdenarRaca
+            // 
+            this.btnOrdenarRaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarRaca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarRaca.BackgroundImage")));
+            this.btnOrdenarRaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarRaca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarRaca.FlatAppearance.BorderSize = 0;
+            this.btnOrdenarRaca.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarRaca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarRaca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarRaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenarRaca.Location = new System.Drawing.Point(444, 181);
+            this.btnOrdenarRaca.Name = "btnOrdenarRaca";
+            this.btnOrdenarRaca.Size = new System.Drawing.Size(20, 20);
+            this.btnOrdenarRaca.TabIndex = 13;
+            this.btnOrdenarRaca.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdenarPorPorte
+            // 
+            this.btnOrdenarPorPorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorPorte.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorPorte.BackgroundImage")));
+            this.btnOrdenarPorPorte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorPorte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorPorte.FlatAppearance.BorderSize = 0;
+            this.btnOrdenarPorPorte.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorPorte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorPorte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorPorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenarPorPorte.Location = new System.Drawing.Point(587, 181);
+            this.btnOrdenarPorPorte.Name = "btnOrdenarPorPorte";
+            this.btnOrdenarPorPorte.Size = new System.Drawing.Size(20, 20);
+            this.btnOrdenarPorPorte.TabIndex = 12;
+            this.btnOrdenarPorPorte.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdenarPorIdade
+            // 
+            this.btnOrdenarPorIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorIdade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorIdade.BackgroundImage")));
+            this.btnOrdenarPorIdade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorIdade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorIdade.FlatAppearance.BorderSize = 0;
+            this.btnOrdenarPorIdade.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorIdade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorIdade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorIdade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenarPorIdade.Location = new System.Drawing.Point(299, 181);
+            this.btnOrdenarPorIdade.Name = "btnOrdenarPorIdade";
+            this.btnOrdenarPorIdade.Size = new System.Drawing.Size(20, 20);
+            this.btnOrdenarPorIdade.TabIndex = 11;
+            this.btnOrdenarPorIdade.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdenarPorNome
+            // 
+            this.btnOrdenarPorNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrdenarPorNome.BackgroundImage")));
+            this.btnOrdenarPorNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnOrdenarPorNome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorNome.FlatAppearance.BorderSize = 0;
+            this.btnOrdenarPorNome.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnOrdenarPorNome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorNome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(29)))), ((int)(((byte)(66)))));
+            this.btnOrdenarPorNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenarPorNome.Location = new System.Drawing.Point(204, 181);
+            this.btnOrdenarPorNome.Name = "btnOrdenarPorNome";
+            this.btnOrdenarPorNome.Size = new System.Drawing.Size(20, 20);
+            this.btnOrdenarPorNome.TabIndex = 10;
+            this.btnOrdenarPorNome.UseVisualStyleBackColor = false;
+            // 
             // TelaControleEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,18 +361,18 @@
             this.Controls.Add(this.botaoVoltarCadastro);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panelLateralControleEstoque);
-            this.Controls.Add(this.panelCadastrarItem);
             this.Controls.Add(this.panelControleEstoque);
+            this.Controls.Add(this.panelCadastrarItem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaControleEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaControleEstoque";
             this.Load += new System.EventHandler(this.TelaControleEstoque_Load);
             this.panelLateralControleEstoque.ResumeLayout(false);
-            this.panelControleEstoque.ResumeLayout(false);
             this.panelCadastrarItem.ResumeLayout(false);
             this.panelCadastrarItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).EndInit();
+            this.panelControleEstoque.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,9 +390,14 @@
         private System.Windows.Forms.Button botaoCadastrarItem2;
         private System.Windows.Forms.Button botaoInserirImagem;
         private System.Windows.Forms.PictureBox picboxItem;
-        private System.Windows.Forms.Panel panelControleEstoque;
         private System.Windows.Forms.Button botaoVoltarCadastro;
         private System.Windows.Forms.Button botaoFechar;
         private System.Windows.Forms.FlowLayoutPanel flowControleEstoque;
+        public System.Windows.Forms.Panel panelControleEstoque;
+        private System.Windows.Forms.Button btnOrdenarPorId;
+        private System.Windows.Forms.Button btnOrdenarRaca;
+        private System.Windows.Forms.Button btnOrdenarPorPorte;
+        private System.Windows.Forms.Button btnOrdenarPorIdade;
+        private System.Windows.Forms.Button btnOrdenarPorNome;
     }
 }

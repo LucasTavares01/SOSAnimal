@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -241,6 +242,14 @@ namespace SOS_Animal
 
         private void botaoCadastrarCachorro_Click(object sender, EventArgs e)
         {
+            // Verificar se os valores das labels são inválidos
+            if (textNomeCachorro.Text.ToUpper() == "NOME" || textIdadeCachorro.Text.ToUpper() == "IDADE" ||
+                textRacaCachorro.Text.ToUpper() == "RAÇA" || textPorteCachorro.Text.ToUpper() == "PORTE")
+            {
+                MessageBox.Show("Os dados são inválidos. Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
             try
             {
                 // Obter os valores das TextBoxes
@@ -434,6 +443,14 @@ namespace SOS_Animal
 
         private void botaoCadastrarGato_Click(object sender, EventArgs e)
         {
+            // Verificar se os valores das labels são inválidos
+            if (textNomeGato.Text.ToUpper() == "NOME" || textIdadeGato.Text.ToUpper() == "IDADE" ||
+                textRacaGato.Text.ToUpper() == "RAÇA" || textPorteGato.Text.ToUpper() == "PORTE")
+            {
+                MessageBox.Show("Os dados são inválidos. Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
             try
             {
                 // Obter os valores das TextBoxes
@@ -632,6 +649,264 @@ namespace SOS_Animal
             telaEscolhaCadastro.Show();
         }
 
-        
+        private void textNomeCachorro_TextChanged(object sender, EventArgs e)
+        {
+            if (textNomeCachorro.Text.ToUpper() == "NOME")
+            {
+                textNomeCachorro.Text = "NOME";
+                textNomeCachorro.SelectionStart = textNomeCachorro.Text.Length;
+                return; // Sai do evento para evitar a conversão de texto
+            }
+
+            if (!string.IsNullOrEmpty(textNomeCachorro.Text))
+            {
+                string[] nomes = textNomeCachorro.Text.Split(' ');
+                StringBuilder resultado = new StringBuilder();
+
+                foreach (string nome in nomes)
+                {
+                    if (resultado.Length > 0)
+                        resultado.Append(" ");
+
+                    if (nome.ToLower() == "da" || nome.ToLower() == "do" || nome.ToLower() == "das" ||
+                        nome.ToLower() == "dos" || nome.ToLower() == "de" || nome.ToLower() == "e" ||
+                        nome.ToLower() == "eles")
+                    {
+                        resultado.Append(nome.ToLower());
+                    }
+                    else
+                    {
+                        if (nome.Length > 0)
+                        {
+                            string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                            string restante = nome.Substring(1).ToLower();
+                            resultado.Append(primeiroCaractere + restante);
+                        }
+                    }
+                }
+
+                textNomeCachorro.Text = resultado.ToString();
+                textNomeCachorro.SelectionStart = textNomeCachorro.Text.Length;
+            }
+        }
+
+        private void textIdadeCachorro_TextChanged(object sender, EventArgs e)
+        {
+            // Verificar se o texto é diferente de "IDADE"
+            if (textIdadeCachorro.Text != "IDADE")
+            {
+                string numero = string.Empty;
+                foreach (char c in textIdadeCachorro.Text)
+                {
+                    if (char.IsDigit(c))
+                    {
+                        numero += c;
+                    }
+                }
+
+                textIdadeCachorro.Text = numero;
+            }
+        }
+
+        private void textRacaCachorro_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textRacaCachorro.Text.Trim();
+
+            // Verificar se o texto é igual a "Raça" com letras maiúsculas
+            if (texto.ToUpper() == "RAÇA")
+            {
+                textRacaCachorro.Text = "RAÇA";
+                textRacaCachorro.SelectionStart = textRacaCachorro.Text.Length;
+                return;
+            }
+
+            string[] nomes = textRacaCachorro.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textRacaCachorro.Text = resultado.ToString();
+            textRacaCachorro.SelectionStart = textRacaCachorro.Text.Length;
+        }
+
+
+
+        private void textPorteCachorro_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textPorteCachorro.Text.Trim();
+
+            // Verificar se o texto é igual a "Raça" com letras maiúsculas
+            if (texto.ToUpper() == "PORTE")
+            {
+                textPorteCachorro.Text = "PORTE";
+                textPorteCachorro.SelectionStart = textPorteCachorro.Text.Length;
+                return;
+            }
+
+            string[] nomes = textPorteCachorro.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textPorteCachorro.Text = resultado.ToString();
+            textPorteCachorro.SelectionStart = textPorteCachorro.Text.Length;
+        }
+
+        private void panelCadastrarCachorro_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void panelLateralControleAnimal_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void textNomeGato_TextChanged(object sender, EventArgs e)
+        {
+            if (textNomeGato.Text.ToUpper() == "NOME")
+            {
+                textNomeGato.Text = "NOME";
+                textNomeGato.SelectionStart = textNomeGato.Text.Length;
+                return; // Sai do evento para evitar a conversão de texto
+            }
+
+            if (!string.IsNullOrEmpty(textNomeGato.Text))
+            {
+                string[] nomes = textNomeGato.Text.Split(' ');
+                StringBuilder resultado = new StringBuilder();
+
+                foreach (string nome in nomes)
+                {
+                    if (resultado.Length > 0)
+                        resultado.Append(" ");
+
+                    if (nome.ToLower() == "da" || nome.ToLower() == "do" || nome.ToLower() == "das" ||
+                        nome.ToLower() == "dos" || nome.ToLower() == "de" || nome.ToLower() == "e" ||
+                        nome.ToLower() == "eles")
+                    {
+                        resultado.Append(nome.ToLower());
+                    }
+                    else
+                    {
+                        if (nome.Length > 0)
+                        {
+                            string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                            string restante = nome.Substring(1).ToLower();
+                            resultado.Append(primeiroCaractere + restante);
+                        }
+                    }
+                }
+
+                textNomeGato.Text = resultado.ToString();
+                textNomeGato.SelectionStart = textNomeGato.Text.Length;
+            }
+        }
+
+        private void textIdadeGato_TextChanged(object sender, EventArgs e)
+        {
+            // Verificar se o texto é diferente de "IDADE"
+            if (textIdadeGato.Text != "IDADE")
+            {
+                string numero = string.Empty;
+                foreach (char c in textIdadeGato.Text)
+                {
+                    if (char.IsDigit(c))
+                    {
+                        numero += c;
+                    }
+                }
+
+                textIdadeGato.Text = numero;
+            }
+        }
+
+        private void textRacaGato_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textRacaGato.Text.Trim();
+
+            // Verificar se o texto é igual a "Raça" com letras maiúsculas
+            if (texto.ToUpper() == "RAÇA")
+            {
+                textRacaGato.Text = "RAÇA";
+                textRacaGato.SelectionStart = textRacaGato.Text.Length;
+                return;
+            }
+
+            string[] nomes = textRacaGato.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textRacaGato.Text = resultado.ToString();
+            textRacaGato.SelectionStart = textRacaGato.Text.Length;
+        }
+
+
+        private void textPorteGato_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textPorteGato.Text.Trim();
+
+            // Verificar se o texto é igual a "Raça" com letras maiúsculas
+            if (texto.ToUpper() == "PORTE")
+            {
+                textPorteGato.Text = "PORTE";
+                textPorteGato.SelectionStart = textPorteGato.Text.Length;
+                return;
+            }
+
+            string[] nomes = textPorteGato.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textPorteGato.Text = resultado.ToString();
+            textPorteGato.SelectionStart = textPorteGato.Text.Length;
+        }
+
     }
 }

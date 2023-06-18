@@ -199,6 +199,7 @@
             this.cadastrarDespesas.Name = "cadastrarDespesas";
             this.cadastrarDespesas.Size = new System.Drawing.Size(920, 660);
             this.cadastrarDespesas.TabIndex = 10;
+            this.cadastrarDespesas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cadastrarDespesas_MouseDown);
             // 
             // textDescricaoDespesas
             // 
@@ -210,6 +211,7 @@
             this.textDescricaoDespesas.TabIndex = 11;
             this.textDescricaoDespesas.Text = "DESCRIÇÃO";
             this.textDescricaoDespesas.Enter += new System.EventHandler(this.textDescricaoDespesas_Enter);
+            this.textDescricaoDespesas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textDescricaoDespesas_KeyDown);
             this.textDescricaoDespesas.Leave += new System.EventHandler(this.textDescricaoDespesas_Leave);
             // 
             // textValorDespesas
@@ -221,7 +223,9 @@
             this.textValorDespesas.Size = new System.Drawing.Size(350, 31);
             this.textValorDespesas.TabIndex = 10;
             this.textValorDespesas.Text = "VALOR";
+            this.textValorDespesas.TextChanged += new System.EventHandler(this.textValorDespesas_TextChanged);
             this.textValorDespesas.Enter += new System.EventHandler(this.textValorDespesas_Enter);
+            this.textValorDespesas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textValorDespesas_KeyDown);
             this.textValorDespesas.Leave += new System.EventHandler(this.textValorDespesas_Leave);
             // 
             // textCategoriaDespesas
@@ -233,7 +237,9 @@
             this.textCategoriaDespesas.Size = new System.Drawing.Size(350, 31);
             this.textCategoriaDespesas.TabIndex = 9;
             this.textCategoriaDespesas.Text = "CATEGORIA";
+            this.textCategoriaDespesas.TextChanged += new System.EventHandler(this.textCategoriaDespesas_TextChanged);
             this.textCategoriaDespesas.Enter += new System.EventHandler(this.textCategoriaDespesas_Enter);
+            this.textCategoriaDespesas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textCategoriaDespesas_KeyDown);
             this.textCategoriaDespesas.Leave += new System.EventHandler(this.textCategoriaDespesas_Leave);
             // 
             // textDataDespesas
@@ -245,7 +251,9 @@
             this.textDataDespesas.Size = new System.Drawing.Size(350, 31);
             this.textDataDespesas.TabIndex = 8;
             this.textDataDespesas.Text = "DATA";
+            this.textDataDespesas.TextChanged += new System.EventHandler(this.textDataDespesas_TextChanged);
             this.textDataDespesas.Enter += new System.EventHandler(this.textDataDespesas_Enter);
+            this.textDataDespesas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textDataDespesas_KeyDown);
             this.textDataDespesas.Leave += new System.EventHandler(this.textDataDespesas_Leave);
             // 
             // botaoCadastrarDespesas2
@@ -390,6 +398,7 @@
             this.btnOrdenarPorDataReceitas.Size = new System.Drawing.Size(20, 20);
             this.btnOrdenarPorDataReceitas.TabIndex = 17;
             this.btnOrdenarPorDataReceitas.UseVisualStyleBackColor = false;
+            this.btnOrdenarPorDataReceitas.Click += new System.EventHandler(this.btnOrdenarPorDataReceitas_Click);
             // 
             // btnOrdenarPorDescricaoReceitas
             // 
@@ -407,6 +416,7 @@
             this.btnOrdenarPorDescricaoReceitas.Size = new System.Drawing.Size(20, 20);
             this.btnOrdenarPorDescricaoReceitas.TabIndex = 16;
             this.btnOrdenarPorDescricaoReceitas.UseVisualStyleBackColor = false;
+            this.btnOrdenarPorDescricaoReceitas.Click += new System.EventHandler(this.btnOrdenarPorDescricaoReceitas_Click);
             // 
             // btnOrdenarPorValorReceitas
             // 
@@ -424,6 +434,7 @@
             this.btnOrdenarPorValorReceitas.Size = new System.Drawing.Size(20, 20);
             this.btnOrdenarPorValorReceitas.TabIndex = 15;
             this.btnOrdenarPorValorReceitas.UseVisualStyleBackColor = false;
+            this.btnOrdenarPorValorReceitas.Click += new System.EventHandler(this.btnOrdenarPorValorReceitas_Click);
             // 
             // btnOrdenarPorCategoriaReceitas
             // 
@@ -441,6 +452,7 @@
             this.btnOrdenarPorCategoriaReceitas.Size = new System.Drawing.Size(20, 20);
             this.btnOrdenarPorCategoriaReceitas.TabIndex = 14;
             this.btnOrdenarPorCategoriaReceitas.UseVisualStyleBackColor = false;
+            this.btnOrdenarPorCategoriaReceitas.Click += new System.EventHandler(this.btnOrdenarPorCategoriaReceitas_Click);
             // 
             // flowReceitas
             // 
@@ -464,6 +476,7 @@
             this.cadastrarReceitas.Name = "cadastrarReceitas";
             this.cadastrarReceitas.Size = new System.Drawing.Size(920, 660);
             this.cadastrarReceitas.TabIndex = 12;
+            this.cadastrarReceitas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cadastrarReceitas_MouseDown);
             // 
             // textDescricaoReceitas
             // 
@@ -474,7 +487,9 @@
             this.textDescricaoReceitas.Size = new System.Drawing.Size(350, 31);
             this.textDescricaoReceitas.TabIndex = 15;
             this.textDescricaoReceitas.Text = "DESCRIÇÃO";
+            this.textDescricaoReceitas.TextChanged += new System.EventHandler(this.textDescricaoReceitas_TextChanged);
             this.textDescricaoReceitas.Enter += new System.EventHandler(this.textDescricaoReceitas_Enter);
+            this.textDescricaoReceitas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textDescricaoReceitas_KeyDown);
             this.textDescricaoReceitas.Leave += new System.EventHandler(this.textDescricaoReceitas_Leave);
             // 
             // textValorReceitas
@@ -486,7 +501,9 @@
             this.textValorReceitas.Size = new System.Drawing.Size(350, 31);
             this.textValorReceitas.TabIndex = 14;
             this.textValorReceitas.Text = "VALOR";
+            this.textValorReceitas.TextChanged += new System.EventHandler(this.textValorReceitas_TextChanged);
             this.textValorReceitas.Enter += new System.EventHandler(this.textValorReceitas_Enter);
+            this.textValorReceitas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textValorReceitas_KeyDown);
             this.textValorReceitas.Leave += new System.EventHandler(this.textValorReceitas_Leave);
             // 
             // textCategoriaReceitas
@@ -498,7 +515,9 @@
             this.textCategoriaReceitas.Size = new System.Drawing.Size(350, 31);
             this.textCategoriaReceitas.TabIndex = 13;
             this.textCategoriaReceitas.Text = "CATEGORIA";
+            this.textCategoriaReceitas.TextChanged += new System.EventHandler(this.textCategoriaReceitas_TextChanged);
             this.textCategoriaReceitas.Enter += new System.EventHandler(this.textCategoriaReceitas_Enter);
+            this.textCategoriaReceitas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textCategoriaReceitas_KeyDown);
             this.textCategoriaReceitas.Leave += new System.EventHandler(this.textCategoriaReceitas_Leave);
             // 
             // textDataReceitas
@@ -510,7 +529,9 @@
             this.textDataReceitas.Size = new System.Drawing.Size(350, 31);
             this.textDataReceitas.TabIndex = 12;
             this.textDataReceitas.Text = "DATA";
+            this.textDataReceitas.TextChanged += new System.EventHandler(this.textDataReceitas_TextChanged);
             this.textDataReceitas.Enter += new System.EventHandler(this.textDataReceitas_Enter);
+            this.textDataReceitas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textDataReceitas_KeyDown);
             this.textDataReceitas.Leave += new System.EventHandler(this.textDataReceitas_Leave);
             // 
             // botaoCadastrarReceitas2
@@ -539,10 +560,10 @@
             this.Controls.Add(this.botaoVoltarFinanceiro);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panelLateralFinanceiro);
+            this.Controls.Add(this.panelReceitas);
             this.Controls.Add(this.cadastrarReceitas);
             this.Controls.Add(this.cadastrarDespesas);
             this.Controls.Add(this.panelDespesas);
-            this.Controls.Add(this.panelReceitas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaFinanceiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -566,7 +587,6 @@
         private System.Windows.Forms.Button botaoDespesas;
         private System.Windows.Forms.Button botaoVoltarFinanceiro;
         private System.Windows.Forms.Button botaoFechar;
-        private System.Windows.Forms.Panel panelDespesas;
         private System.Windows.Forms.Panel cadastrarDespesas;
         private System.Windows.Forms.Panel panelReceitas;
         private System.Windows.Forms.FlowLayoutPanel flowDespesas;
@@ -592,5 +612,6 @@
         private System.Windows.Forms.Button btnOrdenarPorDescricaoReceitas;
         private System.Windows.Forms.Button btnOrdenarPorValorReceitas;
         private System.Windows.Forms.Button btnOrdenarPorCategoriaReceitas;
+        public System.Windows.Forms.Panel panelDespesas;
     }
 }

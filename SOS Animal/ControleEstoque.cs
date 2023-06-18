@@ -30,12 +30,12 @@ namespace SOS_Animal
 
         private void botaoRemover_MouseEnter(object sender, EventArgs e)
         {
-
+            botaoRemover.BackgroundImage = Properties.Resources.botaoDeletar2;
         }
 
         private void botaoRemover_MouseLeave(object sender, EventArgs e)
         {
-
+            botaoRemover.BackgroundImage = Properties.Resources.botaoDeletar1;
         }
 
         private void botaoRemover_Click(object sender, EventArgs e)
@@ -76,12 +76,12 @@ namespace SOS_Animal
 
         private void botaoEditar_MouseEnter(object sender, EventArgs e)
         {
-
+            botaoEditar.BackgroundImage = Properties.Resources.botaoEditar2;
         }
 
         private void botaoEditar_MouseLeave(object sender, EventArgs e)
         {
-
+            botaoEditar.BackgroundImage = Properties.Resources.botaoEditar1;
         }
 
         private void botaoEditar_Click(object sender, EventArgs e)

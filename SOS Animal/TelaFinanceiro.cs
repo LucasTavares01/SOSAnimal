@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -132,17 +134,7 @@ namespace SOS_Animal
             }
         }
 
-        private void AtualizarImagemFiltro(Button botaoClicado)
-        {
-            // Define a imagem 2 (filtro2) para o botão clicado
-            botaoClicado.Image = Properties.Resources.filtro2;
 
-            // Define a imagem 1 (filtro1) para os outros botões
-            btnOrdenarPorData.Image = btnOrdenarPorData == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
-            btnOrdenarPorCategoria.Image = btnOrdenarPorCategoria == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
-            btnOrdenarPorValor.Image = btnOrdenarPorValor == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
-            btnOrdenarDescricao.Image = btnOrdenarDescricao == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
-        }
 
         private void botaoFechar_Click(object sender, EventArgs e)
         {
@@ -278,6 +270,14 @@ namespace SOS_Animal
 
         private void botaoCadastrarDespesas2_Click(object sender, EventArgs e)
         {
+            // Verificar se as palavras estão presentes nas TextBoxes
+            if (textDataDespesas.Text.ToUpper() == "DATA" || textCategoriaDespesas.Text.ToUpper() == "CATEGORIA" ||
+                textValorDespesas.Text.ToUpper() == "VALOR" || textDescricaoDespesas.Text.ToUpper() == "DESCRIÇÃO")
+            {
+                MessageBox.Show("Por favor, insira os valores corretos.");
+                return;
+            }
+
             try
             {
                 // Obter os valores das TextBoxes
@@ -357,7 +357,7 @@ namespace SOS_Animal
             textDataDespesas.Text = "DATA";
             textCategoriaDespesas.Text = "CATEGORIA";
             textValorDespesas.Text = "VALOR";
-            textDescricaoDespesas.Text = "DESCRICAO";
+            textDescricaoDespesas.Text = "DESCRIÇÃO";
         }
 
         private void LimparCampoTexto(TextBox textBox, string textoPadrao)
@@ -388,6 +388,14 @@ namespace SOS_Animal
 
         private void botaoCadastrarReceitas2_Click(object sender, EventArgs e)
         {
+            // Verificar se as palavras estão presentes nas TextBoxes
+            if (textDataReceitas.Text.ToUpper() == "DATA" || textCategoriaReceitas.Text.ToUpper() == "CATEGORIA" ||
+                textValorReceitas.Text.ToUpper() == "VALOR" || textDescricaoReceitas.Text.ToUpper() == "DESCRIÇÃO")
+            {
+                MessageBox.Show("Por favor, insira os valores corretos.");
+                return;
+            }
+
             try
             {
                 // Obter os valores das TextBoxes
@@ -532,5 +540,374 @@ namespace SOS_Animal
         {
             RestaurarCampoTexto(textDescricaoReceitas, "DESCRIÇÃO");
         }
+
+        private void textDataReceitas_TextChanged(object sender, EventArgs e)
+        {
+            string data = textDataReceitas.Text;
+
+            if (!string.IsNullOrEmpty(data) && !Regex.IsMatch(data, @"^\d{0,2}$") && !data.ToUpper().Contains("DATA"))
+            {
+                // Remove qualquer caractere não numérico
+                data = Regex.Replace(data, @"\D", "");
+
+                // Verifica o comprimento da string de data e formata adequadamente
+                if (data.Length >= 3 && data.Length <= 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2);
+                }
+                else if (data.Length > 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2, 2) + "/" + data.Substring(4, Math.Min(4, data.Length - 4));
+                }
+
+                // Atualiza o texto do TextBox com a data formatada
+                textDataReceitas.TextChanged -= textDataReceitas_TextChanged; // Desabilita o evento temporariamente para evitar recursão infinita
+                textDataReceitas.Text = data;
+                textDataReceitas.SelectionStart = data.Length;
+                textDataReceitas.TextChanged += textDataReceitas_TextChanged; // Reabilita o evento
+            }
+        }
+
+        private void textCategoriaReceitas_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textCategoriaReceitas.Text.Trim();
+
+            // Verificar se o texto é igual a "Categoria" com letras maiúsculas
+            if (texto.ToUpper() == "CATEGORIA")
+            {
+                textCategoriaReceitas.Text = "CATEGORIA";
+                textCategoriaReceitas.SelectionStart = textCategoriaReceitas.Text.Length;
+                return;
+            }
+
+            string[] nomes = textCategoriaReceitas.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textCategoriaReceitas.Text = resultado.ToString();
+            textCategoriaReceitas.SelectionStart = textCategoriaReceitas.Text.Length;
+        }
+
+
+
+        private void textValorReceitas_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textValorReceitas.Text.Trim();
+
+            // Verificar exceção para a palavra "VALOR" com letras maiúsculas
+            if (texto.ToUpper() == "VALOR")
+            {
+                textValorReceitas.Text = "VALOR";
+                textValorReceitas.SelectionStart = textValorReceitas.Text.Length;
+                return;
+            }
+
+            // Remover caracteres não numéricos, exceto a vírgula
+            string valorNumerico = new string(texto.Where(c => char.IsDigit(c) || c == ',').ToArray());
+
+            // Remover vírgulas extras
+            int primeiraVirgula = valorNumerico.IndexOf(',');
+            if (primeiraVirgula >= 0)
+            {
+                valorNumerico = valorNumerico.Substring(0, primeiraVirgula + 1) + new string(valorNumerico.Substring(primeiraVirgula + 1).Where(c => c != ',').ToArray());
+            }
+
+            // Adicionar "R$ " somente quando começar a digitar
+            if (!string.IsNullOrEmpty(valorNumerico))
+            {
+                valorNumerico = "R$ " + valorNumerico;
+            }
+
+            // Verificar se o texto foi modificado antes de atualizar a caixa de texto
+            if (textValorReceitas.Text != valorNumerico)
+            {
+                textValorReceitas.TextChanged -= textValorReceitas_TextChanged; // Remover manipulador temporariamente
+                textValorReceitas.Text = valorNumerico;
+                textValorReceitas.SelectionStart = textValorReceitas.Text.Length;
+                textValorReceitas.TextChanged += textValorReceitas_TextChanged; // Adicionar manipulador novamente
+            }
+        }
+
+
+
+        private void textDescricaoReceitas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textDataDespesas_TextChanged(object sender, EventArgs e)
+        {
+            string data = textDataDespesas.Text;
+
+            // Verificar exceção para a palavra "DATA" com letras maiúsculas
+            if (data.ToUpper() == "DATA")
+            {
+                textDataDespesas.Text = "DATA";
+                textDataDespesas.SelectionStart = textDataDespesas.Text.Length;
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(data) && !Regex.IsMatch(data, @"^\d{0,2}$"))
+            {
+                // Remover qualquer caractere não numérico
+                data = Regex.Replace(data, @"\D", "");
+
+                // Verificar o comprimento da string de data e formatá-la adequadamente
+                if (data.Length >= 3 && data.Length <= 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2);
+                }
+                else if (data.Length > 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2, 2) + "/" + data.Substring(4, Math.Min(4, data.Length - 4));
+                }
+
+                // Atualizar o texto do TextBox com a data formatada
+                textDataDespesas.TextChanged -= textDataDespesas_TextChanged; // Desabilitar o evento temporariamente para evitar recursão infinita
+                textDataDespesas.Text = data;
+                textDataDespesas.SelectionStart = data.Length;
+                textDataDespesas.TextChanged += textDataDespesas_TextChanged; // Reabilitar o evento
+            }
+        }
+
+
+        private void textCategoriaDespesas_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textCategoriaDespesas.Text.Trim();
+
+            // Verificar se o texto é igual a "Categoria" com letras maiúsculas
+            if (texto.ToUpper() == "CATEGORIA")
+            {
+                textCategoriaDespesas.Text = "CATEGORIA";
+                textCategoriaDespesas.SelectionStart = textCategoriaDespesas.Text.Length;
+                return;
+            }
+
+            string[] nomes = textCategoriaDespesas.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textCategoriaDespesas.Text = resultado.ToString();
+            textCategoriaDespesas.SelectionStart = textCategoriaDespesas.Text.Length;
+        }
+
+
+
+        private void textValorDespesas_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textValorDespesas.Text.Trim();
+
+            // Verificar exceção para a palavra "VALOR" com letras maiúsculas
+            if (texto.ToUpper() == "VALOR")
+            {
+                textValorDespesas.Text = "VALOR";
+                textValorDespesas.SelectionStart = textValorDespesas.Text.Length;
+                return;
+            }
+
+            // Remover caracteres não numéricos, exceto a vírgula
+            string valorNumerico = new string(texto.Where(c => char.IsDigit(c) || c == ',').ToArray());
+
+            // Remover vírgulas extras
+            int primeiraVirgula = valorNumerico.IndexOf(',');
+            if (primeiraVirgula >= 0)
+            {
+                valorNumerico = valorNumerico.Substring(0, primeiraVirgula + 1) + new string(valorNumerico.Substring(primeiraVirgula + 1).Where(c => c != ',').ToArray());
+            }
+
+            // Adicionar "R$ " somente quando começar a digitar
+            if (!string.IsNullOrEmpty(valorNumerico))
+            {
+                valorNumerico = "R$ " + valorNumerico;
+            }
+
+            // Verificar se o texto foi modificado antes de atualizar a caixa de texto
+            if (textValorDespesas.Text != valorNumerico)
+            {
+                textValorDespesas.TextChanged -= textValorDespesas_TextChanged; // Remover manipulador temporariamente
+                textValorDespesas.Text = valorNumerico;
+                textValorDespesas.SelectionStart = textValorDespesas.Text.Length;
+                textValorDespesas.TextChanged += textValorDespesas_TextChanged; // Adicionar manipulador novamente
+            }
+        }
+
+        private void cadastrarDespesas_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void cadastrarReceitas_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void textDataDespesas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textCategoriaDespesas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textValorDespesas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textDescricaoDespesas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textDataReceitas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textCategoriaReceitas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textValorReceitas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void textDescricaoReceitas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrarDespesas2.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        
+
+        private void btnOrdenarPorDataReceitas_Click(object sender, EventArgs e)
+        {
+            List<Receitas> controles = flowReceitas.Controls.OfType<Receitas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelData.Text, c2.labelData.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorDataReceitas);
+        }
+
+        private void btnOrdenarPorCategoriaReceitas_Click(object sender, EventArgs e)
+        {
+            List<Receitas> controles = flowReceitas.Controls.OfType<Receitas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelCategoria.Text, c2.labelCategoria.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorCategoriaReceitas);
+        }
+
+        private void btnOrdenarPorValorReceitas_Click(object sender, EventArgs e)
+        {
+            List<Receitas> controles = flowReceitas.Controls.OfType<Receitas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelValor.Text, c2.labelValor.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorValorReceitas);
+        }
+
+
+        private void btnOrdenarPorDescricaoReceitas_Click(object sender, EventArgs e)
+        {
+            List<Receitas> controles = flowReceitas.Controls.OfType<Receitas>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelDescricao.Text, c2.labelDescricao.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorDescricaoReceitas);
+        }
+
+        private void AtualizarControlesOrdenados(List<Receitas> controles)
+        {
+            flowReceitas.Controls.Clear();
+            foreach (Receitas controle in controles)
+            {
+                flowReceitas.Controls.Add(controle);
+            }
+        }
+
+        private void AtualizarImagemFiltro2(Button botaoClicado)
+        {
+            // Define a imagem 2 (filtro2) para o botão clicado
+            botaoClicado.Image = Properties.Resources.filtro2;
+
+            // Define a imagem 1 (filtro1) para os outros botões
+            btnOrdenarPorDataReceitas.Image = btnOrdenarPorDataReceitas == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorCategoriaReceitas.Image = btnOrdenarPorCategoriaReceitas == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorValorReceitas.Image = btnOrdenarPorValorReceitas == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorDescricaoReceitas.Image = btnOrdenarPorDescricaoReceitas == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+        }
+
+        private void AtualizarImagemFiltro(Button botaoClicado)
+        {
+            // Define a imagem 2 (filtro2) para o botão clicado
+            botaoClicado.Image = Properties.Resources.filtro2;
+
+            // Define a imagem 1 (filtro1) para os outros botões
+            btnOrdenarPorData.Image = btnOrdenarPorData == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorCategoria.Image = btnOrdenarPorCategoria == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorValor.Image = btnOrdenarPorValor == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarDescricao.Image = btnOrdenarDescricao == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+        }
+
     }
 }

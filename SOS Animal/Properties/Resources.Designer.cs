@@ -213,6 +213,26 @@ namespace SOS_Animal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botaoDeletar1 {
+            get {
+                object obj = ResourceManager.GetObject("botaoDeletar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botaoDeletar2 {
+            get {
+                object obj = ResourceManager.GetObject("botaoDeletar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botaoDespesas1 {
             get {
                 object obj = ResourceManager.GetObject("botaoDespesas1", resourceCulture);
@@ -226,6 +246,26 @@ namespace SOS_Animal.Properties {
         internal static System.Drawing.Bitmap botaoDespesas2 {
             get {
                 object obj = ResourceManager.GetObject("botaoDespesas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botaoEditar1 {
+            get {
+                object obj = ResourceManager.GetObject("botaoEditar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botaoEditar2 {
+            get {
+                object obj = ResourceManager.GetObject("botaoEditar2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +386,16 @@ namespace SOS_Animal.Properties {
         internal static System.Drawing.Bitmap botaoVoltar {
             get {
                 object obj = ResourceManager.GetObject("botaoVoltar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap brinquedosPet {
+            get {
+                object obj = ResourceManager.GetObject("brinquedosPet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

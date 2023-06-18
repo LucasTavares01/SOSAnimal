@@ -47,6 +47,7 @@
             this.campoEmailLogin.Size = new System.Drawing.Size(500, 25);
             this.campoEmailLogin.TabIndex = 2;
             this.campoEmailLogin.Text = "lucas@lucas.com";
+            this.campoEmailLogin.TextChanged += new System.EventHandler(this.campoEmailLogin_TextChanged);
             this.campoEmailLogin.Enter += new System.EventHandler(this.campoEmailLogin_Enter);
             this.campoEmailLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoEmailLogin_KeyDown);
             this.campoEmailLogin.Leave += new System.EventHandler(this.campoEmailLogin_Leave);

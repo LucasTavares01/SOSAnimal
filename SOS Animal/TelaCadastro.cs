@@ -153,7 +153,17 @@ namespace SOS_Animal
             campoSenhaCadastro.Clear();
             campoEmailCadastro.Clear();
 
+            campoNomeCadastro.Text = "NOME COMPLETO";
+            campoSenhaCadastro.PasswordChar = '\0';
+            campoSenhaCadastro.Text = "SENHA";
+            campoEmailCadastro.Text = "E-MAIL";
+
+
             MessageBox.Show("Cadastro realizado com sucesso!");
+
+            TelaLogin telaLogin = new TelaLogin();
+            this.Hide();
+            telaLogin.Show();
         }
 
 
@@ -235,6 +245,33 @@ namespace SOS_Animal
         {
             Image novaImagem = Properties.Resources.botaoCadastrarDados1;
             botaoCadastrar.BackgroundImage = novaImagem;
+        }
+
+        private void campoNomeCadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrar.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void campoEmailCadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrar.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
+        }
+
+        private void campoSenhaCadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suprime a tecla "Enter" para evitar o som padrão
+                botaoCadastrar.PerformClick(); // Simula o clique no botaoEntrarLogin
+            }
         }
     }
 }

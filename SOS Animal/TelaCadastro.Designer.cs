@@ -48,6 +48,7 @@
             this.campoEmailCadastro.Text = "E-MAIL";
             this.campoEmailCadastro.TextChanged += new System.EventHandler(this.campoEmailCadastro_TextChanged);
             this.campoEmailCadastro.Enter += new System.EventHandler(this.campoEmailCadastro_Enter);
+            this.campoEmailCadastro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoEmailCadastro_KeyDown);
             this.campoEmailCadastro.Leave += new System.EventHandler(this.campoEmailCadastro_Leave);
             // 
             // campoNomeCadastro
@@ -61,6 +62,7 @@
             this.campoNomeCadastro.Text = "NOME COMPLETO";
             this.campoNomeCadastro.TextChanged += new System.EventHandler(this.campoNomeCadastro_TextChanged);
             this.campoNomeCadastro.Enter += new System.EventHandler(this.campoNomeCadastro_Enter);
+            this.campoNomeCadastro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoNomeCadastro_KeyDown);
             this.campoNomeCadastro.Leave += new System.EventHandler(this.campoNomeCadastro_Leave);
             // 
             // campoSenhaCadastro
@@ -73,6 +75,7 @@
             this.campoSenhaCadastro.TabIndex = 3;
             this.campoSenhaCadastro.Text = "SENHA";
             this.campoSenhaCadastro.Enter += new System.EventHandler(this.campoSenhaCadastro_Enter);
+            this.campoSenhaCadastro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoSenhaCadastro_KeyDown);
             this.campoSenhaCadastro.Leave += new System.EventHandler(this.campoSenhaCadastro_Leave);
             // 
             // botaoCadastrar
