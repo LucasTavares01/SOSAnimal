@@ -40,7 +40,7 @@
             // 
             // picboxItem2
             // 
-            this.picboxItem2.Location = new System.Drawing.Point(20, 28);
+            this.picboxItem2.Location = new System.Drawing.Point(20, 27);
             this.picboxItem2.Name = "picboxItem2";
             this.picboxItem2.Size = new System.Drawing.Size(100, 100);
             this.picboxItem2.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.labelDoadoPorEstoque.AutoSize = true;
             this.labelDoadoPorEstoque.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDoadoPorEstoque.Location = new System.Drawing.Point(561, 69);
+            this.labelDoadoPorEstoque.Location = new System.Drawing.Point(548, 69);
             this.labelDoadoPorEstoque.Name = "labelDoadoPorEstoque";
             this.labelDoadoPorEstoque.Size = new System.Drawing.Size(104, 23);
             this.labelDoadoPorEstoque.TabIndex = 7;
@@ -61,7 +61,7 @@
             // 
             this.labelDescricaoEstoque.AutoSize = true;
             this.labelDescricaoEstoque.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescricaoEstoque.Location = new System.Drawing.Point(415, 69);
+            this.labelDescricaoEstoque.Location = new System.Drawing.Point(402, 69);
             this.labelDescricaoEstoque.Name = "labelDescricaoEstoque";
             this.labelDescricaoEstoque.Size = new System.Drawing.Size(101, 23);
             this.labelDescricaoEstoque.TabIndex = 6;
@@ -72,7 +72,7 @@
             // 
             this.labelNomeEstoque.AutoSize = true;
             this.labelNomeEstoque.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeEstoque.Location = new System.Drawing.Point(293, 69);
+            this.labelNomeEstoque.Location = new System.Drawing.Point(258, 69);
             this.labelNomeEstoque.Name = "labelNomeEstoque";
             this.labelNomeEstoque.Size = new System.Drawing.Size(56, 23);
             this.labelNomeEstoque.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.labelDataEstoque.AutoSize = true;
             this.labelDataEstoque.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataEstoque.Location = new System.Drawing.Point(176, 69);
+            this.labelDataEstoque.Location = new System.Drawing.Point(162, 69);
             this.labelDataEstoque.Name = "labelDataEstoque";
             this.labelDataEstoque.Size = new System.Drawing.Size(53, 23);
             this.labelDataEstoque.TabIndex = 4;
@@ -98,7 +98,7 @@
             this.botaoRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.botaoRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoRemover.Location = new System.Drawing.Point(746, 64);
+            this.botaoRemover.Location = new System.Drawing.Point(734, 64);
             this.botaoRemover.Name = "botaoRemover";
             this.botaoRemover.Size = new System.Drawing.Size(30, 30);
             this.botaoRemover.TabIndex = 9;
@@ -115,7 +115,7 @@
             this.botaoEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botaoEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.botaoEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoEditar.Location = new System.Drawing.Point(716, 64);
+            this.botaoEditar.Location = new System.Drawing.Point(704, 64);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(30, 30);
             this.botaoEditar.TabIndex = 8;

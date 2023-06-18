@@ -36,6 +36,7 @@ namespace SOS_Animal
             this.Hide();
             telaControleEstoque.Show();
             telaControleEstoque.panelControleEstoque.Visible = true;
+            telaControleEstoque.panelCadastrarItem.Visible = false;
         }
 
         private void botaoEscolhaFinanceiro_Click(object sender, EventArgs e)

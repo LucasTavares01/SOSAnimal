@@ -8,6 +8,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -160,6 +161,14 @@ namespace SOS_Animal
 
         private void botaoCadastrarItem2_Click(object sender, EventArgs e)
         {
+            // Verificar se as palavras estão presentes nas TextBoxes
+            if (textDataItem.Text.ToUpper() == "DATA" || textNomeItem.Text.ToUpper() == "NOME" ||
+                textDescricaoItem.Text.ToUpper() == "DESCRIÇÃO" || textDoadoPorItem.Text.ToUpper() == "DOADO POR")
+            {
+                MessageBox.Show("Por favor, insira os valores corretos.");
+                return;
+            }
+
             try
             {
                 // Obter a imagem selecionada
@@ -436,6 +445,164 @@ namespace SOS_Animal
             telaEscolhaCadastro.Show();
         }
 
-        
+        private void textDataItem_TextChanged(object sender, EventArgs e)
+        {
+            string data = textDataItem.Text;
+
+            if (!string.IsNullOrEmpty(data) && !Regex.IsMatch(data, @"^\d{0,2}$") && !data.ToUpper().Contains("DATA"))
+            {
+                // Remova qualquer caractere não numérico
+                data = Regex.Replace(data, @"\D", "");
+
+                // Verifique o comprimento da string de data e formate adequadamente
+                if (data.Length >= 3 && data.Length <= 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2);
+                }
+                else if (data.Length > 5)
+                {
+                    data = data.Substring(0, 2) + "/" + data.Substring(2, 2) + "/" + data.Substring(4, Math.Min(4, data.Length - 4));
+                }
+
+                // Atualize o texto do TextBox com a data formatada
+                textDataItem.TextChanged -= textDataItem_TextChanged; // Desabilite o evento temporariamente para evitar recursão infinita
+                textDataItem.Text = data;
+                textDataItem.SelectionStart = data.Length;
+                textDataItem.TextChanged += textDataItem_TextChanged; // Reabilite o evento
+            }
+        }
+
+        private void textNomeItem_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textNomeItem.Text.Trim();
+
+            // Verificar se o texto é igual a "Nome" com letras maiúsculas
+            if (texto.ToUpper() == "NOME")
+            {
+                textNomeItem.Text = "NOME";
+                textNomeItem.SelectionStart = textNomeItem.Text.Length;
+                return;
+            }
+
+            string[] nomes = textNomeItem.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textNomeItem.Text = resultado.ToString();
+            textNomeItem.SelectionStart = textNomeItem.Text.Length;
+        }
+
+        private void textDoadoPorItem_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textDoadoPorItem.Text.Trim();
+
+            // Verificar se o texto é igual a "NOME" com letras maiúsculas
+            if (texto.ToUpper() == "NOME")
+            {
+                textDoadoPorItem.Text = "NOME";
+                textDoadoPorItem.SelectionStart = textDoadoPorItem.Text.Length;
+                return;
+            }
+
+            // Verificar se o texto é igual a "DOADO POR" com letras maiúsculas
+            if (texto.ToUpper() == "DOADO POR")
+            {
+                textDoadoPorItem.Text = "DOADO POR";
+                textDoadoPorItem.SelectionStart = textDoadoPorItem.Text.Length;
+                return;
+            }
+
+            string[] nomes = textDoadoPorItem.Text.Split(' ');
+            StringBuilder resultado = new StringBuilder();
+
+            foreach (string nome in nomes)
+            {
+                if (resultado.Length > 0)
+                    resultado.Append(" ");
+
+                if (nome.Length > 0)
+                {
+                    string primeiroCaractere = nome.Substring(0, 1).ToUpper();
+                    string restante = nome.Substring(1).ToLower();
+                    resultado.Append(primeiroCaractere + restante);
+                }
+            }
+
+            textDoadoPorItem.Text = resultado.ToString();
+            textDoadoPorItem.SelectionStart = textDoadoPorItem.Text.Length;
+        }
+
+
+
+
+        private void AtualizarControlesOrdenados(List<ControleEstoque> controles)
+        {
+            flowControleEstoque.Controls.Clear();
+            foreach (ControleEstoque controle in controles)
+            {
+                flowControleEstoque.Controls.Add(controle);
+            }
+        }
+
+        private void AtualizarImagemFiltro2(Button botaoClicado)
+        {
+            // Define a imagem 2 (filtro2) para o botão clicado
+            botaoClicado.Image = Properties.Resources.filtro2;
+
+            // Define a imagem 1 (filtro1) para os outros botões
+            btnOrdenarPorData.Image = btnOrdenarPorData == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorNome.Image = btnOrdenarPorNome == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorDescricao.Image = btnOrdenarPorDescricao == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+            btnOrdenarPorDoadoPor.Image = btnOrdenarPorDoadoPor == botaoClicado ? Properties.Resources.filtro2 : Properties.Resources.filtro1;
+        }
+
+        private void btnOrdenarPorData_Click(object sender, EventArgs e)
+        {
+            List<ControleEstoque> controles = flowControleEstoque.Controls.OfType<ControleEstoque>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelDataEstoque.Text, c2.labelDataEstoque.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorData);
+        }
+
+        private void btnOrdenarPorNome_Click(object sender, EventArgs e)
+        {
+            List<ControleEstoque> controles = flowControleEstoque.Controls.OfType<ControleEstoque>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelNomeEstoque.Text, c2.labelNomeEstoque.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorNome);
+        }
+
+        private void btnOrdenarPorDescricao_Click(object sender, EventArgs e)
+        {
+            List<ControleEstoque> controles = flowControleEstoque.Controls.OfType<ControleEstoque>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelDescricaoEstoque.Text, c2.labelDescricaoEstoque.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorDescricao);
+        }
+
+        private void btnOrdenarPorDoadoPor_Click(object sender, EventArgs e)
+        {
+            List<ControleEstoque> controles = flowControleEstoque.Controls.OfType<ControleEstoque>().ToList();
+            controles.Sort((c1, c2) => string.Compare(c1.labelDoadoPorEstoque.Text, c2.labelDoadoPorEstoque.Text));
+            AtualizarControlesOrdenados(controles);
+
+            AtualizarImagemFiltro2(btnOrdenarPorDoadoPor);
+        }
+
     }
 }

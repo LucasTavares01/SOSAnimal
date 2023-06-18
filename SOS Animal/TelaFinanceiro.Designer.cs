@@ -560,10 +560,10 @@
             this.Controls.Add(this.botaoVoltarFinanceiro);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.panelLateralFinanceiro);
+            this.Controls.Add(this.panelDespesas);
             this.Controls.Add(this.panelReceitas);
             this.Controls.Add(this.cadastrarReceitas);
             this.Controls.Add(this.cadastrarDespesas);
-            this.Controls.Add(this.panelDespesas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaFinanceiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
