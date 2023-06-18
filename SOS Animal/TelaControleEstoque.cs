@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,13 +60,49 @@ namespace SOS_Animal
                 string dataValue = reader["DATA"].ToString();
                 string nomeValue = reader["NOME"].ToString();
                 string descricaoValue = reader["DESCRICAO"].ToString();
-                string doadoporValue = reader["DOADOPOR"].ToString();
-              
+                string doadoporValue = reader["DOADOPOR"].ToString();            
 
                 // Criar uma instância do UserControl ControleAnimal
                 ControleEstoque controleEstoque = new ControleEstoque();
                 controleEstoque.PreencherLabels(dataValue, nomeValue, descricaoValue, doadoporValue);
-                
+
+                if (reader["DADOSIMAGEM"] != DBNull.Value)
+                {
+                    byte[] imagemBytes2 = (byte[])reader["DADOSIMAGEM"];
+
+                    // Converter os bytes em uma imagem
+                    Image imagemRecuperada = null;
+                    using (MemoryStream stream = new MemoryStream(imagemBytes2))
+                    {
+                        imagemRecuperada = Image.FromStream(stream);
+                    }
+
+                    // Redimensionar a imagem para caber na PictureBox
+                    Image imagemRedimensionada = new Bitmap(100, 100);
+                    using (Graphics graphics = Graphics.FromImage(imagemRedimensionada))
+                    {
+                        graphics.DrawImage(imagemRecuperada, 0, 0, 100, 100);
+                    }
+
+                    // Tornar a imagem redonda
+                    Bitmap imagemRedonda = new Bitmap(100, 100);
+                    using (Graphics graphics = Graphics.FromImage(imagemRedonda))
+                    {
+                        graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        graphics.Clear(Color.Transparent);
+
+                        using (GraphicsPath path = new GraphicsPath())
+                        {
+                            path.AddEllipse(0, 0, 100, 100);
+                            graphics.SetClip(path);
+                            graphics.DrawImage(imagemRedimensionada, 0, 0);
+                        }
+                    }
+
+                    // Atribuir a imagem editada a picboxItem2
+                    controleEstoque.picboxItem2.Image = imagemRedonda;
+                    controleEstoque.picboxItem2.Refresh(); // Atualizar a exibição da imagem
+                }
 
                 // Definir a posição e tamanho do UserControl
                 controleEstoque.Location = new Point(0, 0);
@@ -74,7 +112,7 @@ namespace SOS_Animal
                 flowControleEstoque.Controls.Add(controleEstoque);
             }
 
-            reader.Close();                                       
+            reader.Close();            
         }
 
         private void botaoControleEstoque_MouseEnter(object sender, EventArgs e)
@@ -124,21 +162,33 @@ namespace SOS_Animal
         {
             try
             {
+                // Obter a imagem selecionada
+                Image imagem = picboxItem.Image;
+
+                // Converter a imagem em bytes
+                byte[] imagemBytes = null;
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    imagem.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    imagemBytes = stream.ToArray();
+                }
+
                 // Obter os valores das TextBoxes
                 string data = textDataItem.Text;
                 string nome = textNomeItem.Text;
                 string descricao = textDescricaoItem.Text;
                 string doadopor = textDoadoPorItem.Text;
 
-                // Inserir os dados na tabela controle_estoque
-                string query = "INSERT INTO controle_estoque (DATA, NOME, DESCRICAO, DOADOPOR) " +
-                    "VALUES (@DATA, @NOME, @DESCRICAO, @DOADOPOR)";
+                // Atualizar a query para inserir o campo de imagem
+                string query = "INSERT INTO controle_estoque (DATA, NOME, DESCRICAO, DOADOPOR, DADOSIMAGEM) " +
+                    "VALUES (@DATA, @NOME, @DESCRICAO, @DOADOPOR, @DADOSIMAGEM)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@DATA", data);
                 command.Parameters.AddWithValue("@NOME", nome);
                 command.Parameters.AddWithValue("@DESCRICAO", descricao);
                 command.Parameters.AddWithValue("@DOADOPOR", doadopor);
+                command.Parameters.AddWithValue("@DADOSIMAGEM", imagemBytes);
 
                 command.ExecuteNonQuery();
 
@@ -170,6 +220,43 @@ namespace SOS_Animal
                     ControleEstoque controleEstoque = new ControleEstoque();
                     controleEstoque.PreencherLabels(dataValue, nomeValue, descricaoValue, doadoporValue);
 
+                    if (reader["DADOSIMAGEM"] != DBNull.Value)
+                    {
+                        byte[] imagemBytes2 = (byte[])reader["DADOSIMAGEM"];
+
+                        // Converter os bytes em uma imagem
+                        Image imagemRecuperada = null;
+                        using (MemoryStream stream = new MemoryStream(imagemBytes2))
+                        {
+                            imagemRecuperada = Image.FromStream(stream);
+                        }
+
+                        // Redimensionar a imagem para caber na PictureBox
+                        Image imagemRedimensionada = new Bitmap(100, 100);
+                        using (Graphics graphics = Graphics.FromImage(imagemRedimensionada))
+                        {
+                            graphics.DrawImage(imagemRecuperada, 0, 0, 100, 100);
+                        }
+
+                        // Tornar a imagem redonda
+                        Bitmap imagemRedonda = new Bitmap(100, 100);
+                        using (Graphics graphics = Graphics.FromImage(imagemRedonda))
+                        {
+                            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                            graphics.Clear(Color.Transparent);
+
+                            using (GraphicsPath path = new GraphicsPath())
+                            {
+                                path.AddEllipse(0, 0, 100, 100);
+                                graphics.SetClip(path);
+                                graphics.DrawImage(imagemRedimensionada, 0, 0);
+                            }
+                        }
+
+                        // Atribuir a imagem editada a picboxItem2
+                        controleEstoque.picboxItem2.Image = imagemRedonda;
+                        controleEstoque.picboxItem2.Refresh(); // Atualizar a exibição da imagem
+                    }
 
                     // Definir a posição e tamanho do UserControl
                     controleEstoque.Location = new Point(0, 0);
@@ -184,7 +271,7 @@ namespace SOS_Animal
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar item: " + ex.Message);
-            }
+            }           
         }
 
         private void LimparTextBoxes()
@@ -216,8 +303,43 @@ namespace SOS_Animal
 
         private void botaoInserirImagem_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Arquivos de imagem (*.jpg; *.jpeg; *.png; *.gif) | *.jpg; *.jpeg; *.png; *.gif";
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string nomeArquivo = openFileDialog.FileName;
+                    Image imagem = Image.FromFile(nomeArquivo);
+
+                    // Redimensionar a imagem para caber na PictureBox
+                    Image imagemRedimensionada = new Bitmap(260, 260);
+                    using (Graphics graphics = Graphics.FromImage(imagemRedimensionada))
+                    {
+                        graphics.DrawImage(imagem, 0, 0, 260, 260);
+                    }
+
+                    // Tornar a PictureBox redonda
+                    Bitmap imagemRedonda = new Bitmap(260, 260);
+                    using (Graphics graphics = Graphics.FromImage(imagemRedonda))
+                    {
+                        graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        graphics.Clear(Color.Transparent);
+
+                        using (GraphicsPath path = new GraphicsPath())
+                        {
+                            path.AddEllipse(0, 0, 260, 260);
+                            graphics.SetClip(path);
+                            graphics.DrawImage(imagemRedimensionada, 0, 0);
+                        }
+                    }
+
+                    // Atribuir a imagem redimensionada e arredondada à PictureBox
+                    picboxItem.Image = imagemRedonda;
+                }
+            }
         }
+
 
         private void textDataItem_Enter(object sender, EventArgs e)
         {
@@ -304,5 +426,7 @@ namespace SOS_Animal
             this.Hide();
             telaEscolhaCadastro.Show();
         }
+
+        
     }
 }

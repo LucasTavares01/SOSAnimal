@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxItem2 = new System.Windows.Forms.PictureBox();
             this.labelDoadoPorEstoque = new System.Windows.Forms.Label();
             this.labelDescricaoEstoque = new System.Windows.Forms.Label();
             this.labelNomeEstoque = new System.Windows.Forms.Label();
             this.labelDataEstoque = new System.Windows.Forms.Label();
             this.botaoRemover = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxItem2)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picboxItem2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picboxItem2.Location = new System.Drawing.Point(20, 28);
+            this.picboxItem2.Name = "picboxItem2";
+            this.picboxItem2.Size = new System.Drawing.Size(100, 100);
+            this.picboxItem2.TabIndex = 0;
+            this.picboxItem2.TabStop = false;
             // 
             // labelDoadoPorEstoque
             // 
@@ -121,7 +121,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::SOS_Animal.Properties.Resources.listaControleEstoque;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picboxItem2);
             this.Controls.Add(this.botaoRemover);
             this.Controls.Add(this.botaoEditar);
             this.Controls.Add(this.labelDoadoPorEstoque);
@@ -131,20 +131,19 @@
             this.DoubleBuffered = true;
             this.Name = "ControleEstoque";
             this.Size = new System.Drawing.Size(830, 163);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label labelDoadoPorEstoque;
         public System.Windows.Forms.Label labelDescricaoEstoque;
         public System.Windows.Forms.Label labelNomeEstoque;
         public System.Windows.Forms.Label labelDataEstoque;
         private System.Windows.Forms.Button botaoRemover;
         public System.Windows.Forms.Button botaoEditar;
+        public System.Windows.Forms.PictureBox picboxItem2;
     }
 }

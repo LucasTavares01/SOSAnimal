@@ -36,7 +36,7 @@
             this.panelControleEstoque = new System.Windows.Forms.Panel();
             this.flowControleEstoque = new System.Windows.Forms.FlowLayoutPanel();
             this.panelCadastrarItem = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxItem = new System.Windows.Forms.PictureBox();
             this.botaoInserirImagem = new System.Windows.Forms.Button();
             this.textDoadoPorItem = new System.Windows.Forms.TextBox();
             this.textDescricaoItem = new System.Windows.Forms.TextBox();
@@ -46,12 +46,12 @@
             this.panelLateralControleEstoque.SuspendLayout();
             this.panelControleEstoque.SuspendLayout();
             this.panelCadastrarItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
             this.SuspendLayout();
             // 
             // botaoVoltarCadastro
             // 
-            this.botaoVoltarCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.botaoVoltarCadastro.BackColor = System.Drawing.Color.White;
             this.botaoVoltarCadastro.BackgroundImage = global::SOS_Animal.Properties.Resources.botaoVoltar;
             this.botaoVoltarCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.botaoVoltarCadastro.FlatAppearance.BorderSize = 0;
@@ -151,7 +151,7 @@
             // panelCadastrarItem
             // 
             this.panelCadastrarItem.BackgroundImage = global::SOS_Animal.Properties.Resources.fundoCadastrarItem;
-            this.panelCadastrarItem.Controls.Add(this.pictureBox1);
+            this.panelCadastrarItem.Controls.Add(this.picboxItem);
             this.panelCadastrarItem.Controls.Add(this.botaoInserirImagem);
             this.panelCadastrarItem.Controls.Add(this.textDoadoPorItem);
             this.panelCadastrarItem.Controls.Add(this.textDescricaoItem);
@@ -163,13 +163,14 @@
             this.panelCadastrarItem.Size = new System.Drawing.Size(920, 660);
             this.panelCadastrarItem.TabIndex = 13;
             // 
-            // pictureBox1
+            // picboxItem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(585, 245);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 260);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.picboxItem.BackColor = System.Drawing.Color.Transparent;
+            this.picboxItem.Location = new System.Drawing.Point(585, 245);
+            this.picboxItem.Name = "picboxItem";
+            this.picboxItem.Size = new System.Drawing.Size(260, 260);
+            this.picboxItem.TabIndex = 17;
+            this.picboxItem.TabStop = false;
             // 
             // botaoInserirImagem
             // 
@@ -275,7 +276,7 @@
             this.panelControleEstoque.ResumeLayout(false);
             this.panelCadastrarItem.ResumeLayout(false);
             this.panelCadastrarItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,7 +293,7 @@
         private System.Windows.Forms.TextBox textDataItem;
         private System.Windows.Forms.Button botaoCadastrarItem2;
         private System.Windows.Forms.Button botaoInserirImagem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picboxItem;
         private System.Windows.Forms.Panel panelControleEstoque;
         private System.Windows.Forms.Button botaoVoltarCadastro;
         private System.Windows.Forms.Button botaoFechar;
